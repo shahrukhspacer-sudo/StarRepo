@@ -31,6 +31,13 @@
     <link rel="icon" type="image/png" href="assets/images/favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="assets/images/favicon/favicon-16x16.png" sizes="16x16">
 
+    <style>
+        /* Native Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
     <!-- Fixing Internet Explorer-->
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -206,18 +213,18 @@
                         <!-- Main Menu -->
                         <nav class="main-menu style1 navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
+                                <ul class="navigation clearfix scroll-nav">
                                     <li class="current">
-                                        <a class="home" href="index.html">
+                                        <a class="home" href="#home">
                                             <span class="home_text">Home</span>
                                             <span class="flaticon-home home_icon"></span>
                                         </a>
                                     </li>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="services-v1.html">Services</a></li>
-                                    <li><a href="about.html">Products</a></li>
-                                    <li><a href="blog.html">News</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#about">About us</a></li>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#products">Products</a></li>
+                                    <li><a href="#news">News</a></li>
+                                    <li><a href="#contact">Contact</a></li>
                                 </ul>
                             </div>
                         </nav>                        
@@ -296,7 +303,7 @@
 
 
 <!-- Start Main Slider -->
-<section class="main-slider style1">
+<section class="main-slider style1" id="home">
     <div class="top_shadow"></div>
     <div class="slider-box">
         <!-- Banner Carousel -->
@@ -481,7 +488,7 @@
 <!--End Features Style1 Area-->
 
 <!--Start About Style1 Area float-bob-y  paroller-2 -->
-<section class="about-style1-area">
+<section class="about-style1-area" id="about">
     <div class="container">
         <div class="row">
             <div class="col-xl-8">
@@ -563,7 +570,7 @@
 
 
 <!-- Start Service Style1 Area -->
-<section class="service-style1-area">
+<section class="service-style1-area" id="services">
     <div class="layer-outer" style="background-image: url(assets/images/parallax-background/service-style1-bg.jpg);"></div>
     <div class="shape wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
         <img class="paroller" src="assets/images/shape/factory.png" alt="">
@@ -679,7 +686,7 @@
 <!-- End Service Style1 Area -->
 
 <!--Start Project Style1 Area-->
-<section class="project-style1-area">
+<section class="project-style1-area" id="products">
     <div class="custom-container">
         <div class="sec-title with_text text-center">
             <div class="sub-title">
@@ -1195,7 +1202,7 @@
 <!--End Partner Area--> 
 
 <!--Start Blog Style1 Area-->
-<section class="blog-style1-area">
+<section class="blog-style1-area" id="news">
     <div class="layer-outer" style="background-image: url(assets/images/parallax-background/service-style1-bg.jpg);"></div>
     <div class="container">
         <div class="sec-title with_text text-center">
@@ -1343,7 +1350,7 @@
 <!--End Subscribe Area-->
 
 <!--Start footer area -->  
-<footer class="footer-area">
+<footer class="footer-area" id="contact">
     <div class="shape  wow slideInRight" data-wow-delay="500ms" data-wow-duration="3500ms">
         <img src="assets/images/shape/footer-shape-1.jpg" alt="">
     </div><!-- /.shape -->
@@ -1557,7 +1564,21 @@
 <!-- thm custom script -->
 <script src="assets/js/custom.js"></script>
 
-
+<script>
+    // Smooth scroll for one-page navigation
+    jQuery(document).ready(function($) {
+        $('.scroll-nav a[href^="#"]').on('click', function(e) {
+            e.preventDefault();
+            var target = this.hash;
+            var $target = $(target);
+            if ($target.length) {
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top - 80 // Adjust 80 based on your fixed header height
+                }, 900, 'swing');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
