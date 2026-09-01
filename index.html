@@ -36,6 +36,104 @@
         html {
             scroll-behavior: smooth;
         }
+        
+        /* Levitating Contact Form Styles */
+        .levitating-contact-area {
+            position: relative;
+            z-index: 99;
+            margin-bottom: -70px;
+            margin-top: 50px;
+        }
+        .levitating-contact-box {
+            background-color: #ffffff;
+            box-shadow: 0px 15px 40px 0px rgba(0,0,0,0.1);
+            padding: 45px 50px;
+            border-radius: 8px;
+            border-bottom: 4px solid #f68a0a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .levitating-contact-box .left-content {
+            display: flex;
+            align-items: center;
+            flex: 0 0 40%;
+        }
+        .levitating-contact-box .left-content .icon {
+            font-size: 55px;
+            color: #f68a0a;
+            margin-right: 20px;
+            line-height: 1;
+        }
+        .levitating-contact-box .left-content h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #222222;
+            margin-bottom: 5px;
+        }
+        .levitating-contact-box .left-content p {
+            margin: 0;
+            color: #666666;
+            font-size: 15px;
+        }
+        .levitating-contact-box .right-form {
+            flex: 0 0 55%;
+        }
+        .levitating-contact-form {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+        }
+        .levitating-contact-form input {
+            flex: 1;
+            height: 60px;
+            background: #f9f9f9;
+            border: 1px solid #eeeeee;
+            padding: 0 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            color: #222;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .levitating-contact-form input:focus {
+            border-color: #f68a0a;
+            background: #ffffff;
+        }
+        .levitating-contact-form button {
+            flex: 0 0 auto;
+            height: 60px;
+            border-radius: 5px;
+            border: none;
+            padding: 0 35px;
+            cursor: pointer;
+            background-color: #f68a0a;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        /* Adjust footer padding so content isn't hidden behind the levitating box */
+        .footer-area {
+            padding-top: 130px !important;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1199px) {
+            .levitating-contact-box .left-content { flex: 0 0 100%; margin-bottom: 25px; justify-content: center; text-align: center; }
+            .levitating-contact-box .right-form { flex: 0 0 100%; }
+        }
+        @media (max-width: 767px) {
+            .levitating-contact-area { margin-bottom: -150px; }
+            .footer-area { padding-top: 190px !important; }
+            .levitating-contact-box { padding: 30px 20px; }
+            .levitating-contact-form { flex-direction: column; }
+            .levitating-contact-box .left-content { flex-direction: column; }
+            .levitating-contact-box .left-content .icon { margin-right: 0; margin-bottom: 10px; }
+        }
     </style>
 
     <!-- Fixing Internet Explorer-->
@@ -72,24 +170,13 @@
         <button><img src="assets/images/icon/color-palette.png" alt="Color Palette"> </button>
     </div>
     <div class="switch_menu">
-        <!-- color changer -->
         <div class="switcher_container">
             <ul id="styleOptions" title="switch styling">
-                <li>
-                    <a href="javascript: void(0)" data-theme="blue" class="blue-color"></a>
-                </li>
-                <li>
-                    <a href="javascript: void(0)" data-theme="pink" class="pink-color"></a>
-                </li>
-                <li>
-                    <a href="javascript: void(0)" data-theme="violet" class="violet-color"></a>
-                </li>
-                <li>
-                    <a href="javascript: void(0)" data-theme="crimson" class="crimson-color"></a>
-                </li>
-                <li>
-                    <a href="javascript: void(0)" data-theme="orange" class="orange-color"></a>
-                </li>
+                <li><a href="javascript: void(0)" data-theme="blue" class="blue-color"></a></li>
+                <li><a href="javascript: void(0)" data-theme="pink" class="pink-color"></a></li>
+                <li><a href="javascript: void(0)" data-theme="violet" class="violet-color"></a></li>
+                <li><a href="javascript: void(0)" data-theme="crimson" class="crimson-color"></a></li>
+                <li><a href="javascript: void(0)" data-theme="orange" class="orange-color"></a></li>
             </ul>
         </div>
     </div>
@@ -247,7 +334,7 @@
                         </ul>
                     </div>
                     <div class="header-bottom_right__btn">
-                        <a class="btn-one" href="#"><span class="txt"><i class="left flaticon-login"></i>Get an Estimate</span></a>
+                        <a class="btn-one scroll-nav" href="#contact"><span class="txt"><i class="left flaticon-login"></i>Get an Estimate</span></a>
                     </div>  
                 </div> 
                 
@@ -1320,37 +1407,34 @@
 </section>
 <!--End Blog Style1 Area-->
 
-<!--Start Subscribe Area-->
-<section class="subscribe-area">
-    <div class="subscribe-bg banner-animate" style="background-image: url(assets/images/shape/subscribe-area-bg.png);"></div>
+<!--Start Levitating Quick Contact Area-->
+<section class="levitating-contact-area" id="contact">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="subscribe-content-box wow slideInDown" data-wow-delay="100ms" data-wow-duration="1500ms">
-                    <div class="left">
-                        <div class="icon">
-                            <span class="flaticon-envelope-1"></span>
-                        </div><!-- /.icon -->
-                        <div class="subscribe-title">
-                            <h2>Subscribe Newsletter</h2>
-                            <p>At Erdunt, our goal is to generate production by experts</p>
-                        </div>
-                    </div><!-- /.left -->
-                    <div class="subscribe-box">
-                        <form class="subscribe-form" action="#">
-                            <input type="email" name="email" placeholder="Email address ...">
-                            <button class="btn-one" type="submit"><span class="txt">Subscribe <i class="right flaticon-login"></i></span></button>
-                        </form>
-                    </div>
-                </div> 
-            </div><!-- /.col-xl-12 -->
-        </div><!-- /.row -->
-    </div><!-- /.container -->
+        <div class="levitating-contact-box wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1000ms">
+            <div class="left-content">
+                <div class="icon">
+                    <span class="flaticon-envelope-1"></span>
+                </div>
+                <div class="text-box">
+                    <h2>Quick Contact Form</h2>
+                    <p>Get in touch with our industry experts today</p>
+                </div>
+            </div>
+            <div class="right-form">
+                <form class="levitating-contact-form" action="#">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="text" name="phone" placeholder="Phone No.">
+                    <button type="submit">Submit <i class="fa fa-sign-in" style="margin-left:5px;"></i></button>
+                </form>
+            </div>
+        </div> 
+    </div>
 </section>
-<!--End Subscribe Area-->
+<!--End Levitating Quick Contact Area-->
 
 <!--Start footer area -->  
-<footer class="footer-area" id="contact">
+<footer class="footer-area">
     <div class="shape  wow slideInRight" data-wow-delay="500ms" data-wow-duration="3500ms">
         <img src="assets/images/shape/footer-shape-1.jpg" alt="">
     </div><!-- /.shape -->
@@ -1481,7 +1565,7 @@
                         <div class="footer-bottom">
                             <div class="footer-bottom_left_box">
                                 <div class="copyright-text">
-                                    <p>&copy; 2021 <a href="#">Erdunt.</a> All rights reserved.</p>
+                                    <p>&copy; 2026 <a href="#">Erdunt.</a> All rights reserved.</p>
                                 </div>
                                 <div class="footer-menu-style1">
                                     <ul>
@@ -1513,9 +1597,6 @@
             </div>
         </div>
     </div>
-    
-    
-
 </footer>   
 <!--End footer area-->
 
@@ -1525,11 +1606,6 @@
 </button> 
 
 </div> 
-
-
-
-
-
 
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/aos.js"></script>
@@ -1573,7 +1649,7 @@
             var $target = $(target);
             if ($target.length) {
                 $('html, body').stop().animate({
-                    'scrollTop': $target.offset().top - 80 // Adjust 80 based on your fixed header height
+                    'scrollTop': $target.offset().top - 80
                 }, 900, 'swing');
             }
         });
