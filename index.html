@@ -45,6 +45,43 @@
             display: block !important;
         }
 
+        /* Additional Why Choose Us / Infrastructure Section Styling */
+        .why-choose-us-area {
+            padding: 90px 0;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+        .why-choose-box {
+            background: #ffffff;
+            padding: 35px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            height: 100%;
+            border-top: 3px solid #f68a0a;
+            transition: all 0.3s ease;
+        }
+        .why-choose-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .why-choose-box .icon-holder {
+            font-size: 42px;
+            color: #f68a0a;
+            margin-bottom: 20px;
+        }
+        .why-choose-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 12px;
+        }
+        .why-choose-box p {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
         /* Levitating Contact Form Styles with Description */
         .levitating-contact-area {
             position: relative;
@@ -280,7 +317,7 @@
             <div class="outer-box clearfix">
                 <div class="header-left clearfix pull-left">
                     <div class="logo">
-                        <a href="index.html"><img src="images/logo/LOGO-SEW.png" alt="Star Engineering Works" title=""style="width: 180px; height: auto;">></a>
+                        <a href="index.html"><img src="images/logo/LOGO-SEW.png" alt="Star Engineering Works" title="" style="width: 180px; height: auto;"></a>
                     </div>
                 </div>
                 <div class="header-right pull-right">
@@ -350,7 +387,7 @@
                                     <li><a href="#about">About us</a></li>
                                     <li><a href="#services">Core Capacities</a></li>
                                     <li><a href="#products">Products</a></li>
-                                    <li><a href="#news">News</a></li>
+                                    <li><a href="#whyus">Why Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
                             </div>
@@ -390,7 +427,7 @@
             <div class="clearfix">
                 <!--Logo-->
                 <div class="logo float-left">
-                    <a href="index.html" class="img-responsive"><img src="images/logo/LOGO-SEW.png" alt="" title=""style="width: 180px; height: auto;">></a>
+                    <a href="index.html" class="img-responsive"><img src="images/logo/LOGO-SEW.png" alt="" title="" style="width: 180px; height: auto;"></a>
                 </div>
                 <!--Right Col-->
                 <div class="right-col float-right">
@@ -1008,6 +1045,49 @@
 </section>
 <!--End Project Style1 Area-->
 
+<!--Start Why Choose Us Area (New Section added to fill gaps)-->
+<section class="why-choose-us-area" id="whyus">
+    <div class="container">
+        <div class="sec-title text-center">
+            <div class="sub-title">
+                <span class="border-box"></span>
+                <h5>Excellence in Engineering</h5>
+            </div>
+            <h2>Why Choose Star Engineering Works?</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                <div class="why-choose-box">
+                    <div class="icon-holder">
+                        <i class="fa fa-shield" aria-hidden="true"></i>
+                    </div>
+                    <h3>ISO 9001:2015 Certified</h3>
+                    <p>Strict adherence to international quality management systems ensuring premium grade components and absolute reliability.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                <div class="why-choose-box">
+                    <div class="icon-holder">
+                        <i class="fa fa-cogs" aria-hidden="true"></i>
+                    </div>
+                    <h3>Advanced Machinery</h3>
+                    <p>State-of-the-art CNC machining centers, turning facilities, and rapid 3D prototyping setup located in Karachi.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                <div class="why-choose-box">
+                    <div class="icon-holder">
+                        <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                    </div>
+                    <h3>Trusted National Partner</h3>
+                    <p>Proudly serving top-tier organizations, defense contractors, and major industrial plants across Pakistan since 1985.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Why Choose Us Area-->
+
 <!--Start Testimonial style1 Area-->
 <section class="testimonial-style1-area">
     <div class="testimonial-style1-area_map" style="background-image: url(assets/images/shape/features-style4_map.png);"></div>
@@ -1124,125 +1204,6 @@
 </section> 
 <!--End Partner Area--> 
 
-<!--Start Blog Style1 Area-->
-<section class="blog-style1-area" id="news">
-    <div class="layer-outer" style="background-image: url(assets/images/parallax-background/service-style1-bg.jpg);"></div>
-    <div class="container">
-        <div class="sec-title with_text text-center">
-            <div class="sub-title">
-                <span class="border-box"></span>
-                <h5>Star Engineering Updates</h5>
-            </div>
-            <h2>Latest News & Updates</h2>
-            <div class="text">
-                <p>Explore our recent milestones in advanced mechanical engineering, ISO quality updates, and technological advancements.</p>
-            </div><!-- /.text -->
-        </div>
-        <div class="row text-right-rtl">
-            <!--Start Single blog Style1-->
-            <div class="col-xl-4 col-lg-4">
-                <div class="single-blog-style1 wow fadeInUp" data-wow-duration="1500ms">
-                    <div class="img-holder">
-                        <div class="inner">
-                            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=370&h=270&fit=crop" alt="">
-                            <div class="overlay-icon">
-                                <a href="#"><span class="flaticon-plus"></span></a>
-                            </div>
-                        </div>
-                        <div class="date-box bgclr1">
-                            <h2>01</h2>
-                            <span>SEP</span>
-                        </div>
-                    </div>
-                    <div class="text-holder">
-                        <ul class="meta-info">
-                            <li><i class="fa fa-user" aria-hidden="true"></i>By<a href="#">Admin</a></li>
-                            <li><i class="fa fa-comment-o" aria-hidden="true"></i>15 Comments</li>
-                        </ul>
-                        <h3 class="blog-title">
-                            <a href="#">Advancements in CNC Machining & 4-Axis Capabilities</a>
-                        </h3>
-                        <div class="text">
-                            <p>Enhancing precision component production for local industrial sectors.</p>
-                        </div>
-                        <div class="readmore-button">
-                            <a href="#"><span class="fa fa-arrow-circle-o-right"></span>Read More</a>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-            <!--End Single blog Style1-->
-            <!--Start Single blog Style1-->
-            <div class="col-xl-4 col-lg-4">
-                <div class="single-blog-style1 wow fadeInUp" data-wow-duration="1500ms">
-                    <div class="img-holder">
-                        <div class="inner">
-                            <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=370&h=270&fit=crop" alt="">
-                            <div class="overlay-icon">
-                                <a href="#"><span class="flaticon-plus"></span></a>
-                            </div>
-                        </div>
-                        <div class="date-box bgclr1">
-                            <h2>15</h2>
-                            <span>AUG</span>
-                        </div>
-                    </div>
-                    <div class="text-holder">
-                        <ul class="meta-info">
-                            <li><i class="fa fa-user" aria-hidden="true"></i>By<a href="#">Admin</a></li>
-                            <li><i class="fa fa-comment-o" aria-hidden="true"></i>24 Comments</li>
-                        </ul>
-                        <h3 class="blog-title">
-                            <a href="#">Underwater Connectors Series for Marine Applications</a>
-                        </h3>
-                        <div class="text">
-                            <p>Engineered for extreme deep-water reliability and pressure resistance.</p>
-                        </div>
-                        <div class="readmore-button">
-                            <a href="#"><span class="fa fa-arrow-circle-o-right"></span>Read More</a>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-            <!--End Single blog Style1-->
-            <!--Start Single blog Style1-->
-            <div class="col-xl-4 col-lg-4">
-                <div class="single-blog-style1 wow fadeInUp" data-wow-duration="1500ms">
-                    <div class="img-holder">
-                        <div class="inner">
-                            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=370&h=270&fit=crop" alt="">
-                            <div class="overlay-icon">
-                                <a href="#"><span class="flaticon-plus"></span></a>
-                            </div>
-                        </div>
-                        <div class="date-box bgclr1">
-                            <h2>10</h2>
-                            <span>JUL</span>
-                        </div>
-                    </div>
-                    <div class="text-holder">
-                        <ul class="meta-info">
-                            <li><i class="fa fa-user" aria-hidden="true"></i>By<a href="#">Admin</a></li>
-                            <li><i class="fa fa-comment-o" aria-hidden="true"></i>30 Comments</li>
-                        </ul>
-                        <h3 class="blog-title">
-                            <a href="#">Maintaining ISO 9001:2015 Standards in Manufacturing</a>
-                        </h3>
-                        <div class="text">
-                            <p>Our ongoing commitment to international quality management.</p>
-                        </div>
-                        <div class="readmore-button">
-                            <a href="#"><span class="fa fa-arrow-circle-o-right"></span>Read More</a>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-            <!--End Single blog Style1-->
-        </div>
-    </div>
-</section>
-<!--End Blog Style1 Area-->
-
 <!--Start Levitating Quick Contact Area-->
 <section class="levitating-contact-area" id="contact">
     <div class="container">
@@ -1346,7 +1307,7 @@
                                         <li><a href="#about">About Us</a></li>    
                                         <li><a href="#services">Core Capacities</a></li>    
                                         <li><a href="#products">Products</a></li>    
-                                        <li><a href="#news">News</a></li>                       
+                                        <li><a href="#whyus">Why Us</a></li>                       
                                         <li><a href="#contact">Contact</a></li>                                            
                                     </ul>
                                 </div>
