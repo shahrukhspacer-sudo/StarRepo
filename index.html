@@ -199,6 +199,39 @@
             background-color: var(--theme-blue);
         }
 
+        /* Custom Footer Map Styling */
+        .footer-map-wrapper {
+            margin-top: 15px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 2px solid #e5e5e5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        .footer-map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 140px;
+            border: 0;
+        }
+        .footer-map-btn {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 10px;
+            color: var(--theme-red) !important;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .footer-map-btn i {
+            margin-right: 6px;
+            font-size: 14px;
+        }
+        .footer-map-btn:hover {
+            color: var(--theme-blue) !important;
+            text-decoration: underline;
+        }
+
         /* Top Bar & Menu Social Icons Style */
         .header-social-link-1 .social-link ul li a,
         .social-links ul li a {
@@ -274,6 +307,7 @@
             font-size: 42px;
             color: var(--theme-red);
             margin-bottom: 20px;
+            line-height: 1;
         }
         .why-choose-box h3 {
             font-size: 20px;
@@ -437,8 +471,8 @@
             color: var(--theme-red) !important;
         }
 
-        /* Specific fix for Why Choose Us 3rd Card Icon */
-        .why-choose-box .icon-holder i.fa {
+        /* Specific fix for Why Choose Us Icons */
+        .why-choose-box .icon-holder i {
             color: #e31820 !important;
             background: transparent !important;
             display: inline-block !important;
@@ -569,8 +603,8 @@
                                     <span class="flaticon-placeholder clr1"></span>
                                 </div>
                                 <div class="text">
-                                    <p>Mehran Town, Korangi</p>
-                                    <h4>Karachi, Pakistan</h4>
+                                    <p><a href="https://maps.google.com/?cid=11563172088824159762" target="_blank" style="color: inherit;">Mehran Town, Korangi</a></p>
+                                    <h4><a href="https://maps.google.com/?cid=11563172088824159762" target="_blank" style="color: inherit;">Karachi, Pakistan</a></h4>
                                 </div>
                             </li>
                         </ul>
@@ -1300,7 +1334,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
                 <div class="why-choose-box">
                     <div class="icon-holder">
-                        <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                        <i class="fa fa-users" aria-hidden="true"></i>
                     </div>
                     <h3>Trusted National Partner</h3>
                     <p>Proudly serving top-tier organizations, defense contractors, and major industrial plants across Pakistan since 1985.</p>
@@ -1591,7 +1625,7 @@
                                                     <span class="flaticon-placeholder clr1"></span>
                                                 </div>
                                                 <div class="text">
-                                                    <p>Plot # B-279, Sector 6F Mehran Town,<br> Korangi Industrial Area, Karachi</p>
+                                                    <p><a href="https://maps.google.com/?cid=11563172088824159762" target="_blank" style="color: inherit;">Plot # B-279, Sector 6F Mehran Town,<br> Korangi Industrial Area, Karachi</a></p>
                                                 </div>   
                                             </li>
                                             <li>
@@ -1611,6 +1645,20 @@
                                                 </div>   
                                             </li>
                                         </ul>
+
+                                        <!-- Live Embedded Google Map -->
+                                        <div class="footer-map-wrapper">
+                                            <iframe 
+                                                title="Star Engineering Works Location"
+                                                src="https://maps.google.com/maps?q=Star+Engineering+Works+Mehran+Town+Korangi+Karachi&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                                                loading="lazy" 
+                                                allowfullscreen>
+                                            </iframe>
+                                        </div>
+                                        <a href="https://maps.google.com/?cid=11563172088824159762" target="_blank" class="footer-map-btn">
+                                            <i class="fa fa-map-marker"></i> Open in Google Maps
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>
