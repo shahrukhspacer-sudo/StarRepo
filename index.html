@@ -43,6 +43,24 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* --- PRELOADER SPEED FIX --- */
+        /* Yeh rule preloader ko maximum 1.5s ke andar screen se hata deta hai chahe images late load hon */
+        .loader-wrap {
+            animation: forceHideLoader 0.4s ease 1.5s forwards !important;
+        }
+        @keyframes forceHideLoader {
+            0% {
+                opacity: 1;
+                visibility: visible;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+                display: none !important;
+                pointer-events: none !important;
+            }
+        }
         
         /* Clean Fix for Product Slider Images & Heights */
         .single-project-style1 .img-holder .inner img {
@@ -479,6 +497,77 @@
             visibility: visible !important;
             opacity: 1 !important;
         }
+        /* --- PRODUCTS / PROJECT STYLE 1 CLEAN THEME FIX --- */
+
+/* Normal state me bottom icon ka background aur color */
+.single-project-style1 .project-style1_overly_content .bottom-box_inner .left .icon {
+    background-color: var(--theme-blue) !important;
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.single-project-style1 .project-style1_overly_content .bottom-box_inner .left .icon i {
+    color: #ffffff !important; /* Red khatam, clean white plus */
+    font-size: 14px;
+}
+
+/* Hover par card ka background orange se badal kar Deep Star Blue */
+.single-project-style1:hover .project-style1_overly_content {
+    background-color: var(--theme-blue) !important;
+}
+
+/* Hover par text aur headings ka color pure white */
+.single-project-style1:hover .project-style1_overly_content h5,
+.single-project-style1:hover .project-style1_overly_content h3 a,
+.single-project-style1:hover .project-style1_overly_content p,
+.single-project-style1:hover .project-style1_overly_content .bottom-box_inner .right p,
+.single-project-style1:hover .project-style1_overly_content .bottom-box_inner .right p span {
+    color: #ffffff !important;
+}
+
+/* Hover par divider line pure white ya subtle */
+.single-project-style1:hover .project-style1_overly_content .border-box {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Hover state par Inquire button aur uska icon */
+.single-project-style1:hover .bottom-box_outer .readmore-button a {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+.single-project-style1:hover .bottom-box_outer .readmore-button a span {
+    color: var(--theme-red) !important;
+    margin-right: 5px;
+}
+
+/* Hover par bottom right wala icon box clean white & red */
+.single-project-style1:hover .bottom-box_outer .icon a {
+    background-color: #ffffff !important;
+    border-radius: 4px;
+}
+.single-project-style1:hover .bottom-box_outer .icon a i {
+    color: var(--theme-red) !important;
+}
+
+/* Image ke upar aane wala center zoom button fix */
+.single-project-style1 .img-holder .zoom-button a {
+    background-color: var(--theme-red) !important;
+    border-radius: 50% !important;
+    width: 45px !important;
+    height: 45px !important;
+    line-height: 45px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.single-project-style1 .img-holder .zoom-button a i {
+    color: #ffffff !important;
+    font-size: 16px !important;
+}
     </style>
 
     <!-- Fixing Internet Explorer-->
@@ -493,7 +582,7 @@
 
 <div class="boxed_wrapper ltr">
 
-<!-- Preloader -->
+<!-- Preloader[cite: 1] -->
 <div class="loader-wrap">
     <div class="preloader"><div class="preloader-close">Preloader Close</div></div>
     <div class="layer layer-one"><span class="overlay"></span></div>
@@ -501,15 +590,15 @@
     <div class="layer layer-three"><span class="overlay"></span></div>        
 </div>
 
-<!-- page-direction -->
+<!-- page-direction[cite: 1] -->
 <div class="page_direction">
     <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
     <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
 </div>
-<!-- page-direction end -->
+<!-- page-direction end[cite: 1] -->
 
 
-<!-- switcher menu -->
+<!-- switcher menu[cite: 1] -->
 <div class="switcher">
     <div class="switch_btn">
         <button><img src="assets/images/icon/color-palette.png" alt="Color Palette"> </button>
@@ -526,7 +615,7 @@
         </div>
     </div>
 </div>
-<!-- end switcher menu --> 
+<!-- end switcher menu[cite: 1] --> 
 
 
 <!-- Main header-->
@@ -1732,6 +1821,21 @@
 <script>
     // Smooth scroll for one-page navigation
     jQuery(document).ready(function($) {
+        // Force Preloader to dismiss quickly
+        function dismissLoader() {
+            if ($('.loader-wrap').length) {
+                $('.loader-wrap').fadeOut(300, function() {
+                    $(this).remove();
+                });
+            }
+        }
+
+        // Agar custom.js late respond kare to maximum 1 second baad khud band ho jaye
+        setTimeout(dismissLoader, 1000);
+
+        // Fallback: Agar user click kare to foran close ho jaye
+        $('.loader-wrap').on('click', dismissLoader);
+
         $('.scroll-nav a[href^="#"]').on('click', function(e) {
             e.preventDefault();
             var target = this.hash;
