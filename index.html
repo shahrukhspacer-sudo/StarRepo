@@ -32,6 +32,13 @@
     <link rel="icon" type="image/png" href="assets/images/favicon/favicon-16x16.png" sizes="16x16">
 
     <style>
+        /* --- RED & BLUE THEME OVERRIDES (Based on Logo) --- */
+        :root {
+            --theme-red: #e31820;      /* Logo Red */
+            --theme-blue: #2b3088;     /* Star Blue */
+            --theme-blue-dark: #1e2260;
+        }
+
         /* Native Smooth Scrolling */
         html {
             scroll-behavior: smooth;
@@ -45,11 +52,11 @@
             display: block !important;
         }
 
-        /* Top Bar WhatsApp Button Styling - Updated to Red Theme */
+        /* Top Bar WhatsApp Button Styling */
         .header-whatsapp-btn {
             display: inline-flex;
             align-items: center;
-            background-color: #cc0000;
+            background-color: var(--theme-red);
             color: #ffffff !important;
             padding: 6px 15px;
             border-radius: 4px;
@@ -59,13 +66,150 @@
             text-decoration: none;
         }
         .header-whatsapp-btn:hover {
-            background-color: #a30000;
+            background-color: var(--theme-blue);
             color: #ffffff !important;
             text-decoration: none;
         }
         .header-whatsapp-btn i {
             margin-right: 6px;
             font-size: 16px;
+        }
+
+        /* --- MENU BAR READABILITY FIXES --- */
+        .header-bottom {
+            background-color: var(--theme-blue) !important;
+        }
+        .main-menu .navigation > li > a {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+        .main-menu .navigation > li:hover > a, 
+        .main-menu .navigation > li.current > a {
+            color: var(--theme-red) !important;
+        }
+        .main-menu .navigation > li > a.home {
+            background-color: var(--theme-red) !important;
+        }
+        .header-bottom_right .outer-search-box-style1 .seach-toggle {
+            color: #ffffff !important;
+        }
+
+        /* --- FIXING LEFTOVER YELLOW/ORANGE ACCENTS --- */
+        .single-features-style1 .counting h2,
+        .features-style1_top_text ul li i,
+        .sec-title .sub-title h5,
+        .project-style1_overly_content h5,
+        .single-service-style1 .readmore-button a,
+        .service-style1_inner_box h3,
+        .client-info h3,
+        .single-project-style1 .project-style1_overly_content .bottom-box_inner .right p span,
+        .about-style1-image-box .overlay-box p,
+        .about-style1-content-box .inner-content ul li .text h3,
+        .single-service-style1 .text-holder h3 a:hover {
+            color: var(--theme-red) !important;
+        }
+        
+        .sec-title .sub-title .border-box,
+        .sec-title .sub-title h5:before,
+        .single-project-style1 .project-style1_overly_content .border-box,
+        .service-style1_inner_box .border-top-box,
+        .service-style1_inner_box .border-left-box,
+        .service-style1_inner_box .border-right-box,
+        .single-features-style1:hover .btn-box a,
+        .zoom-button a,
+        .bottom-box_outer .icon a,
+        .scroll-top,
+        .btn-one, 
+        .video-gallery_box_4 .icon a,
+        .header-bottom_right__btn .btn-one {
+            background-color: var(--theme-red) !important;
+        }
+        
+        .btn-one:before {
+            background-color: var(--theme-blue) !important;
+        }
+        .btn-one:hover, 
+        .video-gallery_box_4 .icon a:hover, 
+        .scroll-top:hover,
+        .single-features-style1:hover .btn-box a:hover {
+            background-color: var(--theme-blue) !important;
+        }
+
+        .clr1, .text-holder h3 a:hover, .project-style1_overly_content h3 a:hover, .bottom-box_outer .readmore-button a:hover,
+        .footer-widget-links1 li a:hover, .footer-menu-style1 ul li a:hover {
+            color: var(--theme-red) !important;
+        }
+        .bgclr1, .thm-bgclr {
+            background-color: var(--theme-red) !important;
+        }
+        .icon-plus, .flaticon-plus {
+            color: var(--theme-red) !important;
+        }
+
+        /* --- FOOTER STYLING & NEWSLETTER REPLACEMENT --- */
+        .single-footer-widget .title h3 {
+            color: var(--theme-blue) !important;
+            font-weight: 700 !important;
+        }
+        .single-footer-widget .title:before,
+        .single-footer-widget .title::before,
+        .footer-rigth-box .title h3::before,
+        .single-footer-widget .title h3::after {
+            background-color: var(--theme-red) !important;
+        }
+        .footer-contact-info ul li .icon span,
+        .footer-contact-info ul li .icon i {
+            color: var(--theme-red) !important;
+        }
+        .footer-contact-info ul li .text p a:hover,
+        .footer-widget-links1 li a:hover {
+            color: var(--theme-red) !important;
+        }
+
+        /* Custom Footer Newsletter Box Style */
+        .footer-newsletter-box {
+            margin-top: 20px;
+        }
+        .footer-newsletter-box input {
+            width: 100%;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            padding: 0 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            outline: none;
+        }
+        .footer-newsletter-box button {
+            width: 100%;
+            height: 42px;
+            background-color: var(--theme-red);
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .footer-newsletter-box button:hover {
+            background-color: var(--theme-blue);
+        }
+
+        /* Top Bar & Menu Social Icons Style */
+        .header-social-link-1 .social-link ul li a,
+        .social-links ul li a {
+            background-color: var(--theme-red) !important;
+            border-color: var(--theme-red) !important;
+            color: #ffffff !important;
+        }
+        .header-social-link-1 .social-link ul li a:hover,
+        .social-links ul li a:hover {
+            background-color: var(--theme-blue) !important;
+            border-color: var(--theme-blue) !important;
         }
 
         /* Quality Policy / Info Section Styling */
@@ -80,22 +224,23 @@
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             height: 100%;
-            border-left: 4px solid #cc0000;
+            border-left: 4px solid var(--theme-blue);
             transition: all 0.3s ease;
         }
         .quality-policy-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-left-color: var(--theme-red);
         }
         .quality-policy-box .icon-holder {
             font-size: 38px;
-            color: #cc0000;
+            color: var(--theme-red);
             margin-bottom: 20px;
         }
         .quality-policy-box h3 {
             font-size: 20px;
             font-weight: 700;
-            color: #222;
+            color: var(--theme-blue);
             margin-bottom: 12px;
         }
         .quality-policy-box p {
@@ -117,22 +262,23 @@
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             height: 100%;
-            border-top: 3px solid #cc0000;
+            border-top: 3px solid var(--theme-blue);
             transition: all 0.3s ease;
         }
         .why-choose-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-top-color: var(--theme-red);
         }
         .why-choose-box .icon-holder {
             font-size: 42px;
-            color: #cc0000;
+            color: var(--theme-red);
             margin-bottom: 20px;
         }
         .why-choose-box h3 {
             font-size: 20px;
             font-weight: 700;
-            color: #222;
+            color: var(--theme-blue);
             margin-bottom: 12px;
         }
         .why-choose-box p {
@@ -142,7 +288,7 @@
             line-height: 1.6;
         }
 
-        /* Levitating Contact Form Styles with Description */
+        /* Levitating Contact Form Styles */
         .levitating-contact-area {
             position: relative;
             z-index: 99;
@@ -154,7 +300,7 @@
             box-shadow: 0px 15px 40px 0px rgba(0,0,0,0.1);
             padding: 45px 50px;
             border-radius: 8px;
-            border-bottom: 4px solid #cc0000;
+            border-bottom: 4px solid var(--theme-red);
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
@@ -167,14 +313,14 @@
         }
         .levitating-contact-box .left-content .icon {
             font-size: 50px;
-            color: #cc0000;
+            color: var(--theme-blue);
             margin-right: 15px;
             line-height: 1;
         }
         .levitating-contact-box .left-content h2 {
             font-size: 24px;
             font-weight: 700;
-            color: #222222;
+            color: var(--theme-blue);
             margin-bottom: 5px;
         }
         .levitating-contact-box .left-content p {
@@ -218,7 +364,7 @@
         }
         .levitating-contact-form input:focus,
         .levitating-contact-form textarea:focus {
-            border-color: #cc0000;
+            border-color: var(--theme-red);
             background: #ffffff;
         }
         .levitating-contact-form button {
@@ -228,14 +374,14 @@
             border: none;
             padding: 0 35px;
             cursor: pointer;
-            background-color: #cc0000;
+            background-color: var(--theme-red);
             color: #ffffff;
             font-weight: 600;
             text-transform: uppercase;
             transition: all 0.3s ease;
         }
         .levitating-contact-form button:hover {
-            background-color: #a30000;
+            background-color: var(--theme-blue);
         }
         
         /* Partner Logos Drop Shadow Styling */
@@ -259,59 +405,45 @@
             position: relative;
             z-index: 1;
         }
-
-        /* --- RED THEME GLOBAL OVERRIDES --- */
-        /* Overriding external theme colors to match the Red theme */
-        .clr1, .text-holder h3 a:hover, .project-style1_overly_content h3 a:hover, .bottom-box_outer .readmore-button a:hover {
-            color: #cc0000 !important;
-        }
-        .bgclr1, .btn-one, .video-gallery_box_4 .icon a, .scroll-top {
-            background-color: #cc0000 !important;
-        }
-        .btn-one:before {
-            background-color: #a30000 !important;
-        }
-        .btn-one:hover, .video-gallery_box_4 .icon a:hover {
-            background-color: #a30000 !important;
-        }
-        .thm-bgclr {
-            background-color: #cc0000 !important;
-        }
-        .icon-plus, .flaticon-plus, .sec-title .sub-title h5:before {
-            color: #cc0000 !important;
-        }
-        .single-service-style1:hover .readmore-button a, .main-menu .navigation > li:hover > a, .main-menu .navigation > li.current > a {
-            color: #cc0000 !important;
-        }
-        .border-box {
-            background-color: #cc0000 !important;
-        }
         
-        /* Social Icons Theme Match */
-        .header-social-link-1 .social-link ul li a,
-        .social-links ul li a,
-        .social-links-style1 li a {
-            background-color: #cc0000 !important;
+        /* --- PROFESSIONAL CLEAN STICKY HEADER FIX --- */
+        .sticky-header, 
+        .sticky-header.stricky-fixed {
+            background-color: #ffffff !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08) !important;
+        }
+        .sticky-header .main-menu .navigation > li > a,
+        .sticky-header .navigation > li > a {
+            color: #222222 !important;
+            font-weight: 700 !important;
+        }
+        .sticky-header .main-menu .navigation > li:hover > a,
+        .sticky-header .main-menu .navigation > li.current > a {
+            color: #e31820 !important;
+        }
+        .sticky-header .main-menu .navigation > li > a.home {
+            background-color: #e31820 !important;
             color: #ffffff !important;
-            border-color: #cc0000 !important;
         }
-        .header-social-link-1 .social-link ul li a:hover,
-        .social-links ul li a:hover,
-        .social-links-style1 li a:hover {
-            background-color: #a30000 !important;
-            border-color: #a30000 !important;
+
+        /* Fix for the plus icon background next to 38 */
+        .about-style1-image-box .overlay-box .top .counting .icon {
+            background: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
         }
-        
-        /* Responsive adjustments */
-        @media (max-width: 1199px) {
-            .levitating-contact-box .left-content { flex: 0 0 100%; margin-bottom: 25px; }
-            .levitating-contact-box .right-form { flex: 0 0 100%; }
+        .about-style1-image-box .overlay-box .top .counting .icon i {
+            background: transparent !important;
+            color: var(--theme-red) !important;
         }
-        @media (max-width: 767px) {
-            .levitating-contact-area { margin-bottom: -150px; }
-            .footer-area { padding-top: 190px !important; }
-            .levitating-contact-box { padding: 30px 20px; }
-            .levitating-contact-form input { flex: 1 1 100%; }
+
+        /* Specific fix for Why Choose Us 3rd Card Icon */
+        .why-choose-box .icon-holder i.fa {
+            color: #e31820 !important;
+            background: transparent !important;
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
         }
     </style>
 
@@ -543,11 +675,11 @@
             <!--Social Links-->
             <div class="social-links">
                 <ul class="clearfix">
-                    <li><a href="#"><span class="fab fa fa-facebook-square"></span></a></li>
-                    <li><a href="#"><span class="fab fa fa-twitter-square"></span></a></li>
-                    <li><a href="#"><span class="fab fa fa-pinterest-square"></span></a></li>
-                    <li><a href="#"><span class="fab fa fa-google-plus-square"></span></a></li>
-                    <li><a href="#"><span class="fab fa fa-youtube-square"></span></a></li>
+                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-pinterest"></span></a></li>
+                    <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                    <li><a href="#"><span class="fa fa-youtube"></span></a></li>
                 </ul>
             </div>
         </nav>
@@ -1385,25 +1517,16 @@
                                 <div class="text-box">
                                     <p>A passion for precision. Providing robust structural designs, underwater connectors, and manufacturing excellence across Pakistan since 1985.</p>
                                 </div>
-                                <div class="footer-social-links">
+                                <!-- Replaced Social Links with Professional Newsletter Subscription Box -->
+                                <div class="footer-newsletter-box">
                                     <div class="inner_title">
-                                        <h3>Connect With Us</h3>
+                                        <h3 style="font-size: 16px; font-weight: 700; color: #2b3088; margin-bottom: 10px;">Newsletter Updates</h3>
                                     </div>
-                                    <ul class="social-links-style1">
-                                        <li>
-                                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a> 
-                                        </li>
-                                    </ul>
-                                </div><!-- /.footer-social-links -->
+                                    <form action="#" method="post">
+                                        <input type="email" placeholder="Enter your email" required="">
+                                        <button type="submit">Subscribe Now</button>
+                                    </form>
+                                </div>
                             </div>     
                         </div>
                         <!--End single footer widget-->
