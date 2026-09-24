@@ -6,7 +6,6 @@
 
 	<!-- responsive meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- For IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
 	<link rel="stylesheet" href="assets/css/aos.css">
@@ -20,31 +19,33 @@
 	<link rel="stylesheet" href="assets/css/scrollbar.css">
 	<link rel="stylesheet" href="assets/css/hiddenbar.css">
 	<link rel="stylesheet" href="assets/css/icomoon.css">
-   
     <link rel="stylesheet" href="assets/css/color.css">
     <link href="assets/css/color/theme-color.css" id="jssDefault" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/responsive.css">
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="assets/images/favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="assets/images/favicon/favicon-16x16.png" sizes="16x16">
 
     <style>
-        /* --- RED & BLUE THEME OVERRIDES --- */
+        /* ==========================================================================
+           1. ROOT & GLOBAL THEME STYLES - START
+           ========================================================================== */
         :root {
             --theme-red: #e31820;      /* Logo Red */
             --theme-blue: #2b3088;     /* Star Blue */
             --theme-blue-dark: #191c52;
+            --border-clr: #e2e8f0;
+            --bg-light: #f8fafc;
         }
 
-        /* Native Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* --- PRELOADER SPEED FIX --- */
         .loader-wrap {
             animation: forceHideLoader 0.4s ease 1.5s forwards !important;
         }
@@ -60,16 +61,11 @@
                 pointer-events: none !important;
             }
         }
-        
-        /* Clean Fix for Product Slider Images & Heights */
-        .single-project-style1 .img-holder .inner img {
-            width: 100% !important;
-            height: 420px !important;
-            object-fit: cover !important;
-            display: block !important;
-        }
+        /* ROOT & GLOBAL THEME STYLES - END */
 
-        /* Top Bar WhatsApp Button Styling */
+        /* ==========================================================================
+           2. TOPBAR STYLES - START
+           ========================================================================== */
         .header-whatsapp-btn {
             display: inline-flex;
             align-items: center;
@@ -81,6 +77,7 @@
             font-size: 14px;
             transition: all 0.3s ease;
             text-decoration: none;
+            gap: 6px;
         }
         .header-whatsapp-btn:hover {
             background-color: var(--theme-blue);
@@ -88,30 +85,294 @@
             text-decoration: none;
         }
         .header-whatsapp-btn i {
-            margin-right: 6px;
+            margin-right: 2px;
             font-size: 16px;
         }
+        /* TOPBAR STYLES - END */
 
-        /* --- MENU BAR READABILITY FIXES --- */
+        /* ==========================================================================
+           3. NORMAL NAVBAR (60PX EXACT HEIGHT & CENTERING) - START
+           ========================================================================== */
         .header-bottom {
             background-color: var(--theme-blue) !important;
+            height: 60px !important;
+            padding: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+        .header-bottom .outer-box {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+            height: 60px !important;
+        }
+        .header-bottom_left {
+            display: flex !important;
+            align-items: center !important;
+            height: 100% !important;
+            flex: 1 1 auto !important;
+        }
+        .nav-outer.style1 {
+            display: flex !important;
+            align-items: center !important;
+            height: 60px !important;
+        }
+        .main-menu.style1 {
+            height: 60px !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .main-menu .navigation {
+            display: flex !important;
+            align-items: stretch !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
+            height: 60px !important;
+        }
+        .main-menu .navigation > li {
+            height: 60px !important;
+            display: flex !important;
+            align-items: stretch !important;
+            margin-right: 0 !important;
         }
         .main-menu .navigation > li > a {
             color: #ffffff !important;
             font-weight: 700 !important;
+            font-size: 14px !important;
+            padding: 0 14px !important;
+            line-height: 60px !important;
+            height: 60px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            text-transform: uppercase !important;
+            text-decoration: none !important;
+            transition: color 0.3s ease;
         }
         .main-menu .navigation > li:hover > a, 
         .main-menu .navigation > li.current > a {
             color: var(--theme-red) !important;
         }
-        .main-menu .navigation > li > a.home {
+
+        /* Normal Header Red Home Button (No Orange & Perfect Center) */
+        .main-menu .navigation > li.home-li,
+        .main-menu .navigation > li:first-child {
             background-color: var(--theme-red) !important;
+            height: 60px !important;
+            display: flex !important;
+            align-items: stretch !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .main-menu .navigation > li > a.home,
+        .main-menu .navigation > li.current > a.home {
+            background-color: var(--theme-red) !important;
+            background: var(--theme-red) !important;
+            color: #ffffff !important;
+            padding: 0 24px !important;
+            height: 60px !important;
+            line-height: 60px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border: none !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+            position: relative !important;
+        }
+        .main-menu .navigation > li > a.home:before,
+        .main-menu .navigation > li > a.home:after,
+        .main-menu .navigation > li.current > a.home:before,
+        .main-menu .navigation > li.current > a.home:after {
+            display: none !important;
+            content: none !important;
+        }
+        .main-menu .navigation > li > a.home i,
+        .main-menu .navigation > li.current > a.home i {
+            color: #ffffff !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            font-size: 20px !important;
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: static !important;
+            transform: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .header-bottom_right {
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px !important;
+            height: 60px !important;
+        }
+        .header-bottom_right__btn .btn-one {
+            padding: 10px 22px !important;
+            line-height: 20px !important;
+            white-space: nowrap !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            background-color: var(--theme-red) !important;
+            color: #ffffff !important;
+            font-size: 13px !important;
+            font-weight: 700 !important;
+            border-radius: 4px !important;
+            text-decoration: none !important;
+            gap: 6px;
         }
         .header-bottom_right .outer-search-box-style1 .seach-toggle {
             color: #ffffff !important;
+            cursor: pointer;
+        }
+        /* NORMAL NAVBAR STYLES - END */
+
+        /* ==========================================================================
+           4. STICKY NAVBAR (75PX HEIGHT & LOGO CONTAINMENT) - START
+           ========================================================================== */
+        .sticky-header,
+        .sticky-header.stricky-fixed {
+            height: 75px !important;
+            min-height: 75px !important;
+            background-color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+            padding: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .sticky-header .container {
+            height: 75px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+        }
+        .sticky-header .clearfix {
+            width: 100% !important;
+            height: 75px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            margin: 0 !important;
         }
 
-        /* --- ACCENTS --- */
+        /* Sticky Header Logo Centering */
+        .sticky-header .logo,
+        .sticky-header .logo a {
+            display: flex !important;
+            align-items: center !important;
+            height: 75px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            float: none !important;
+        }
+        .sticky-header .logo img {
+            max-height: 52px !important;
+            width: auto !important;
+            display: block !important;
+        }
+        .sticky-header .right-col,
+        .sticky-header .main-menu {
+            height: 75px !important;
+            display: flex !important;
+            align-items: center !important;
+            float: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .sticky-header .main-menu .navigation,
+        .stricky-fixed .main-menu .navigation {
+            display: flex !important;
+            align-items: stretch !important;
+            height: 75px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
+        }
+        .sticky-header .main-menu .navigation > li,
+        .stricky-fixed .main-menu .navigation > li {
+            display: flex !important;
+            align-items: stretch !important;
+            height: 75px !important;
+            margin: 0 !important;
+        }
+        .sticky-header .main-menu .navigation > li > a,
+        .stricky-fixed .main-menu .navigation > li > a {
+            color: #222222 !important;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+            padding: 0 14px !important;
+            height: 75px !important;
+            line-height: 75px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            text-transform: uppercase !important;
+            text-decoration: none !important;
+            background: transparent !important;
+        }
+        .sticky-header .main-menu .navigation > li:hover > a,
+        .sticky-header .main-menu .navigation > li.current > a {
+            color: var(--theme-red) !important;
+        }
+
+        /* Sticky Red Home Button (100% of 75px) */
+        .sticky-header .main-menu .navigation > li.home-li,
+        .sticky-header .main-menu .navigation > li:first-child,
+        .stricky-fixed .main-menu .navigation > li.home-li,
+        .stricky-fixed .main-menu .navigation > li:first-child {
+            background-color: var(--theme-red) !important;
+            height: 75px !important;
+            display: flex !important;
+            align-items: stretch !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .sticky-header .main-menu .navigation > li > a.home,
+        .sticky-header .main-menu .navigation > li.current > a.home,
+        .stricky-fixed .main-menu .navigation > li > a.home,
+        .stricky-fixed .main-menu .navigation > li.current > a.home {
+            background: var(--theme-red) !important;
+            background-color: var(--theme-red) !important;
+            color: #ffffff !important;
+            height: 75px !important;
+            line-height: 75px !important;
+            padding: 0 24px !important;
+            margin: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+        .sticky-header .main-menu .navigation > li > a.home:before,
+        .sticky-header .main-menu .navigation > li > a.home:after,
+        .stricky-fixed .main-menu .navigation > li > a.home:before,
+        .stricky-fixed .main-menu .navigation > li > a.home:after {
+            display: none !important;
+            content: none !important;
+        }
+        .sticky-header .main-menu .navigation > li > a.home i,
+        .stricky-fixed .main-menu .navigation > li > a.home i {
+            font-size: 20px !important;
+            color: #ffffff !important;
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: static !important;
+            transform: none !important;
+        }
+        /* STICKY NAVBAR STYLES - END */
+
+        /* ==========================================================================
+           5. ACCENTS & COMMON THEME ELEMENTS - START
+           ========================================================================== */
         .single-features-style1 .counting h2,
         .features-style1_top_text ul li i,
         .sec-title .sub-title h5,
@@ -157,7 +418,148 @@
             color: var(--theme-red) !important;
         }
 
-        /* --- PROFESSIONAL REPLACEMENT FOR CONVEYOR BELT IMAGE --- */
+        .about-style1-image-box .overlay-box .top .counting .icon {
+            background: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+        }
+        .about-style1-image-box .overlay-box .top .counting .icon i {
+            background: transparent !important;
+            color: var(--theme-red) !important;
+        }
+
+        .why-choose-box .icon-holder i {
+            color: #e31820 !important;
+            background: transparent !important;
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        /* ACCENTS & COMMON THEME ELEMENTS - END */
+
+        /* ==========================================================================
+           6. MANUFACTURING CAPABILITIES SECTION STYLES - START
+           ========================================================================== */
+        .capabilities-area {
+            padding: 70px 0 40px 0;
+            background-color: #ffffff;
+        }
+        .capabilities-header {
+            margin-bottom: 40px;
+        }
+        .capabilities-title {
+            font-size: 34px;
+            font-weight: 800;
+            color: #1a1e36;
+            text-transform: capitalize;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            position: relative;
+            display: inline-block;
+        }
+        .capabilities-bar {
+            width: 55px;
+            height: 3px;
+            background: var(--theme-red);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+        .capability-card {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 240px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            background-color: #0b111e;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: block;
+            text-decoration: none;
+        }
+        .capability-card .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease, filter 0.5s ease;
+        }
+        .capability-card .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.4) 0%, rgba(17, 24, 39, 0.75) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            transition: background 0.4s ease;
+        }
+        .capability-card h4 {
+            color: #ffffff;
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1.35;
+            transition: transform 0.4s ease;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+        }
+        .capability-card .card-readmore {
+            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 18px;
+            background-color: var(--theme-red);
+            color: #ffffff !important;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.35s ease;
+            text-decoration: none;
+        }
+        .capability-card .card-readmore i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+        .capability-card .card-readmore:hover {
+            background-color: var(--theme-blue);
+        }
+        .capability-card .card-readmore:hover i {
+            transform: translateX(4px);
+        }
+        .capability-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(43, 48, 136, 0.2);
+        }
+        .capability-card:hover .card-img {
+            transform: scale(1.1);
+            filter: brightness(0.85);
+        }
+        .capability-card:hover .card-overlay {
+            background: linear-gradient(180deg, rgba(43, 48, 136, 0.65) 0%, rgba(17, 24, 39, 0.88) 100%);
+        }
+        .capability-card:hover h4 {
+            transform: translateY(-6px);
+        }
+        .capability-card:hover .card-readmore {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* MANUFACTURING CAPABILITIES SECTION STYLES - END */
+
+        /* ==========================================================================
+           7. SERVICE SECTION & PRECISION BOX STYLES - START
+           ========================================================================== */
         .service-style1-area {
             position: relative;
             overflow: hidden;
@@ -182,7 +584,6 @@
             line-height: 1.4;
             margin-bottom: 20px;
         }
-        /* Precision Highlights Box replacing conveyor belt */
         .precision-specs-badge {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -208,8 +609,11 @@
             margin-right: 10px;
             flex-shrink: 0;
         }
+        /* SERVICE SECTION & PRECISION BOX STYLES - END */
 
-        /* --- UNDERWATER CONNECTORS / PRODUCT SECTION MODERNIZATION --- */
+        /* ==========================================================================
+           8. PRODUCTS / CONNECTORS SECTION STYLES - START
+           ========================================================================== */
         .project-style1-area {
             background: linear-gradient(180deg, #ffffff 0%, #f4f6fa 100%);
             padding: 95px 0 85px 0;
@@ -265,6 +669,12 @@
         .single-project-style1:hover {
             transform: translateY(-6px);
             box-shadow: 0 16px 35px rgba(43, 48, 136, 0.16);
+        }
+        .single-project-style1 .img-holder .inner img {
+            width: 100% !important;
+            height: 420px !important;
+            object-fit: cover !important;
+            display: block !important;
         }
         .single-project-style1 .project-style1_overly_content .bottom-box_inner .left .icon {
             background-color: var(--theme-blue) !important;
@@ -322,140 +732,11 @@
             color: #ffffff !important;
             font-size: 16px !important;
         }
+        /* PRODUCTS / CONNECTORS SECTION STYLES - END */
 
-        /* --- FOOTER STYLING & NEWSLETTER --- */
-        .single-footer-widget .title h3 {
-            color: var(--theme-blue) !important;
-            font-weight: 700 !important;
-        }
-        .single-footer-widget .title:before,
-        .single-footer-widget .title::before,
-        .footer-rigth-box .title h3::before,
-        .single-footer-widget .title h3::after {
-            background-color: var(--theme-red) !important;
-        }
-        .footer-contact-info ul li .icon span,
-        .footer-contact-info ul li .icon i {
-            color: var(--theme-red) !important;
-        }
-        .footer-contact-info ul li .text p a:hover,
-        .footer-widget-links1 li a:hover {
-            color: var(--theme-red) !important;
-        }
-        .footer-newsletter-box {
-            margin-top: 20px;
-        }
-        .footer-newsletter-box input {
-            width: 100%;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid #ddd;
-            padding: 0 15px;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 10px;
-            outline: none;
-        }
-        .footer-newsletter-box button {
-            width: 100%;
-            height: 42px;
-            background-color: var(--theme-red);
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .footer-newsletter-box button:hover {
-            background-color: var(--theme-blue);
-        }
-        .footer-map-wrapper {
-            margin-top: 15px;
-            border-radius: 6px;
-            overflow: hidden;
-            border: 2px solid #e5e5e5;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-        .footer-map-wrapper iframe {
-            display: block;
-            width: 100%;
-            height: 140px;
-            border: 0;
-        }
-        .footer-map-btn {
-            display: inline-flex;
-            align-items: center;
-            margin-top: 10px;
-            color: var(--theme-red) !important;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        .footer-map-btn i {
-            margin-right: 6px;
-            font-size: 14px;
-        }
-        .footer-map-btn:hover {
-            color: var(--theme-blue) !important;
-            text-decoration: underline;
-        }
-
-        .header-social-link-1 .social-link ul li a,
-        .social-links ul li a {
-            background-color: var(--theme-red) !important;
-            border-color: var(--theme-red) !important;
-            color: #ffffff !important;
-        }
-        .header-social-link-1 .social-link ul li a:hover,
-        .social-links ul li a:hover {
-            background-color: var(--theme-blue) !important;
-            border-color: var(--theme-blue) !important;
-        }
-
-        /* Quality Policy Section */
-        .quality-policy-area {
-            padding: 90px 0;
-            background-color: #fcfcfc;
-            position: relative;
-        }
-        .quality-policy-box {
-            background: #ffffff;
-            padding: 40px 35px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            height: 100%;
-            border-left: 4px solid var(--theme-blue);
-            transition: all 0.3s ease;
-        }
-        .quality-policy-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-left-color: var(--theme-red);
-        }
-        .quality-policy-box .icon-holder {
-            font-size: 38px;
-            color: var(--theme-red);
-            margin-bottom: 20px;
-        }
-        .quality-policy-box h3 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--theme-blue);
-            margin-bottom: 12px;
-        }
-        .quality-policy-box p {
-            color: #666;
-            font-size: 14px;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* Why Choose Us Section */
+        /* ==========================================================================
+           9. WHY CHOOSE US & QUALITY POLICY STYLES - START
+           ========================================================================== */
         .why-choose-us-area {
             padding: 90px 0;
             background-color: #f8f9fa;
@@ -494,7 +775,61 @@
             line-height: 1.6;
         }
 
-        /* Levitating Contact Form */
+        .quality-policy-area {
+            padding: 90px 0;
+            background-color: #fcfcfc;
+            position: relative;
+        }
+        .quality-policy-box {
+            background: #ffffff;
+            padding: 40px 35px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            height: 100%;
+            border-left: 4px solid var(--theme-blue);
+            transition: all 0.3s ease;
+        }
+        .quality-policy-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-left-color: var(--theme-red);
+        }
+        .quality-policy-box .icon-holder {
+            font-size: 38px;
+            color: var(--theme-red);
+            margin-bottom: 20px;
+        }
+        .quality-policy-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--theme-blue);
+            margin-bottom: 12px;
+        }
+        .quality-policy-box p {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        /* WHY CHOOSE US & QUALITY POLICY STYLES - END */
+
+        /* ==========================================================================
+           10. PARTNERS, CONTACT & FOOTER STYLES - START
+           ========================================================================== */
+        .partner-area .single-partner-logo-box {
+            border: none !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .partner-area .single-partner-logo-box:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            transform: translateY(-3px);
+        }
+
         .levitating-contact-area {
             position: relative;
             z-index: 99;
@@ -589,63 +924,105 @@
         .levitating-contact-form button:hover {
             background-color: var(--theme-blue);
         }
-        
-        .partner-area .single-partner-logo-box {
-            border: none !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px;
-            transition: all 0.3s ease;
-        }
-        .partner-area .single-partner-logo-box:hover {
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-            transform: translateY(-3px);
-        }
-        
+
         .footer-area {
             padding-top: 130px !important;
             position: relative;
             z-index: 1;
         }
-        
-        .sticky-header, 
-        .sticky-header.stricky-fixed {
-            background-color: #ffffff !important;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08) !important;
-        }
-        .sticky-header .main-menu .navigation > li > a,
-        .sticky-header .navigation > li > a {
-            color: #222222 !important;
+        .single-footer-widget .title h3 {
+            color: var(--theme-blue) !important;
             font-weight: 700 !important;
         }
-        .sticky-header .main-menu .navigation > li:hover > a,
-        .sticky-header .main-menu .navigation > li.current > a {
-            color: #e31820 !important;
+        .single-footer-widget .title:before,
+        .single-footer-widget .title::before,
+        .footer-rigth-box .title h3::before,
+        .single-footer-widget .title h3::after {
+            background-color: var(--theme-red) !important;
         }
-        .sticky-header .main-menu .navigation > li > a.home {
-            background-color: #e31820 !important;
-            color: #ffffff !important;
-        }
-
-        .about-style1-image-box .overlay-box .top .counting .icon {
-            background: transparent !important;
-            padding: 0 !important;
-            border-radius: 0 !important;
-        }
-        .about-style1-image-box .overlay-box .top .counting .icon i {
-            background: transparent !important;
+        .footer-contact-info ul li .icon span,
+        .footer-contact-info ul li .icon i {
             color: var(--theme-red) !important;
         }
-
-        .why-choose-box .icon-holder i {
-            color: #e31820 !important;
-            background: transparent !important;
-            display: inline-block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
+        .footer-contact-info ul li .text p a:hover,
+        .footer-widget-links1 li a:hover {
+            color: var(--theme-red) !important;
         }
+        .footer-newsletter-box {
+            margin-top: 20px;
+        }
+        .footer-newsletter-box input {
+            width: 100%;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            padding: 0 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            outline: none;
+        }
+        .footer-newsletter-box button {
+            width: 100%;
+            height: 42px;
+            background-color: var(--theme-red);
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .footer-newsletter-box button:hover {
+            background-color: var(--theme-blue);
+        }
+        .footer-map-wrapper {
+            margin-top: 15px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 2px solid #e5e5e5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        .footer-map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 140px;
+            border: 0;
+        }
+        .footer-map-btn {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 10px;
+            color: var(--theme-red) !important;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .footer-map-btn i {
+            margin-right: 6px;
+            font-size: 14px;
+        }
+        .footer-map-btn:hover {
+            color: var(--theme-blue) !important;
+            text-decoration: underline;
+        }
+
+        .header-social-link-1 .social-link ul li a,
+        .social-links ul li a {
+            background-color: var(--theme-red) !important;
+            border-color: var(--theme-red) !important;
+            color: #ffffff !important;
+        }
+        .header-social-link-1 .social-link ul li a:hover,
+        .social-links ul li a:hover {
+            background-color: var(--theme-blue) !important;
+            border-color: var(--theme-blue) !important;
+        }
+        /* PARTNERS, CONTACT & FOOTER STYLES - END */
     </style>
 
     <!-- Fixing Internet Explorer-->
@@ -659,7 +1036,9 @@
 
 <div class="boxed_wrapper ltr">
 
-<!-- Preloader[cite: 1] -->
+<!-- ==========================================================================
+     PRELOADER & COLOR SWITCHER - START
+     ========================================================================== -->
 <div class="loader-wrap">
     <div class="preloader"><div class="preloader-close">Preloader Close</div></div>
     <div class="layer layer-one"><span class="overlay"></span></div>
@@ -667,14 +1046,11 @@
     <div class="layer layer-three"><span class="overlay"></span></div>        
 </div>
 
-<!-- page-direction[cite: 1] -->
 <div class="page_direction">
     <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
     <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
 </div>
-<!-- page-direction end[cite: 1] -->
 
-<!-- switcher menu[cite: 1] -->
 <div class="switcher">
     <div class="switch_btn">
         <button><img src="assets/images/icon/color-palette.png" alt="Color Palette"> </button>
@@ -691,19 +1067,20 @@
         </div>
     </div>
 </div>
-<!-- end switcher menu[cite: 1] --> 
+<!-- PRELOADER & COLOR SWITCHER - END -->
 
-<!-- Main header-->
+<!-- ==========================================================================
+     HEADER SECTION - START
+     ========================================================================== -->
 <header class="main-header header-style-one">
 
-    <!--Start Header Top[cite: 1]-->  
+    <!-- Header Top -->  
     <div class="header-top">
         <div class="container">
             <div class="outer-box clearfix">
-               
                 <div class="header-top-left pull-left">
                     <a href="https://wa.me/922135888950" target="_blank" class="header-whatsapp-btn">
-                        <i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp Us
+                        <i class="fa fa-whatsapp"></i> WhatsApp Us
                     </a>
                 </div>
                 
@@ -718,27 +1095,25 @@
                     <div class="header-social-link-1">
                         <div class="social-link">
                             <ul class="clearfix">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                             </ul>
                         </div>    
                     </div>      
                 </div>
-                  
             </div>    
         </div>   
-    </div>
-    <!--End Header Top[cite: 1]--> 
+    </div> 
      
-    <!--Start Header[cite: 1]--> 
+    <!-- Main Brand Header --> 
     <div class="header">
         <div class="container">
             <div class="outer-box clearfix">
                 <div class="header-left clearfix pull-left">
                     <div class="logo">
-                        <a href="index.html"><img src="images/logo/LOGO-SEW.png" alt="Star Engineering Works" title="" style="width: 180px; height: auto;"></a>
+                        <a href="index.html"><img src="images/logo/LOGO-SEW.png" alt="Star Engineering Works" style="width: 180px; height: auto;"></a>
                     </div>
                 </div>
                 <div class="header-right pull-right">
@@ -773,19 +1148,17 @@
                             </li>
                         </ul>
                     </div>
-
                 </div> 
             </div>
         </div>    
     </div> 
-    <!--End header[cite: 1]-->
 
-    <!--Start Header Bottom[cite: 1]--> 
+    <!-- Header Bottom Navbar (Standardized 60px) --> 
     <div class="header-bottom">
         <div class="container">
             <div class="outer-box clearfix">
 
-                <div class="header-bottom_left pull-left">
+                <div class="header-bottom_left">
                     <div class="nav-outer style1 clearfix">
                         <div class="mobile-nav-toggler">
                             <div class="inner">
@@ -794,16 +1167,15 @@
                                 <span class="icon-bar"></span>
                             </div>
                         </div>
-                        <!-- Main Menu[cite: 1] -->
                         <nav class="main-menu style1 navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix scroll-nav">
-                                    <li class="current">
-                                        <a class="home" href="#home">
-                                            <span class="home_text">Home</span>
-                                            <span class="flaticon-home home_icon"></span>
+                                    <li class="current home-li">
+                                        <a class="home" href="#home" title="Home">
+                                            <i class="fa fa-home"></i>
                                         </a>
                                     </li>
+                                    <li><a href="#capabilities">Capabilities</a></li>
                                     <li><a href="#about">About us</a></li>
                                     <li><a href="#services">Core Capacities</a></li>
                                     <li><a href="#products">Products</a></li>
@@ -815,7 +1187,7 @@
                     </div>  
                 </div>
                 
-                <div class="header-bottom_right pull-right">
+                <div class="header-bottom_right">
                     <div class="outer-search-box-style1">
                         <div class="seach-toggle"><span class="flaticon-magnifiying-glass"></span></div>
                         <ul class="search-box">
@@ -837,14 +1209,13 @@
             </div>
         </div>    
     </div> 
-    <!--End header bottom[cite: 1]-->
 
-    <!--Sticky Header[cite: 1]-->
+    <!-- Sticky Header (Exact 75px Full Height & Centered Logo) -->
     <div class="sticky-header">
         <div class="container">
             <div class="clearfix">
                 <div class="logo float-left">
-                    <a href="index.html" class="img-responsive"><img src="images/logo/LOGO-SEW.png" alt="" title="" style="width: 180px; height: auto;"></a>
+                    <a href="index.html" class="img-responsive"><img src="images/logo/LOGO-SEW.png" alt="" style="width: 180px; height: auto;"></a>
                 </div>
                 <div class="right-col float-right">
                     <nav class="main-menu clearfix">
@@ -853,9 +1224,8 @@
             </div>
         </div>
     </div>
-    <!--End Sticky Header[cite: 1]-->
     
-    <!-- Mobile Menu[cite: 1] -->
+    <!-- Mobile Menu -->
     <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <div class="close-btn"><span class="icon fa fa-times-circle"></span></div>
@@ -874,16 +1244,18 @@
             </div>
         </nav>
     </div>
-    <!-- End Mobile Menu[cite: 1] --> 
 
 </header>
+<!-- HEADER SECTION - END -->
 
-<!-- Start Main Slider[cite: 1] -->
+<!-- ==========================================================================
+     MAIN SLIDER SECTION - START
+     ========================================================================== -->
 <section class="main-slider style1" id="home">
     <div class="top_shadow"></div>
     <div class="slider-box">
         <div class="banner-carousel owl-theme owl-carousel">
-            <!-- Slide 1[cite: 1] -->
+            <!-- Slide 1 -->
             <div class="slide">
                 <div class="image-layer" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=720&fit=crop')"></div>
                 <div class="auto-container">
@@ -911,7 +1283,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Slide 2[cite: 1] -->
+            <!-- Slide 2 -->
             <div class="slide">
                 <div class="image-layer" style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1920&h=720&fit=crop')"></div>
                 <div class="auto-container">
@@ -942,9 +1314,115 @@
         </div>
     </div>
 </section>
-<!-- End Main Slider[cite: 1] -->
+<!-- MAIN SLIDER SECTION - END -->
 
-<!--Start Features Style1 Area[cite: 1]-->
+<!-- ==========================================================================
+     MANUFACTURING CAPABILITIES SECTION (8 DYNAMIC CARDS) - START
+     ========================================================================== -->
+<section class="capabilities-area" id="capabilities">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 text-center capabilities-header">
+                <h2 class="capabilities-title">Manufacturing Capabilities</h2>
+                <div class="capabilities-bar"></div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- 1. CNC MACHINING -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                <a href="CNCMachining.html?item=cnc-machining" class="capability-card wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1000ms">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=450&fit=crop" alt="CNC Machining">
+                    <div class="card-overlay">
+                        <h4>CNC Machining</h4>
+                        <span class="card-readmore">Read More <i class="fa fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 2. CNC MILLING -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                <a href="CNCMachining.html?item=cnc-milling" class="capability-card wow fadeInUp" data-wow-delay="150ms" data-wow-duration="1000ms">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=450&fit=crop" alt="CNC Milling">
+                    <div class="card-overlay">
+                        <h4>CNC Milling</h4>
+                        <span class="card-readmore">Read More <i class="fa fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 3. CNC TURNING -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                <a href="CNCMachining.html?item=cnc-turning" class="capability-card wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=600&h=450&fit=crop" alt="CNC Turning">
+                    <div class="card-overlay">
+                        <h4>CNC Turning</h4>
+                        <span class="card-readmore">Read More <i class="fa fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 4. SWISS MACHINING -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                <a href="CNCMachining.html?item=swiss-machining" class="capability-card wow fadeInUp" data-wow-delay="450ms" data-wow-duration="1000ms">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=450&fit=crop" alt="Swiss Machining">
+                    <div class="card-overlay">
+                        <h4>Swiss Machining</h4>
+                        <span class="card-readmore">Read More <i class="fa fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 5. PREMIUM DIE CASTING -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                <a href="CNCMachining.html?item=die-casting" class="capability-card wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1000ms">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=500&fit=crop" alt="Premium Die Casting">
+                    <div class="card-overlay">
+                        <h4>Premium Die Casting</h4>
+                        <span class="card-readmore">Read More <i class="fa fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 6. PROTOTYPE AND PREPRODUCTION -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                <a href="CNCMachining.html?item=prototype" class="capability-card wow fadeInUp" data-wow-delay="150ms" data-wow-duration="1000ms">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&h=450&fit=crop" alt="Prototype and Preproduction">
+                    <div class="card-overlay">
+                        <h4>Prototype &amp; Preproduction</h4>
+                        <span class="card-readmore">Read More <i class="fa fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 7. LOW-VOLUME MANUFACTURING -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                <a href="CNCMachining.html?item=low-volume" class="capability-card wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&h=450&fit=crop" alt="Low-Volume Manufacturing">
+                    <div class="card-overlay">
+                        <h4>Low-Volume Manufacturing</h4>
+                        <span class="card-readmore">Read More <i class="fa fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 8. METAL PARTS PRODUCTION -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                <a href="CNCMachining.html?item=metal-parts" class="capability-card wow fadeInUp" data-wow-delay="450ms" data-wow-duration="1000ms">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=450&fit=crop" alt="Metal Parts Production">
+                    <div class="card-overlay">
+                        <h4>Metal Parts Production</h4>
+                        <span class="card-readmore">Read More <i class="fa fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- MANUFACTURING CAPABILITIES SECTION - END -->
+
+<!-- ==========================================================================
+     FEATURES STYLE 1 AREA - START
+     ========================================================================== -->
 <section class="features-style1-area">
     <div class="container">
         <div class="row">
@@ -1049,9 +1527,11 @@
         </div>
     </div>
 </section>
-<!--End Features Style1 Area[cite: 1]-->
+<!-- FEATURES STYLE 1 AREA - END -->
 
-<!--Start About Style1 Area[cite: 1]-->
+<!-- ==========================================================================
+     ABOUT STYLE 1 AREA - START
+     ========================================================================== -->
 <section class="about-style1-area" id="about">
     <div class="container">
         <div class="row">
@@ -1079,7 +1559,7 @@
                         </li>
                         <li>
                             <div class="image_box right">
-                                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=350&h=500&fit=crop" alt="Industrial Plant">
+                                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=350&h=500&fit=crop" alt="Industrial Plant">
                             </div>
                         </li>
                     </ul>
@@ -1130,12 +1610,13 @@
         </div>
     </div>
 </section>
-<!--End About Style1 Area[cite: 1]-->
+<!-- ABOUT STYLE 1 AREA - END -->
 
-<!-- Start Service Style1 Area (CONVEYOR BELT IMAGE PERMANENTLY REMOVED)[cite: 1, 2] -->
+<!-- ==========================================================================
+     SERVICE STYLE 1 AREA (CORE CAPACITIES) - START
+     ========================================================================== -->
 <section class="service-style1-area" id="services">
     <div class="layer-outer" style="background-image: url(assets/images/parallax-background/service-style1-bg.jpg);"></div>
-    <!-- Conveyor belt factory.png removed completely from here[cite: 1, 2] -->
     
     <div class="container">
         <div class="row">
@@ -1151,7 +1632,7 @@
                         <p>Our infrastructure meets strict global benchmarks. Total reliability ensured through multi-tier testing in Korangi Industrial Area, Karachi.</p>
                     </div>
 
-                    <!-- Modern High-Tech Precision Engineering Card (Replacing conveyor belt animation)[cite: 1, 2] -->
+                    <!-- Modern Precision Highlights Card -->
                     <div class="service-style1_inner_box text-center">
                         <h3>Precision Engineering & Manufacturing Excellence</h3>
                         
@@ -1180,7 +1661,7 @@
             <div class="col-xl-8">
                 <div class="service-style1_content">
                     <div class="row">
-                        <!--CAD/CAM[cite: 1]-->
+                        <!-- CAD/CAM -->
                         <div class="col-xl-6 col-lg-6 col-md-12 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="single-service-style1">
                                 <div class="img-holder">
@@ -1197,7 +1678,7 @@
                                 </div>   
                             </div>
                         </div>
-                        <!--3D Printing[cite: 1]-->
+                        <!-- 3D Printing -->
                         <div class="col-xl-6 col-lg-6 col-md-12 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="single-service-style1">
                                 <div class="img-holder">
@@ -1214,7 +1695,7 @@
                                 </div>   
                             </div>
                         </div>
-                        <!--CNC Machining Center[cite: 1]-->
+                        <!-- CNC Machining Center -->
                         <div class="col-xl-6 col-lg-6 col-md-12 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="single-service-style1">
                                 <div class="img-holder">
@@ -1231,7 +1712,7 @@
                                 </div>   
                             </div>
                         </div>
-                        <!--CNC Turning Center[cite: 1]-->
+                        <!-- CNC Turning Center -->
                         <div class="col-xl-6 col-lg-6 col-md-12 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="single-service-style1">
                                 <div class="img-holder">
@@ -1255,9 +1736,11 @@
         </div>
     </div>
 </section>
-<!-- End Service Style1 Area[cite: 1] -->
+<!-- SERVICE STYLE 1 AREA - END -->
 
-<!--Start Project Style1 Area (Submarine Systems Removed & Clean Professional Style)[cite: 1]-->
+<!-- ==========================================================================
+     PROJECT STYLE 1 AREA (PRODUCTS) - START
+     ========================================================================== -->
 <section class="project-style1-area" id="products">
     <div class="custom-container">
         
@@ -1277,7 +1760,7 @@
                 <div class="project-style1_content">
                     <div class="project-style1_carousel three-item-carousel owl-carousel owl-theme">
                         
-                        <!--Start Single Project Style1: Marine Sensors[cite: 1]-->
+                        <!-- Single Project Style 1: Marine Sensors -->
                         <div class="single-project-style1 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
@@ -1318,9 +1801,8 @@
                                 </div>
                             </div>    
                         </div>
-                        <!--End Single Project Style1[cite: 1]-->
 
-                        <!--Start Single Project Style1: Underwater Robotics[cite: 1]-->
+                        <!-- Single Project Style 1: Underwater Robotics -->
                         <div class="single-project-style1 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
@@ -1361,9 +1843,8 @@
                                 </div>
                             </div>    
                         </div>
-                        <!--End Single Project Style1[cite: 1]-->
 
-                        <!--Start Single Project Style1: Offshore Installations[cite: 1]-->
+                        <!-- Single Project Style 1: Offshore Installations -->
                         <div class="single-project-style1 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
@@ -1404,7 +1885,6 @@
                                 </div>
                             </div>    
                         </div>
-                        <!--End Single Project Style1[cite: 1]-->
 
                     </div>
                 </div>
@@ -1413,9 +1893,11 @@
 
     </div>    
 </section>
-<!--End Project Style1 Area[cite: 1]-->
+<!-- PROJECT STYLE 1 AREA - END -->
 
-<!--Start Why Choose Us Area[cite: 1]-->
+<!-- ==========================================================================
+     WHY CHOOSE US AREA - START
+     ========================================================================== -->
 <section class="why-choose-us-area" id="whyus">
     <div class="container">
         <div class="sec-title text-center">
@@ -1456,9 +1938,11 @@
         </div>
     </div>
 </section>
-<!--End Why Choose Us Area[cite: 1]-->
+<!-- WHY CHOOSE US AREA - END -->
 
-<!--Start Quality Policy & Information Section[cite: 1]-->
+<!-- ==========================================================================
+     QUALITY POLICY AREA - START
+     ========================================================================== -->
 <section class="quality-policy-area" id="quality">
     <div class="container">
         <div class="sec-title text-center">
@@ -1499,9 +1983,11 @@
         </div>
     </div>
 </section>
-<!--End Quality Policy & Information Section[cite: 1]-->
+<!-- QUALITY POLICY AREA - END -->
 
-<!--Start Partner Area (Major Clients)[cite: 1]-->
+<!-- ==========================================================================
+     PARTNER LOGOS AREA (CLIENTS) - START
+     ========================================================================== -->
 <section class="partner-area">
     <div class="custom-container">
         <ul class="partner-box partner-carousel owl-carousel owl-theme">
@@ -1541,9 +2027,11 @@
         </ul>
     </div>
 </section> 
-<!--End Partner Area[cite: 1]--> 
+<!-- PARTNER LOGOS AREA - END -->
 
-<!--Start Levitating Quick Contact Area[cite: 1]-->
+<!-- ==========================================================================
+     LEVITATING CONTACT FORM AREA - START
+     ========================================================================== -->
 <section class="levitating-contact-area" id="contact">
     <div class="container">
         <div class="levitating-contact-box wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1000ms">
@@ -1568,9 +2056,11 @@
         </div> 
     </div>
 </section>
-<!--End Levitating Quick Contact Area[cite: 1]-->
+<!-- LEVITATING CONTACT FORM AREA - END -->
 
-<!--Start footer area[cite: 1]-->  
+<!-- ==========================================================================
+     FOOTER SECTION - START
+     ========================================================================== -->
 <footer class="footer-area">
     <div class="shape wow slideInRight" data-wow-delay="500ms" data-wow-duration="3500ms">
         <img src="assets/images/shape/footer-shape-1.jpg" alt="">
@@ -1628,6 +2118,7 @@
                                     </div>
                                     <ul class="footer-widget-links1">
                                         <li><a href="#home">Home</a></li>    
+                                        <li><a href="#capabilities">Capabilities</a></li>    
                                         <li><a href="#about">About Us</a></li>    
                                         <li><a href="#services">Core Capacities</a></li>    
                                         <li><a href="#products">Products</a></li>    
@@ -1677,7 +2168,7 @@
                                             </li>
                                         </ul>
 
-                                        <!-- Live Embedded Google Map[cite: 1] -->
+                                        <!-- Live Embedded Google Map -->
                                         <div class="footer-map-wrapper">
                                             <iframe 
                                                 title="Star Engineering Works Location"
@@ -1717,7 +2208,7 @@
         </div>
     </div>
 </footer>   
-<!--End footer area[cite: 1]-->
+<!-- FOOTER SECTION - END -->
 
 <button class="scroll-top scroll-to-target bgclr1" data-target="html">
     <span class="fa fa-angle-up"></span>
@@ -1725,6 +2216,9 @@
 
 </div> 
 
+<!-- ==========================================================================
+     SCRIPTS & JS PLUGINS - START
+     ========================================================================== -->
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/aos.js"></script>
 <script src="assets/js/appear.js"></script>
@@ -1753,12 +2247,10 @@
 <script src="assets/js/validation.js"></script>
 <script src="assets/js/wow.js"></script>
 <script src="assets/js/TweenMax.min.js"></script>
-
-<!-- thm custom script[cite: 1] -->
 <script src="assets/js/custom.js"></script>
 
 <script>
-    // Smooth scroll for one-page navigation[cite: 1]
+    // Smooth scroll for one-page navigation
     jQuery(document).ready(function($) {
         function dismissLoader() {
             if ($('.loader-wrap').length) {
@@ -1777,12 +2269,13 @@
             var $target = $(target);
             if ($target.length) {
                 $('html, body').stop().animate({
-                    'scrollTop': $target.offset().top - 80
+                    'scrollTop': $target.offset().top - 75
                 }, 900, 'swing');
             }
         });
     });
 </script>
+<!-- SCRIPTS & JS PLUGINS - END -->
 
 </body>
 </html>
