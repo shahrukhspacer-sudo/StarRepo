@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>CNC Machining Services || Star Engineering Works</title>
+	<title>Swiss Machining Services || Star Engineering Works</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     
@@ -356,7 +356,45 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.06);
         }
 
-        /* --- ADVANTAGES --- */
+        /* --- CAPABILITIES SLIDER --- */
+        .capabilities-slider-wrapper {
+            position: relative;
+            margin-top: 30px;
+        }
+        .capabilities-slide {
+            display: flex;
+        }
+        .capabilities-content {
+            padding-right: 30px;
+        }
+        .capabilities-content h4 {
+            font-size: 21px;
+            font-weight: 800;
+            color: var(--theme-blue);
+            margin: 0 0 15px 0;
+        }
+        .capabilities-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #475569;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .capabilities-content ul li {
+            margin-bottom: 8px;
+        }
+        .capabilities-img img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        /* --- ADVANTAGES & PERFECT FOR --- */
+        .advantages-img {
+            position: relative;
+        }
         .advantages-img img {
             width: 100%;
             height: 390px;
@@ -370,14 +408,48 @@
             gap: 12px;
             font-size: 14.5px;
             color: #334155;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             line-height: 1.6;
+        }
+        .advantage-item-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--theme-blue);
+            margin-bottom: 5px;
         }
         .advantage-item i {
             color: var(--theme-red);
             font-size: 13px;
             margin-top: 5px;
         }
+        .advantage-item-content {
+            flex: 1;
+        }
+        .advantage-item-content p {
+            font-size: 14.5px;
+            color: #475569;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .list-item-simple {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .list-item-simple i {
+            color: var(--theme-red);
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
         .stats-strip {
             display: flex;
             justify-content: space-around;
@@ -408,6 +480,8 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
         }
         .service-clean-card:hover {
             transform: translateY(-5px);
@@ -416,6 +490,7 @@
         }
         .service-clean-body {
             padding: 26px;
+            flex-grow: 1;
         }
         .service-clean-body h4 {
             font-size: 21px;
@@ -427,11 +502,11 @@
             color: #64748b;
             font-size: 14.5px;
             line-height: 1.75;
-            margin: 0;
+            margin: 0 0 20px 0;
         }
         .service-clean-img {
             width: 100%;
-            height: 230px;
+            height: 250px;
             object-fit: cover;
             display: block;
         }
@@ -507,18 +582,77 @@
             border-bottom: 1px solid #f1f5f9;
             font-size: 14px;
             color: #334155;
+            text-align: center;
         }
+        .clean-table th { text-align: center; }
         .clean-table tr:nth-child(even) td { background: #fbfcfe; }
+        .clean-table td strong { color: #0f172a; }
+        
+        .tolerance-img-container {
+            position: relative;
+            text-align: right;
+            padding-right: 20px;
+        }
+        
         .tolerance-img {
-            width: 100%;
+            max-width: 90%;
             border-radius: 8px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.06);
         }
+
+        .status-box {
+            position: absolute;
+            bottom: -20px;
+            left: -10px;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            z-index: 5;
+            border: 2px solid #10b981; 
+        }
+        
+        .status-item {
+             display:flex; 
+             align-items:center; 
+             gap:12px; 
+             font-size:14px;
+             margin-bottom: 12px;
+        }
+        .status-item:last-child { margin-bottom: 0;}
+        .status-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .status-done .status-icon {
+            background-color: #e6f8f1;
+            color: #10b981;
+            border: 1px solid #10b981;
+        }
+        .status-active .status-icon {
+            background-color: #10b981;
+            color: #ffffff;
+        }
+        .status-pending .status-icon {
+            border: 1px solid #cbd5e1;
+            color: #cbd5e1;
+        }
+        
+        .status-done span { color: #94a3b8; }
+        .status-active span { color: #0f172a; font-weight: 700; }
+        .status-pending span { color: #94a3b8; }
 
         /* --- OTHER SERVICES (RESPONSIVE SLIDER) --- */
         .slider-wrapper-rel {
             position: relative;
             margin-top: 25px;
+            padding: 0 40px; 
         }
         .other-services-slider {
             display: flex;
@@ -570,7 +704,7 @@
             color: #64748b;
             line-height: 1.7;
             margin: 0 0 22px 0;
-            min-height: 65px;
+            min-height: 65px; 
         }
         .btn-learn {
             background: var(--theme-blue);
@@ -585,7 +719,6 @@
         }
         .btn-learn:hover { background: var(--theme-red); }
 
-        /* Slider Control Arrows */
         .slider-arrow-btn {
             position: absolute;
             top: 50%;
@@ -610,13 +743,9 @@
             color: #ffffff;
             border-color: var(--theme-red);
         }
-        .slider-arrow-left { left: -20px; }
-        .slider-arrow-right { right: -20px; }
-        @media(max-width: 768px) {
-            .slider-arrow-left { left: 0; }
-            .slider-arrow-right { right: 0; }
-        }
-
+        .slider-arrow-left { left: 0; }
+        .slider-arrow-right { right: 0; }
+        
         /* --- WHY STAR ENGINEERING WORKS --- */
         .why-diff-header {
             margin-bottom: 40px;
@@ -650,7 +779,7 @@
         }
         .why-clean-box .icon {
             font-size: 32px;
-            color: var(--theme-red);
+            color: var(--theme-red); 
             margin-bottom: 14px;
         }
         .why-clean-box h4 {
@@ -665,7 +794,7 @@
             line-height: 1.75;
             margin: 0;
         }
-
+        
         /* --- BOTTOM FULL CTA --- */
         .full-cta-strip {
             background: linear-gradient(135deg, var(--theme-blue-dark), var(--theme-blue));
@@ -754,7 +883,7 @@
     </div>    
 </div>
 
-<!-- 3. Exact Matched Menu Bar (Height 60px) -->
+<!-- 3. Exact Matched Menu Bar -->
 <div class="header-bottom">
     <div class="container">
         <div class="outer-box">
@@ -790,8 +919,8 @@
 <!-- 4. Hero Section -->
 <section class="fullwidth-hero">
     <div class="container">
-        <h1 class="hero-title">CNC Machining Services</h1>
-        <p class="hero-sub">High-precision mechanical fabrication and subtractive machining solutions conforming to international quality benchmarks.</p>
+        <h1 class="hero-title">Swiss Machining Services</h1>
+        <p class="hero-sub">High-precision subtractive machining for small, long, and intricate parts conforming to international quality benchmarks.</p>
         <div class="hero-btns">
             <a href="index.html#contact" class="btn-red">Get A Free Project Quote</a>
         </div>
@@ -803,6 +932,8 @@
     <div class="container">
         <div class="pill-wrapper">
             <a href="#process" class="pill-btn active">Process</a>
+            <a href="#perfect-for" class="pill-btn">Perfect For</a>
+            <a href="#capabilities" class="pill-btn">Capabilities</a>
             <a href="#advantages" class="pill-btn">Advantages</a>
             <a href="#services" class="pill-btn">Our CNC Services</a>
             <a href="#materials" class="pill-btn">Materials</a>
@@ -822,48 +953,116 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <span class="section-badge">Process</span>
-                    <h2 class="section-heading-main">CNC Machining</h2>
+                    <h2 class="section-heading-main">Swiss Machining</h2>
                     <p class="process-text">
-                        CNC machining includes both CNC milling and CNC turning as two of its primary machining processes. It is a high-speed, precise manufacturing process that involves cutting away material from a block or billet to create parts.
+                        Swiss machining, also known as swiss turning or swiss screw machining, is a precise way to create complex parts with high accuracy. In Swiss machining, the bar comes to the tool, not the other way around (in the Z direction). This reduces deflection and boosts stability, leading to better precision. CNC Swiss machining is especially good for detailed projects needing tight tolerances, especially for small parts.
                     </p>
                     <p class="process-text">
-                        It's controlled by written code, which dictates machine movements, spindle speed, and more. This numerical control allows for automated, repeatable processes, reducing human intervention. A 2D or 3D CAD drawing is translated into computer code, which is then tested for accuracy. CNC machining is widely used in metal and plastic production across various industries.
+                        Swiss machining moves parts in different directions, cutting them very accurately. Like 5-axis machining, Swiss machines rotate parts in 5 directions for super accurate cuts. Swiss Machines usually have one or two spindles. This helps them make custom parts fast, sometimes in just 10-15 seconds. They're perfect for making many small parts in big production runs.
                     </p>
                 </div>
                 <div class="col-lg-6">
                     <div class="process-img-box">
-                        <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=800&h=500&fit=crop" alt="CNC Machining Process Spindle">
+                        <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=800&h=500&fit=crop" alt="Swiss Machining Process">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 2: PERFECT FOR -->
+        <section class="content-section" id="perfect-for">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="advantages-img">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800&h=600&fit=crop" alt="Small intricate brass and metal parts">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="section-heading-main">Swiss Machining is Perfect For</h2>
+                    <p class="process-text">
+                        Swiss Style Machining is great for making small, long, and intricate parts. Unlike other machining methods, where the tool moves towards the part, in Swiss Machining, the part moves towards the tool. This gives really precise results for thin, long, and small parts, no matter how complex they are.
+                    </p>
+                    <p class="process-text">
+                        The special design also lets the machine do turning and milling at the same time as the part moves. This not only lets us do both operations on one machine, but also at the same time, making the process super efficient and fast.
+                    </p>
+                    <div style="margin-top: 20px;">
+                        <div class="list-item-simple"><i class="fa fa-circle"></i> Parts that need to be turned, but have some milled features</div>
+                        <div class="list-item-simple"><i class="fa fa-circle"></i> Suitable for long and fine shaft parts with tight tolerances</div>
+                        <div class="list-item-simple"><i class="fa fa-circle"></i> Parts that require critical straightness and/or concentricity tolerances</div>
+                        <div class="list-item-simple"><i class="fa fa-circle"></i> High quality finishes and tight tolerances</div>
+                        <div class="list-item-simple"><i class="fa fa-circle"></i> Conserving costs for order quantities over 1,000, with costs dropping further at high volume</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2: ADVANTAGES OF CNC MACHINING -->
-        <section class="content-section" id="advantages">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-4 mb-lg-0">
-                    <div class="advantages-img">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800&h=600&fit=crop" alt="Engineer inspecting CNC CAD drawings">
+        <!-- 3: CAPABILITIES -->
+        <section class="content-section" id="capabilities">
+            <div class="capabilities-slider-wrapper">
+                <div class="row align-items-center capabilities-slide active">
+                    <div class="col-lg-6 mb-4 mb-lg-0 capabilities-content">
+                        <h4>Swiss Machining Capabilities of Star Engineering Works</h4>
+                        <p class="process-text" style="font-size: 14px; margin-top: 15px;">
+                            Our Swiss-Type CNC lathes are perfect for machining precision parts with complex configurations and profiles in one setup incredibly fast. One of the key benefits of Swiss Style Machining is the ability to machine smaller, longer and more complex parts. In other forms of machining, the tool approaches the open turning part whereas in Swiss Machining the part is guided and supported to the tool which allows for excellent accuracy for longer, thinner components and small parts however complex.
+                        </p>
+                        <p class="process-text" style="font-size: 14px;">
+                            Generally, Swiss machining is well-suited for producing long, slender parts. Typical lengths can range from around 150mm (6 inches) to 450mm (17.71 inches), although some machines might be able to handle longer parts with additional support systems. Star Engineering Works's swiss-style lathes are designed to handle small-diameter parts efficiently. The maximum diameter can range from around 1mm (0.04 inches) to 38mm (1.49 inches).
+                        </p>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                         <div class="capabilities-img">
+                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&h=500&fit=crop" alt="Star SB 20R Type Sliding Head Lathe">
+                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <h2 class="section-heading-main">Advantages of CNC Machining</h2>
-                    <p class="process-text">
-                        CNC machining offers many advantages for product developers. All of these options give you even more design freedom.
-                    </p>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="advantage-item"><i class="fa fa-chevron-right"></i> <span>Parts are full-strength</span></div>
-                            <div class="advantage-item"><i class="fa fa-chevron-right"></i> <span>Produce parts with complex shapes, contours</span></div>
-                            <div class="advantage-item"><i class="fa fa-chevron-right"></i> <span>Excellent surface finishes</span></div>
-                            <div class="advantage-item"><i class="fa fa-chevron-right"></i> <span>Tight tolerances and high precision</span></div>
-                            <div class="advantage-item"><i class="fa fa-chevron-right"></i> <span>Uniform product</span></div>
+            </div>
+        </section>
+
+        <!-- 4: ADVANTAGES OF SWISS MACHINING -->
+        <section class="content-section" id="advantages">
+            <h2 class="center-heading">Advantages of Swiss Machining</h2>
+            <p style="text-align: center; color: #555; font-size: 14.5px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">Swiss machining offers many advantages, it is best suited for small, high-precision parts. For larger parts or components that don't require the same level of precision, other machining methods may be more suitable. Swiss machining has benefits, but suitability varies. Choose based on factors like part complexity, material, tolerances, and production volume.</p>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="advantages-img">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=500&fit=crop" alt="Small Assorted Precision Parts">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="advantage-item">
+                        <i class="fa fa-chevron-right"></i>
+                        <div class="advantage-item-content">
+                            <div class="advantage-item-header">Precision and Accuracy</div>
+                            <p>Swiss machining is excellent at creating precise parts with exact measurements and smooth surfaces.</p>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="advantage-item"><i class="fa fa-chevron-right"></i> <span>High production and scalability</span></div>
-                            <div class="advantage-item"><i class="fa fa-chevron-right"></i> <span>Easily customized</span></div>
-                            <div class="advantage-item"><i class="fa fa-chevron-right"></i> <span>Suitable for many different kinds of substrates</span></div>
-                            <div class="advantage-item"><i class="fa fa-chevron-right"></i> <span>A wide range of materials, including metals, plastics, and composites.</span></div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fa fa-chevron-right"></i>
+                        <div class="advantage-item-content">
+                            <div class="advantage-item-header">Reduced Vibration</div>
+                            <p>Swiss machines' design reduces vibration, crucial for accuracy when working on delicate parts, preventing damage.</p>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fa fa-chevron-right"></i>
+                        <div class="advantage-item-content">
+                            <div class="advantage-item-header">Long and Slender Parts</div>
+                            <p>It is exceptional for making long, slender parts with high length-to-diameter ratios due to strong workpiece support, reducing deflection.</p>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fa fa-chevron-right"></i>
+                        <div class="advantage-item-content">
+                            <div class="advantage-item-header">Single-Pass Machining</div>
+                            <p>Swiss machines use live tooling and multiple axes, allowing complex parts to be made in one setup, enhancing efficiency by reducing secondary operations.</p>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fa fa-chevron-right"></i>
+                        <div class="advantage-item-content">
+                            <div class="advantage-item-header">High Production Rates</div>
+                            <p>After setup, Swiss machining achieves high production rates due to simultaneous operations, quick tool changes, and efficient chip removal, reducing cycle times and boosting throughput.</p>
                         </div>
                     </div>
                 </div>
@@ -886,7 +1085,7 @@
             </div>
         </section>
 
-        <!-- 3: OUR CNC SERVICES -->
+        <!-- 5: OUR CNC SERVICES -->
         <section class="content-section" id="services">
             <h2 class="center-heading">Our CNC Services</h2>
             <div class="row">
@@ -897,7 +1096,7 @@
                             <h4>CNC Turning</h4>
                             <p>CNC turning is the perfect method for crafting deep holes, threaded features, and diverse cylindrical forms with exceptional surface quality. When you require accurately produced components, quick turnarounds, and flexibility in volume, our CNC turning services at Star Engineering Works offer the answer. Discover how we can assist you further.</p>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=300&fit=crop" class="service-clean-img" alt="CNC Turning">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=600&h=300&fit=crop" class="service-clean-img" alt="CNC Turning">
                     </div>
                 </div>
                 <!-- CNC Milling -->
@@ -907,31 +1106,33 @@
                             <h4>CNC Milling</h4>
                             <p>CNC milling is utilized to craft intricate prismatic forms and flat surfaces, catering to a diverse range of commercial and industrial products. Multi-axis CNC machines possess the ability to achieve their precision and versatility without relying on fixed tooling. Their design allows them to adapt easily to various tasks and shapes, resulting in high flexibility.</p>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=300&fit=crop" class="service-clean-img" alt="CNC Milling">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=300&fit=crop" class="service-clean-img" alt="CNC Milling">
                     </div>
                 </div>
                 <!-- EDM Services -->
                 <div class="col-md-6 mb-4">
                     <div class="service-clean-card">
-                        <div class="service-clean-body" style="padding-bottom: 35px;">
+                        <div class="service-clean-body">
                             <h4>EDM Services</h4>
-                            <p>EDM (Electrical Discharge Machining) is a specialized machining process that uses electrical discharges or sparks to remove material from a workpiece. EDM is a versatile method that addresses challenges posed by various materials, shapes, and precision requirements in industries ranging from manufacturing to aerospace.</p>
+                            <p>EDM(Electrical Discharge Machining) is a specialized machining process that uses electrical discharges or sparks to remove material from a workpiece. EDM is a versatile method that addresses challenges posed by various materials, shapes, and precision requirements in industries ranging from manufacturing to medical devices and beyond.</p>
                         </div>
+                        <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&h=300&fit=crop" class="service-clean-img" alt="EDM Services">
                     </div>
                 </div>
                 <!-- Surface Finishing -->
-                <div class="col-md-6 mb-4">
+                 <div class="col-md-6 mb-4">
                     <div class="service-clean-card">
-                        <div class="service-clean-body" style="padding-bottom: 35px;">
+                        <div class="service-clean-body">
                             <h4>Surface Finishing</h4>
-                            <p>Surface finishing involves various manufacturing processes designed to enhance a product's appearance, durability, and performance. Common methods include polishing, painting, sandblasting, plating, powder coating, brushing, anodizing, and heat treatment, among others. These techniques improve visual aesthetics, protect surfaces from wear and corrosion, and can also enhance specific mechanical properties.</p>
+                            <p>Surface finishing involves various manufacturing processes designed to enhance a product's appearance, durability, and performance. Common methods include polishing, painting, sandblasting, plating, powder coating, brushing, anodizing, and heat treatment, among others. These techniques improve visual aesthetics, protect surfaces from wear and corrosion.</p>
                         </div>
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=300&fit=crop" class="service-clean-img" alt="Surface Finishing">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4: MATERIALS WITH HOVER EFFECT -->
+        <!-- 6: MATERIALS -->
         <section class="content-section" id="materials">
             <span class="section-badge">Materials</span>
             <h2 class="section-heading-main">Wide Material Availability</h2>
@@ -941,13 +1142,13 @@
             <div class="materials-grid">
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=400&h=250&fit=crop" alt="Aluminum">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop" alt="Aluminum">
                     </div>
                     <h5>Aluminum</h5>
                 </div>
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&h=250&fit=crop" alt="Stainless Steel">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=250&fit=crop" alt="Stainless Steel">
                     </div>
                     <h5>Stainless Steel</h5>
                 </div>
@@ -990,17 +1191,14 @@
             </div>
         </section>
 
-        <!-- 5: TOLERANCE MATRIX -->
+        <!-- 7: TOLERANCE MATRIX -->
         <section class="content-section" id="tolerances">
             <span class="section-badge">Tolerance</span>
             <h2 class="section-heading-main">Precision Tolerances &amp; Inspection</h2>
-            <div class="row align-items-center">
+            <div class="row align-items-center mt-3">
                 <div class="col-lg-7 mb-4 mb-lg-0">
                     <p class="process-text">
-                        <strong>Tightest tolerance: ±.0008″ (0.020 mm).</strong> Tighter tolerances are examined on a case by case basis with your technical drawings. Star Engineering Works' CNC machining service can produce CNC parts with tolerance as low as ± 0.0002 in.
-                    </p>
-                    <p class="process-text">
-                        Without a drawing, all CNC parts are produced to our ISO 2768 medium standard. We can also machine to tighter tolerances, ±0.025mm or ±0.001″, with an attached engineering drawing calling out critical features.
+                        <strong>Tightest tolerance: ±.0008″ (0.020 mm).</strong> Tighter tolerances are examined on a case by case basis with your technical drawings. Star Engineering Works's CNC machining service can produce CNC parts with tolerance as low as ± 0.0002 in. Without a drawing, all CNC parts are produced to our ISO 2768 medium standard. We can also machine to tighter tolerances, ±0.025mm or ±0.001″, with an attached engineering drawing calling out critical features.
                     </p>
                     
                     <div style="overflow-x: auto; margin-top: 25px;">
@@ -1015,19 +1213,19 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Linear Dimension</strong></td>
+                                    <td style="text-align: left;"><strong>Linear Dimension</strong></td>
                                     <td>+/- 0.01 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.0003 inch</span></td>
                                     <td>+/- 0.05 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.002 inch</span></td>
                                     <td>ISO 2768 Medium</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Hole Diameters</strong></td>
+                                    <td style="text-align: left;"><strong>Hole Diameters</strong></td>
                                     <td>+/- 0.008 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.0003 inch</span></td>
                                     <td>+/- 0.05 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.002 inch</span></td>
                                     <td>ISO 2768 Medium</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Shaft Diameters</strong></td>
+                                    <td style="text-align: left;"><strong>Shaft Diameters</strong></td>
                                     <td>+/- 0.004 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.00016 inch</span></td>
                                     <td>+/- 0.05 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.002 inch</span></td>
                                     <td>ISO 2768 Medium</td>
@@ -1037,17 +1235,20 @@
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div style="text-align: center;">
-                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&h=450&fit=crop" class="tolerance-img" alt="Dimensional Inspection">
-                        <div style="background:#ffffff; box-shadow: 0 4px 18px rgba(0,0,0,0.04); border-radius:8px; padding:16px; margin-top:16px; text-align:left;">
-                            <div style="display:flex; align-items:center; gap:10px; color:#10b981; font-weight:700; font-size:13.5px;">
-                                <i class="fa fa-check-circle"></i> Production Complete
+                    <div class="tolerance-img-container">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&h=400&fit=crop" class="tolerance-img" alt="Dimensional Inspection">
+                        <div class="status-box">
+                            <div class="status-item status-done">
+                                <div class="status-icon"><i class="fa fa-check"></i></div>
+                                <span>Production Complete</span>
                             </div>
-                            <div style="display:flex; align-items:center; gap:10px; color:var(--theme-blue); font-weight:700; font-size:13.5px; margin: 8px 0;">
-                                <i class="fa fa-check-circle"></i> Inspection Complete
+                            <div class="status-item status-active">
+                                <div class="status-icon"><i class="fa fa-check"></i></div>
+                                <span>Inspection Complete</span>
                             </div>
-                            <div style="display:flex; align-items:center; gap:10px; color:#64748b; font-size:13.5px;">
-                                <i class="fa fa-circle-o"></i> Ready to ship
+                            <div class="status-item status-pending">
+                                <div class="status-icon">3</div>
+                                <span>Ready to ship</span>
                             </div>
                         </div>
                     </div>
@@ -1055,7 +1256,7 @@
             </div>
         </section>
 
-        <!-- 6: OTHER SERVICES (CAROUSEL / SLIDER) -->
+        <!-- 8: OTHER SERVICES (CAROUSEL / SLIDER) -->
         <section class="content-section" id="other-services">
             <h2 class="center-heading">Other Services</h2>
             
@@ -1075,8 +1276,8 @@
                         <div class="other-icon-wrap">
                             <i class="fa fa-cog"></i>
                         </div>
-                        <h4>CNC Turning</h4>
-                        <p>Capable of precisely machining and turning parts up to 20 inches in length, and tight tolerances of ±0.0002.</p>
+                        <h4>CNC Milling</h4>
+                        <p>Using our imported 3, 4, and 5-axis CNC machining centers, our skilled machinists can make CNC milled</p>
                         <a href="index.html#contact" class="btn-learn">Learn more</a>
                     </div>
                     <!-- Slide 2 -->
@@ -1084,42 +1285,42 @@
                         <div class="other-icon-wrap">
                             <i class="fa fa-wrench"></i>
                         </div>
-                        <h4>Swiss Turning</h4>
-                        <p>Swiss turning excels in precision for small and long, slender parts, typically ranging from 150mm to 450mm.</p>
+                        <h4>CNC Turning</h4>
+                        <p>Capable of precisely machining and turning parts up to 20 inches in length, and tight tolerances of ±0.0002</p>
                         <a href="index.html#contact" class="btn-learn">Learn more</a>
                     </div>
                     <!-- Slide 3 -->
                     <div class="other-slide-item">
                         <div class="other-icon-wrap">
-                            <i class="fa fa-sliders"></i>
+                            <i class="fa fa-cubes"></i>
                         </div>
                         <h4>5 Axis Machining</h4>
-                        <p>Integrate drilling, milling, contouring, and precision machining into one setup to minimize part handling.</p>
+                        <p>Integrate drilling, milling, contouring, and precision machining into one setup to minimize part handling</p>
                         <a href="index.html#contact" class="btn-learn">Learn more</a>
                     </div>
                     <!-- Slide 4 -->
                     <div class="other-slide-item">
                         <div class="other-icon-wrap">
-                            <i class="fa fa-cube"></i>
+                            <i class="fa fa-bar-chart"></i>
                         </div>
-                        <h4>Die Casting</h4>
-                        <p>Durable, lightweight aluminum, zinc, or magnesium castings. Order 1-10K piece custom production.</p>
+                        <h4>Rapid Prototyping</h4>
+                        <p>From prototyping to production, make custom parts on demand in 70+ material options, 50+ finishes</p>
                         <a href="index.html#contact" class="btn-learn">Learn more</a>
                     </div>
-                    <!-- Slide 5 -->
-                    <div class="other-slide-item">
+                     <!-- Slide 5 -->
+                     <div class="other-slide-item">
                         <div class="other-icon-wrap">
                             <i class="fa fa-microchip"></i>
                         </div>
-                        <h4>Prototype &amp; Preproduction</h4>
-                        <p>Rapid turnaround functional prototyping, physical stress validation, and fitment testing.</p>
+                        <h4>Swiss Turning</h4>
+                        <p>Swiss turning excels in precision for small and long, slender parts, typically ranging from 150mm to 450mm.</p>
                         <a href="index.html#contact" class="btn-learn">Learn more</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7: WHY STAR ENGINEERING WORKS IS DIFFERENT -->
+        <!-- 9: WHY STAR ENGINEERING WORKS -->
         <section class="content-section" id="why-choose">
             <div class="why-diff-header">
                 <h6>Why Star Engineering Works is Different</h6>
@@ -1177,9 +1378,12 @@
             e.preventDefault();
             document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            const target = document.querySelector(this.getAttribute('href'));
-            if(target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                const yOffset = -80; 
+                const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
             }
         });
     });
@@ -1187,7 +1391,7 @@
     // Slider Scroll Function for Other Services
     function slideOtherServices(direction) {
         const slider = document.getElementById('otherServicesSlider');
-        const scrollAmount = 300;
+        const scrollAmount = 300; 
         slider.scrollBy({
             left: direction * scrollAmount,
             behavior: 'smooth'
