@@ -508,6 +508,18 @@
              padding-bottom: 30px;
              margin-top: auto;
         }
+        .btn-learn {
+            background: var(--theme-blue);
+            color: #fff !important;
+            padding: 9px 24px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+        .btn-learn:hover { background: var(--theme-red); }
 
         /* --- OTHER SERVICES (RESPONSIVE SLIDER) --- */
         .slider-wrapper-rel {
@@ -567,18 +579,6 @@
             margin: 0 0 22px 0;
             min-height: 65px; 
         }
-        .btn-learn {
-            background: var(--theme-blue);
-            color: #fff !important;
-            padding: 9px 24px;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s ease;
-        }
-        .btn-learn:hover { background: var(--theme-red); }
 
         .slider-arrow-btn {
             position: absolute;
@@ -669,6 +669,65 @@
         }
         .full-cta-strip h2 { margin: 0 0 12px 0; font-size: 34px; font-weight: 800; }
         .full-cta-strip p { margin: 0 0 28px 0; color: #cbd5e1; font-size: 16.5px; }
+
+        /* --- FOOTER STYLES --- */
+        .footer-area {
+            background-color: #f8fafc;
+            padding-top: 80px;
+            padding-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            margin-top: 60px;
+            border-top: 1px solid #f1f5f9;
+        }
+        .single-footer-widget { margin-bottom: 40px; }
+        .single-footer-widget .title h3 {
+            color: var(--theme-blue);
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        .single-footer-widget .title h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--theme-red);
+        }
+        .our-company-info .footer-logo { margin-bottom: 20px; }
+        .our-company-info .text-box p { color: #64748b; font-size: 14.5px; line-height: 1.7; margin-bottom: 25px; }
+        .footer-newsletter-box input {
+            width: 100%; height: 45px; border: 1px solid #e2e8f0; padding: 0 15px; border-radius: 4px; font-size: 14px; margin-bottom: 10px; outline: none; background: #fff;
+        }
+        .footer-newsletter-box button {
+            width: 100%; height: 45px; background: var(--theme-red); color: #ffffff; border: none; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 13px; cursor: pointer; transition: all 0.3s ease;
+        }
+        .footer-newsletter-box button:hover { background: var(--theme-blue); }
+        .footer-widget-links1 { list-style: none; padding: 0; margin: 0; }
+        .footer-widget-links1 li { margin-bottom: 12px; }
+        .footer-widget-links1 li a { color: #64748b; font-size: 14.5px; text-decoration: none; transition: 0.3s ease; }
+        .footer-widget-links1 li a:hover { color: var(--theme-red); padding-left: 5px; }
+        .footer-contact-info ul { list-style: none; padding: 0; margin: 0; }
+        .footer-contact-info ul li { display: flex; align-items: flex-start; margin-bottom: 18px; gap: 15px; }
+        .footer-contact-info ul li .icon { color: var(--theme-red); font-size: 20px; }
+        .footer-contact-info ul li .text p { margin: 0; color: #64748b; font-size: 14.5px; line-height: 1.5; }
+        .footer-contact-info ul li .text p a { color: #64748b; text-decoration: none; transition: 0.3s; }
+        .footer-contact-info ul li .text p a:hover { color: var(--theme-red); }
+        .footer-map-wrapper { margin-top: 15px; border-radius: 6px; overflow: hidden; border: 2px solid #e2e8f0; }
+        .footer-map-wrapper iframe { display: block; width: 100%; height: 140px; border: 0; }
+        .footer-map-btn { display: inline-flex; align-items: center; margin-top: 10px; color: var(--theme-red); font-size: 13px; font-weight: 700; text-decoration: none; transition: 0.3s; }
+        .footer-map-btn i { margin-right: 6px; }
+        .footer-map-btn:hover { color: var(--theme-blue); }
+        .footer-bottom { margin-top: 20px; padding-top: 25px; border-top: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .copyright-text p { color: #64748b; font-size: 14px; margin: 0; }
+        .copyright-text p a { color: var(--theme-blue); font-weight: 700; text-decoration: none; }
+        .footer-menu-style1 ul { display: flex; list-style: none; padding: 0; margin: 0; gap: 20px; }
+        .footer-menu-style1 ul li a { color: #64748b; font-size: 14px; text-decoration: none; transition: 0.3s; }
+        .footer-menu-style1 ul li a:hover { color: var(--theme-red); }
     </style>
 </head>
 
@@ -1112,6 +1171,136 @@
 
     </div>
 </main>
+
+<!-- ==========================================================================
+     FOOTER SECTION - START
+     ========================================================================== -->
+<footer class="footer-area">
+    <div class="container">
+        <div class="row">
+            <!-- Footer Logo & Info -->
+            <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                <div class="single-footer-widget">
+                    <div class="our-company-info">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="images/logo/LOGO-SEW.png" alt="Star Engineering Works" title="Logo" style="width: 160px; height: auto;"></a>   
+                        </div>
+                        <div class="text-box">
+                            <p>A passion for precision. Providing robust structural designs, underwater connectors, and manufacturing excellence across Pakistan since 1985.</p>
+                        </div>
+                        <div class="footer-newsletter-box">
+                            <h3 style="font-size: 16px; font-weight: 700; color: var(--theme-blue); margin-bottom: 10px;">Newsletter Updates</h3>
+                            <form action="#" method="post">
+                                <input type="email" placeholder="Enter your email" required="">
+                                <button type="submit">Subscribe Now</button>
+                            </form>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+            
+            <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                    <!-- Core Capacities Links -->
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <div class="single-footer-widget">
+                            <div class="title">
+                                <h3>Core Capacities</h3>
+                            </div>
+                            <ul class="footer-widget-links1">
+                                <li><a href="index.html#services">CAD/CAM Designing</a></li>    
+                                <li><a href="index.html#services">3D Printing</a></li>    
+                                <li><a href="index.html#services">CNC Machining Center</a></li>    
+                                <li><a href="index.html#services">CNC Turning Center</a></li>    
+                                <li><a href="index.html#services">Sand, Gravity & Die Casting</a></li>                       
+                                <li><a href="index.html#services">Hydraulic Press & Welding</a></li>                       
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <div class="single-footer-widget">
+                            <div class="title">
+                                <h3>Quick Links</h3>
+                            </div>
+                            <ul class="footer-widget-links1">
+                                <li><a href="index.html#home">Home</a></li>    
+                                <li><a href="index.html#capabilities">Capabilities</a></li>    
+                                <li><a href="index.html#about">About Us</a></li>    
+                                <li><a href="index.html#services">Core Capacities</a></li>    
+                                <li><a href="index.html#products">Products</a></li>    
+                                <li><a href="index.html#whyus">Why Us</a></li>                       
+                                <li><a href="index.html#contact">Contact</a></li>                                            
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <div class="single-footer-widget">
+                            <div class="title">
+                                <h3>Contact Us</h3>
+                            </div>
+                            <div class="footer-contact-info">
+                                <ul>
+                                    <li>
+                                        <div class="icon"><span class="flaticon-incoming-call"></span></div>
+                                        <div class="text">
+                                            <p><a href="tel:922135888950">+92 21 3588 8950</a></p>
+                                        </div>   
+                                    </li>
+                                    <li>
+                                        <div class="icon"><span class="flaticon-placeholder"></span></div>
+                                        <div class="text">
+                                            <p><a href="https://maps.google.com/?cid=11563172088824159762" target="_blank">Plot # B-279, Sector 6F Mehran Town,<br> Korangi Industrial Area, Karachi</a></p>
+                                        </div>   
+                                    </li>
+                                    <li>
+                                        <div class="icon"><span class="flaticon-envelope-1"></span></div>
+                                        <div class="text">
+                                            <p><a href="mailto:starengg@hotmail.com">starengg@hotmail.com</a></p>
+                                        </div>   
+                                    </li>
+                                </ul>
+
+                                <!-- Live Embedded Google Map -->
+                                <div class="footer-map-wrapper">
+                                    <iframe 
+                                        title="Star Engineering Works Location"
+                                        src="https://maps.google.com/maps?q=Star+Engineering+Works+Mehran+Town+Korangi+Karachi&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                                        loading="lazy" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <a href="https://maps.google.com/?cid=11563172088824159762" target="_blank" class="footer-map-btn">
+                                    <i class="fa fa-map-marker"></i> Open in Google Maps
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom Row -->
+                <div class="footer-bottom">
+                    <div class="copyright-text">
+                        <p>&copy; 2026 <a href="#">Star Engineering Works.</a> All rights reserved.</p>
+                    </div>
+                    <div class="footer-menu-style1">
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>                       
+                            <li><a href="index.html#contact">Support</a></li>                       
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>   
+<!-- FOOTER SECTION - END -->
 
 <script>
     // Smooth scrolling for sticky pill navigation
