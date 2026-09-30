@@ -156,7 +156,6 @@
             color: var(--theme-red) !important;
         }
 
-        /* Normal Header Red Home Button */
         .main-menu .navigation > li.home-li,
         .main-menu .navigation > li:first-child {
             background-color: var(--theme-red) !important;
@@ -181,13 +180,6 @@
             box-shadow: none !important;
             margin: 0 !important;
             position: relative !important;
-        }
-        .main-menu .navigation > li > a.home:before,
-        .main-menu .navigation > li > a.home:after,
-        .main-menu .navigation > li.current > a.home:before,
-        .main-menu .navigation > li.current > a.home:after {
-            display: none !important;
-            content: none !important;
         }
         .main-menu .navigation > li > a.home i,
         .main-menu .navigation > li.current > a.home i {
@@ -260,7 +252,6 @@
             margin: 0 !important;
         }
 
-        /* Sticky Header Logo Centering */
         .sticky-header .logo,
         .sticky-header .logo a {
             display: flex !important;
@@ -319,7 +310,6 @@
             color: var(--theme-red) !important;
         }
 
-        /* Sticky Red Home Button */
         .sticky-header .main-menu .navigation > li.home-li,
         .sticky-header .main-menu .navigation > li:first-child,
         .stricky-fixed .main-menu .navigation > li.home-li,
@@ -558,7 +548,7 @@
         /* MANUFACTURING CAPABILITIES SECTION STYLES - END */
 
         /* ==========================================================================
-           7. SERVICE SECTION & PRECISION BOX STYLES - START
+           7. SERVICE SECTION (CORE CAPACITIES) NEW MODERN LOOK - START
            ========================================================================== */
         .service-style1-area {
             position: relative;
@@ -609,7 +599,68 @@
             margin-right: 10px;
             flex-shrink: 0;
         }
-        /* SERVICE SECTION & PRECISION BOX STYLES - END */
+
+        .single-service-style1 {
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px; 
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        .single-service-style1:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .single-service-style1 .img-holder {
+            margin-bottom: 20px;
+        }
+        .single-service-style1 .img-holder .inner {
+            background-color: #ffffff; 
+            border-radius: 12px; 
+            padding: 0; 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+            display: block; 
+            overflow: hidden;
+        }
+        .single-service-style1 .img-holder .inner img {
+            width: 100%;
+            height: 220px !important; 
+            object-fit: cover !important; 
+            border-radius: 12px; 
+            transition: transform 0.4s ease;
+        }
+        .single-service-style1:hover .img-holder .inner img {
+            transform: scale(1.05); 
+        }
+        
+        .single-service-style1 .text-holder h3 a {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .single-service-style1 .text-holder p {
+            color: #d1d5db;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .single-service-style1 .readmore-button a {
+            color: var(--theme-red);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        .single-service-style1 .readmore-button a span {
+            margin-right: 6px;
+        }
+        .single-service-style1 .readmore-button a:hover {
+            color: #ffffff !important;
+        }
+        /* SERVICE SECTION NEW MODERN LOOK - END */
 
         /* ==========================================================================
            8. PRODUCTS / CONNECTORS SECTION STYLES - START
@@ -1257,7 +1308,7 @@
         <div class="banner-carousel owl-theme owl-carousel">
             <!-- Slide 1 -->
             <div class="slide">
-                <div class="image-layer" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=720&fit=crop')"></div>
+                <div class="image-layer" style="background-image:url('images/img/slider.jpeg')"></div>
                 <div class="auto-container">
                     <div class="content text-center">
                         <h3>ISO 9001:2015 Certified Enterprise</h3>
@@ -1285,7 +1336,7 @@
             </div>
             <!-- Slide 2 -->
             <div class="slide">
-                <div class="image-layer" style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1920&h=720&fit=crop')"></div>
+                <div class="image-layer" style="background-image:url('images/img/slider.jpeg')"></div>
                 <div class="auto-container">
                     <div class="content text-center">
                         <h3>Advanced Technology</h3>
@@ -1530,17 +1581,18 @@
 <!-- FEATURES STYLE 1 AREA - END -->
 
 <!-- ==========================================================================
-     ABOUT STYLE 1 AREA - START
+     ABOUT STYLE 1 AREA - START (UPDATED SINGLE IMAGE SETUP)
      ========================================================================== -->
 <section class="about-style1-area" id="about">
     <div class="container">
         <div class="row">
             <div class="col-xl-8">
+                <!-- Using original UL/LI structure to keep theme CSS intact for the badge -->
                 <div class="about-style1-image-box">
-                    <ul>
-                        <li>
-                            <div class="image_box left">
-                                <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=350&h=500&fit=crop" alt="Mechanical Workshop">
+                    <ul style="display: block; margin: 0; padding: 0;">
+                        <li style="display: block; width: 100%; margin-bottom: 30px;">
+                            <div class="image_box left" style="width: 100%; max-width: 650px;">
+                                <img src="images/img/4443.jpg" alt="Star Engineering Works" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                                 <div class="overlay-box">
                                     <div class="top">
                                         <div class="icon">
@@ -1555,11 +1607,6 @@
                                     </div>
                                     <p>Years of Excellence</p>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="image_box right">
-                                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=350&h=500&fit=crop" alt="Industrial Plant">
                             </div>
                         </li>
                     </ul>
@@ -1666,7 +1713,7 @@
                             <div class="single-service-style1">
                                 <div class="img-holder">
                                     <div class="inner">
-                                        <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=360&h=250&fit=crop" alt="CAD/CAM">
+                                        <img src="images/img/CADCAM Design.png" alt="CAD/CAM">
                                     </div>
                                 </div> 
                                 <div class="text-holder">
@@ -1683,7 +1730,7 @@
                             <div class="single-service-style1">
                                 <div class="img-holder">
                                     <div class="inner">
-                                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=360&h=250&fit=crop" alt="3D Printing">
+                                        <img src="images/img/3d Printing.png" alt="3D Printing">
                                     </div>
                                 </div> 
                                 <div class="text-holder">
@@ -1700,7 +1747,7 @@
                             <div class="single-service-style1">
                                 <div class="img-holder">
                                     <div class="inner">
-                                        <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=360&h=250&fit=crop" alt="CNC Machining">
+                                        <img src="images/img/CNC Machining Center.png" alt="CNC Machining">
                                     </div>
                                 </div> 
                                 <div class="text-holder">
@@ -1717,7 +1764,7 @@
                             <div class="single-service-style1">
                                 <div class="img-holder">
                                     <div class="inner">
-                                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=360&h=250&fit=crop" alt="CNC Turning">
+                                        <img src="images/img/Cncturning.png" alt="CNC Turning">
                                     </div>
                                 </div> 
                                 <div class="text-holder">
@@ -1764,9 +1811,9 @@
                         <div class="single-project-style1 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=540&fit=crop" alt="Marine Sensors">
+                                    <img src="images/img/marin sensor.png" alt="Marine Sensors">
                                     <div class="zoom-button">
-                                        <a class="lightbox-image" data-fancybox="gallery" href="https://images.unsplash.com/photo-1518770660439-4636190af475">
+                                        <a class="lightbox-image" data-fancybox="gallery" href="images/img/marin sensor.png">
                                             <i class="flaticon-plus"></i>
                                         </a>
                                     </div>
@@ -1792,7 +1839,7 @@
                                                 <a href="#contact"><span class="fa fa-arrow-circle-o-right"></span>Inquire</a>
                                             </div>
                                             <div class="icon">
-                                                <a class="lightbox-image" data-fancybox="gallery" href="https://images.unsplash.com/photo-1518770660439-4636190af475">
+                                                <a class="lightbox-image" data-fancybox="gallery" href="images/img/marin sensor.png">
                                                     <i class="flaticon-plus"></i>
                                                 </a>
                                             </div> 
@@ -1806,9 +1853,9 @@
                         <div class="single-project-style1 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400&h=540&fit=crop" alt="Underwater Robotics">
+                                    <img src="images/img/underwater.png" alt="Underwater Robotics">
                                     <div class="zoom-button">
-                                        <a class="lightbox-image" data-fancybox="gallery" href="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+                                        <a class="lightbox-image" data-fancybox="gallery" href="images/img/underwater.png">
                                             <i class="flaticon-plus"></i>
                                         </a>
                                     </div>
@@ -1834,7 +1881,7 @@
                                                 <a href="#contact"><span class="fa fa-arrow-circle-o-right"></span>Inquire</a>
                                             </div>
                                             <div class="icon">
-                                                <a class="lightbox-image" data-fancybox="gallery" href="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+                                                <a class="lightbox-image" data-fancybox="gallery" href="images/img/underwater.png">
                                                     <i class="flaticon-plus"></i>
                                                 </a>
                                             </div> 
@@ -1848,9 +1895,9 @@
                         <div class="single-project-style1 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                             <div class="img-holder">
                                 <div class="inner">
-                                    <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=400&h=540&fit=crop" alt="Offshore Installations">
+                                    <img src="images/img/Offshore Installations.png" alt="Offshore Installations">
                                     <div class="zoom-button">
-                                        <a class="lightbox-image" data-fancybox="gallery" href="https://images.unsplash.com/photo-1544816155-12df9643f363">
+                                        <a class="lightbox-image" data-fancybox="gallery" href="images/img/Offshore Installations.png">
                                             <i class="flaticon-plus"></i>
                                         </a>
                                     </div>
@@ -1876,7 +1923,7 @@
                                                 <a href="#contact"><span class="fa fa-arrow-circle-o-right"></span>Inquire</a>
                                             </div>
                                             <div class="icon">
-                                                <a class="lightbox-image" data-fancybox="gallery" href="https://images.unsplash.com/photo-1544816155-12df9643f363">
+                                                <a class="lightbox-image" data-fancybox="gallery" href="images/img/Offshore Installations.png">
                                                     <i class="flaticon-plus"></i>
                                                 </a>
                                             </div> 
