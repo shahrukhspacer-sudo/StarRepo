@@ -1130,8 +1130,7 @@
         <div class="container">
             <div class="outer-box clearfix">
                 <div class="header-top-left pull-left">
-                    <a href="https://wa.me/YOUR_NEW_WHATSAPP_NUMBER" target="_blank" class="header-whatsapp-btn">
-                        <i class="fa fa-whatsapp"></i> WhatsApp Us
+<a href="https://wa.me/923002335078" target="_blank" class="header-whatsapp-btn">                        <i class="fa fa-whatsapp"></i> WhatsApp Us
                     </a>
                 </div>
                 
@@ -1251,9 +1250,7 @@
                         </ul>
                     </div>
                     <div class="header-bottom_right__btn">
-                        <a class="btn-one scroll-nav" href="#contact"><span class="txt"><i class="left flaticon-login"></i>Get a Quote</span></a>
-                    </div>  
-                </div> 
+<a class="btn-one scroll-nav" href="#contact"><span class="txt"><i class="left flaticon-login"></i>Get a Quote</span></a>                </div> 
                 
             </div>
         </div>    
@@ -1370,7 +1367,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-12 text-center capabilities-header">
-                <h2 class="capabilities-title">Manufacturing Capabilities</h2>
+                <h2 class="capabilities-title">Precision Manufacturing</h2>
                 <div class="capabilities-bar"></div>
             </div>
         </div>
@@ -1924,9 +1921,10 @@
 <!-- ==========================================================================
      LEVITATING CONTACT FORM AREA - START
      ========================================================================== -->
-<section class="levitating-contact-area" id="contact">
+<!-- LEVITATING CONTACT FORM AREA - START -->
+<section class="levitating-contact-area" id="contact" style="scroll-margin-top: 150px;">
     <div class="container">
-        <div class="levitating-contact-box wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1000ms">
+        <div class="levitating-contact-box wow fadeInUp" id="get-a-quote-form" data-wow-delay="100ms" data-wow-duration="1000ms">
             <div class="left-content">
                 <div class="icon">
                     <span class="flaticon-envelope-1"></span>
@@ -1949,6 +1947,7 @@
     </div>
 </section>
 <!-- LEVITATING CONTACT FORM AREA - END -->
+
 
 <!-- ==========================================================================
      FOOTER SECTION - START
@@ -2202,6 +2201,17 @@
             }
         });
     });
+
+    $('.scroll-nav a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    var target = this.hash;
+    var $target = $(target);
+    if ($target.length) {
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top - 200
+        }, 900, 'swing');
+    }
+});
 </script>
 <!-- SCRIPTS & JS PLUGINS - END -->
 
