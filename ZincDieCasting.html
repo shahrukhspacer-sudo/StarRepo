@@ -495,69 +495,69 @@
             font-weight: 600;
         }
 
-        /* --- SERVICES --- */
+        /* --- SERVICES (UPDATED FIXES) --- */
         .service-clean-card {
             background: #ffffff;
             border-radius: 8px;
             overflow: hidden;
             height: 100%;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border: 1px solid transparent;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
             display: flex;
             flex-direction: column;
         }
         .service-clean-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            border-color: #f1f5f9;
+            border-color: var(--theme-blue);
+        }
+        .service-clean-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
         }
         .service-clean-body {
-            padding: 26px;
+            padding: 24px 24px 15px 24px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        .service-no-image .service-clean-body {
-            justify-content: center;
-            min-height: 250px;
-        }
         .service-clean-body h4 {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 800;
             color: var(--theme-blue);
             margin: 0 0 12px 0;
-            text-align: center;
+            text-align: left;
         }
         .service-clean-body p {
             color: #64748b;
             font-size: 14px;
-            line-height: 1.75;
-            margin: 0 0 20px 0;
-            text-align: center;
-        }
-        .service-clean-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
+            line-height: 1.7;
+            margin: 0;
+            text-align: left;
         }
         .service-btn-container {
              text-align: center;
-             padding-bottom: 26px;
+             padding: 15px 24px 25px 24px;
+             margin-top: auto;
         }
         .btn-learn {
             background: var(--theme-blue);
-            color: #fff !important;
-            padding: 8px 22px;
-            font-size: 12.5px;
+            color: #ffffff !important;
+            padding: 10px 24px;
+            font-size: 13px;
             font-weight: 700;
             border-radius: 4px;
             text-decoration: none;
             display: inline-block;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
-        .btn-learn:hover { background: var(--theme-red); }
+        .btn-learn:hover { 
+            background: var(--theme-red); 
+            box-shadow: 0 4px 12px rgba(227, 24, 32, 0.25);
+        }
 
         /* --- MATERIALS --- */
         .materials-grid {
@@ -1061,7 +1061,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="process-img-box">
-                        <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=800&h=500&fit=crop" alt="Zinc Die Casting Machine">
+                        <img src="images/img/aluminum-die-casting.gif" alt="Zinc Die Casting Machine">
                     </div>
                 </div>
             </div>
@@ -1072,7 +1072,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <div class="advantages-img">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800&h=600&fit=crop" alt="Zinc die cast electronics housing">
+                        <img src="images/img/4-.jpg.png" alt="Zinc die cast electronics housing">
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -1129,7 +1129,7 @@
                     </div>
                     <div class="col-lg-6 position-relative">
                          <div class="capabilities-img">
-                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&h=500&fit=crop" alt="Our Die Casting Shop">
+                            <img src="images/img/Die.png" alt="Our Die Casting Shop">
                          </div>
                     </div>
                 </div>
@@ -1218,66 +1218,69 @@
             </div>
         </section>
 
-        <!-- 5: OUR CNC SERVICES (Updated Layout) -->
+        <!-- 5: OUR CNC SERVICES (FIXED SECTION) -->
         <section class="content-section" id="services">
             <h2 class="center-heading">Our CNC Services</h2>
             <div class="row">
-                <!-- Custom Die Casting (With Image) -->
+                <!-- Custom Die Casting -->
                 <div class="col-md-6 mb-4">
                     <div class="service-clean-card">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=600&h=300&fit=crop" class="service-clean-img" alt="Custom Die Casting Service">
                         <div class="service-clean-body">
                             <h4>Custom Die Casting Service</h4>
-                            <p>Discover precision in manufacturing with die casting, creating intricate and accurate parts. Our custom service brings your ideas to life across industries like automotive, aerospace, and medical. Rooted in excellence, we prioritize customization for each unique project. Our expert team collaborates closely, handling every detail from design to production, ensuring the highest quality outcome.</p>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=600&h=300&fit=crop" class="service-clean-img" alt="Custom Die Casting Service">
-                        <div class="service-btn-container">
-                            <a href="index.html#contact" class="btn-learn">Learn more ></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Aluminum Die Casting (With Image) -->
-                <div class="col-md-6 mb-4">
-                    <div class="service-clean-card">
-                        <div class="service-clean-body">
-                            <h4>Aluminum Die Casting Service</h4>
-                            <p>For aluminum and other alloys with higher melting points, the cold chamber die casting process is used. In this method, the molten metal is ladled into a separate chamber, and then a hydraulic piston injects it into the die. The use of a separate chamber keeps the molten metal away from the machine's plunger and nozzle, which prevents exposure to high temperatures that could damage those components.</p>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=300&fit=crop" class="service-clean-img" alt="Aluminum Die Casting Service">
-                         <div class="service-btn-container">
-                            <a href="index.html#contact" class="btn-learn">Learn more ></a>
-                        </div>
-                    </div>
-                </div>
-                
-                 <!-- Trimming (No Image) -->
-                <div class="col-md-6 mb-4">
-                    <div class="service-clean-card service-no-image">
-                        <div class="service-clean-body">
-                            <h4>Trimming, Deburring & Machining</h4>
-                            <p>After casting, excess material and sharp edges are removed to achieve the desired shape and enhance safety. Additional machining operations, like drilling, tapping, and milling, may be conducted for precise dimensions and features.</p>
+                            <p>Discover precision in manufacturing with die casting, creating intricate and accurate parts. Our custom service brings your ideas to life across industries like automotive, aerospace, and medical. Rooted in excellence, we prioritize customization for each unique project.</p>
                         </div>
                         <div class="service-btn-container">
-                            <a href="index.html#contact" class="btn-learn">Learn more ></a>
+                            <a href="index.html#contact" class="btn-learn">Learn More &gt;</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Surface Finishing (No Image) -->
-                 <div class="col-md-6 mb-4">
-                    <div class="service-clean-card service-no-image">
+                <!-- Aluminum Die Casting -->
+                <div class="col-md-6 mb-4">
+                    <div class="service-clean-card">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=300&fit=crop" class="service-clean-img" alt="Aluminum Die Casting Service">
                         <div class="service-clean-body">
-                            <h4>Surface Finishing</h4>
-                            <p>Applying various surface treatments to improve aesthetics and protect against corrosion. This includes processes like polishing, buffing, shot blasting, and sanding.</p>
+                            <h4>Aluminum Die Casting Service</h4>
+                            <p>For aluminum and other alloys with higher melting points, the cold chamber die casting process is used. In this method, the molten metal is ladled into a separate chamber, and then a hydraulic piston injects it into the die safely.</p>
                         </div>
                         <div class="service-btn-container">
-                            <a href="index.html#contact" class="btn-learn">Learn more ></a>
+                            <a href="index.html#contact" class="btn-learn">Learn More &gt;</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trimming & Deburring -->
+                <div class="col-md-6 mb-4">
+                    <div class="service-clean-card">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=300&fit=crop" class="service-clean-img" alt="Trimming & Machining">
+                        <div class="service-clean-body">
+                            <h4>Trimming, Deburring & Machining</h4>
+                            <p>After casting, excess material and sharp edges are removed to achieve the desired shape and enhance safety. Additional machining operations, like drilling, tapping, and milling, may be conducted for precise dimensions.</p>
+                        </div>
+                        <div class="service-btn-container">
+                            <a href="index.html#contact" class="btn-learn">Learn More &gt;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Surface Finishing -->
+                <div class="col-md-6 mb-4">
+                    <div class="service-clean-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=300&fit=crop" class="service-clean-img" alt="Surface Finishing">
+                        <div class="service-clean-body">
+                            <h4>Surface Finishing</h4>
+                            <p>Applying various surface treatments to improve aesthetics and protect against corrosion. This includes processes like polishing, buffing, shot blasting, and sanding to meet specified customer needs.</p>
+                        </div>
+                        <div class="service-btn-container">
+                            <a href="index.html#contact" class="btn-learn">Learn More &gt;</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-             <!-- 4: MATERIALS WITH HOVER EFFECT (LOCAL IMAGES MATCHING SCREENSHOT) -->
+        <!-- 6: MATERIALS -->
         <section class="content-section" id="materials">
             <span class="section-badge">Materials</span>
             <h2 class="section-heading-main">Wide Material Availability</h2>
@@ -1285,7 +1288,6 @@
                 Star Engineering Works is able to machine components in a wide range of materials. These include metals as well as plastics. It is suitable for both prototyping as well as large-batch manufacturing. When it comes to machining parts, there are a lot of variables. Star Engineering Works can help you determine the best way to have your parts made. From one part to one million, find out how we can help when you upload your CAD files for a free quotation today.
             </p>
             <div class="materials-grid">
-                
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
                         <img src="images/img/Aluminum.png" alt="Aluminum">
@@ -1334,7 +1336,6 @@
                     </div>
                     <h5>Others</h5>
                 </div>
-
             </div>
         </section>
 
@@ -1407,7 +1408,6 @@
             <h2 class="center-heading">Other Services</h2>
             
             <div class="slider-wrapper-rel">
-                <!-- Controls -->
                 <button class="slider-arrow-btn slider-arrow-left" onclick="slideOtherServices(-1)" aria-label="Previous">
                     <i class="fa fa-chevron-left"></i>
                 </button>
@@ -1415,43 +1415,30 @@
                     <i class="fa fa-chevron-right"></i>
                 </button>
 
-                <!-- Slider Track -->
                 <div class="other-services-slider" id="otherServicesSlider">
-                    <!-- Slide 1 -->
                     <div class="other-slide-item">
-                        <div class="other-icon-wrap">
-                            <i class="fa fa-cog"></i>
-                        </div>
+                        <div class="other-icon-wrap"><i class="fa fa-cog"></i></div>
                         <h4>CNC Milling</h4>
-                        <p>Using our imported 3, 4, and 5-axis CNC machining centers, our skilled machinists can make CNC milled</p>
-                        <a href="index.html#contact" class="btn-learn">Learn more</a>
+                        <p>Using our imported 3, 4, and 5-axis CNC machining centers, our skilled machinists can make CNC milled parts.</p>
+                        <a href="index.html#contact" class="btn-learn">Learn More</a>
                     </div>
-                    <!-- Slide 2 -->
                     <div class="other-slide-item">
-                        <div class="other-icon-wrap">
-                            <i class="fa fa-wrench"></i>
-                        </div>
+                        <div class="other-icon-wrap"><i class="fa fa-wrench"></i></div>
                         <h4>CNC Turning</h4>
-                        <p>Capable of precisely machining and turning parts up to 20 inches in length, and tight tolerances of ±0.0002</p>
-                        <a href="index.html#contact" class="btn-learn">Learn more</a>
+                        <p>Capable of precisely machining and turning parts up to 20 inches in length, and tight tolerances of ±0.0002.</p>
+                        <a href="index.html#contact" class="btn-learn">Learn More</a>
                     </div>
-                    <!-- Slide 3 -->
                     <div class="other-slide-item">
-                        <div class="other-icon-wrap">
-                            <i class="fa fa-cubes"></i>
-                        </div>
+                        <div class="other-icon-wrap"><i class="fa fa-cubes"></i></div>
                         <h4>Swiss Turning</h4>
                         <p>Swiss turning excels in precision for small and long, slender parts, typically ranging from 150mm to 450mm.</p>
-                        <a href="index.html#contact" class="btn-learn">Learn more</a>
+                        <a href="index.html#contact" class="btn-learn">Learn More</a>
                     </div>
-                    <!-- Slide 4 -->
                     <div class="other-slide-item">
-                        <div class="other-icon-wrap">
-                            <i class="fa fa-bar-chart"></i>
-                        </div>
+                        <div class="other-icon-wrap"><i class="fa fa-bar-chart"></i></div>
                         <h4>5 Axis Machining</h4>
-                        <p>Integrate drilling, milling, contouring, and precision machining into one setup to minimize part handling</p>
-                        <a href="index.html#contact" class="btn-learn">Learn more</a>
+                        <p>Integrate drilling, milling, contouring, and precision machining into one setup to minimize part handling.</p>
+                        <a href="index.html#contact" class="btn-learn">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1508,13 +1495,10 @@
     </div>
 </main>
 
-<!-- ==========================================================================
-     FOOTER SECTION - START
-     ========================================================================== -->
+<!-- FOOTER SECTION -->
 <footer class="footer-area">
     <div class="container">
         <div class="row">
-            <!-- Footer Logo & Info -->
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
                 <div class="single-footer-widget">
                     <div class="our-company-info">
@@ -1537,7 +1521,6 @@
             
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
                 <div class="row">
-                    <!-- Core Capacities Links -->
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="single-footer-widget">
                             <div class="title">
@@ -1554,7 +1537,6 @@
                         </div>
                     </div>
 
-                    <!-- Quick Links -->
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="single-footer-widget">
                             <div class="title">
@@ -1572,7 +1554,6 @@
                         </div>
                     </div>
 
-                    <!-- Contact Info -->
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="single-footer-widget">
                             <div class="title">
@@ -1600,7 +1581,6 @@
                                     </li>
                                 </ul>
 
-                                <!-- Live Embedded Google Map -->
                                 <div class="footer-map-wrapper">
                                     <iframe 
                                         title="Star Engineering Works Location"
@@ -1612,13 +1592,11 @@
                                 <a href="https://maps.google.com/?cid=11563172088824159762" target="_blank" class="footer-map-btn">
                                     <i class="fa fa-map-marker"></i> Open in Google Maps
                                 </a>
-
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Footer Bottom Row -->
                 <div class="footer-bottom">
                     <div class="copyright-text">
                         <p>&copy; 2026 <a href="#">Star Engineering Works.</a> All rights reserved.</p>
@@ -1636,10 +1614,8 @@
         </div>
     </div>
 </footer>   
-<!-- FOOTER SECTION - END -->
 
 <script>
-    // Smooth scrolling for sticky pill navigation
     document.querySelectorAll('.pill-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -1655,7 +1631,6 @@
         });
     });
 
-    // Slider Scroll Function for Other Services
     function slideOtherServices(direction) {
         const slider = document.getElementById('otherServicesSlider');
         const scrollAmount = 300; 
