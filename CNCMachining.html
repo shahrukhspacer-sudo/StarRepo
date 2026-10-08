@@ -787,13 +787,68 @@
         .footer-menu-style1 ul { display: flex; list-style: none; padding: 0; margin: 0; gap: 20px; }
         .footer-menu-style1 ul li a { color: #64748b; font-size: 14px; text-decoration: none; transition: 0.3s; }
         .footer-menu-style1 ul li a:hover { color: var(--theme-red); }
+        <style>
+/* --- MOBILE & MEGA MENU STYLES --- */
+@media only screen and (max-width: 991px) {
+    /* Sticky Header Fix */
+    .sticky-header, .sticky-header.stricky-fixed {
+        height: 65px !important;
+        min-height: 65px !important;
+    }
+    .sticky-header .clearfix {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+    }
+    .sticky-header .logo img {
+        max-width: 120px !important;
+        height: auto !important;
+    }
+
+    /* Mobile Mega Menu Inside Drawer */
+    .mobile-menu .mega-menu {
+        display: none;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #1a1a1a;
+        padding: 10px 15px;
+        box-shadow: none;
+    }
+    .mobile-menu .mega-menu-item.active > .mega-menu {
+        display: block !important;
+    }
+    .mobile-menu .mega-title {
+        color: #fca311;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 3px;
+    }
+    .mobile-menu .mega-list {
+        padding-left: 10px;
+        list-style: none;
+    }
+    .mobile-menu .mega-list li a {
+        color: #dddddd !important;
+        font-size: 13px !important;
+        display: block;
+        padding: 5px 0;
+    }
+}
+</style>
     </style>
 </head>
 
 <body>
 
 <!-- 1. Top Bar -->
-<div class="header-top">
+<!-- <div class="header-top">
     <div class="container">
         <div class="outer-box">
             <div class="header-top-left">
@@ -820,7 +875,7 @@
             </div>
         </div>    
     </div>   
-</div>
+</div> -->
 
 <!-- 2. Brand Bar -->
 <div class="header">
@@ -862,19 +917,53 @@
     </div>    
 </div>
 
-<!-- 3. Exact Matched Menu Bar (Height 60px) -->
+<!-- 3. Exact Matched Menu Bar with Mega Menu (Height 60px) -->
 <div class="header-bottom">
     <div class="container">
         <div class="outer-box">
             <div class="header-bottom_left">
                 <nav class="main-menu">
-                    <ul class="navigation">
+                    <ul class="navigation clearfix">
                         <li class="home-li">
                             <a class="home" href="index.html#home" title="Home">
                                 <span class="flaticon-home home_icon"></span>
                             </a>
                         </li>
-                        <li class="current"><a href="index.html#capabilities">Capabilities</a></li>
+                        
+                        <!-- Capabilities with Full Mega Menu Dropdown -->
+                        <li class="dropdown mega-menu-item current">
+                            <a href="index.html#capabilities">Capabilities</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-6">
+                                            <h4 class="mega-title">Machining Services</h4>
+                                            <ul class="mega-list">
+                                                <li><a href="CNCMachining.html">CNC Machining</a></li>
+                                                <li><a href="cncmilling.html">CNC Milling</a></li>
+                                                <li><a href="cncturning.html">CNC Turning</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <h4 class="mega-title">Manufacturing</h4>
+                                            <ul class="mega-list">
+                                                <li><a href="sheetmetal.html">Sheet Metal Fabrication</a></li>
+                                                <li><a href="injectionmolding.html">Injection Molding</a></li>
+                                                <li><a href="3dprinting.html">3D Printing</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <h4 class="mega-title">Finishing</h4>
+                                            <ul class="mega-list">
+                                                <li><a href="surfacefinishing.html">Surface Finishing</a></li>
+                                                <li><a href="rapidprototyping.html">Rapid Prototyping</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
                         <li><a href="index.html#about">About us</a></li>
                         <li><a href="index.html#services">Core Capacities</a></li>
                         <li><a href="index.html#products">Products</a></li>
@@ -883,6 +972,7 @@
                     </ul>
                 </nav>                        
             </div>
+
             <div class="header-bottom_right">
                 <div class="outer-search-box-style1">
                     <span class="flaticon-magnifiying-glass seach-toggle"></span>
@@ -894,7 +984,6 @@
         </div>
     </div>    
 </div>
-
 <!-- 4. Hero Section -->
 <section class="fullwidth-hero">
     <div class="container">
@@ -1432,6 +1521,28 @@
             behavior: 'smooth'
         });
     }
+
+    
+jQuery(document).ready(function($) {
+    // 1. Desktop Nav ko Mobile Drawer mein copy karna
+    if ($('.main-header .navigation').length && $('.mobile-menu .menu-outer').length) {
+        $('.mobile-menu .menu-outer').html($('.main-header .navigation').html());
+    }
+
+    // 2. Mobile Dropdown Toggle Button inject karna
+    $('.mobile-menu .navigation li.dropdown').append('<div class="dropdown-btn"><span class="fa fa-angle-down"></span></div>');
+
+    // 3. Sub-menu / Mega menu click par open/close toggle
+    $(document).on('click', '.mobile-menu .dropdown-btn, .mobile-menu .mega-menu-item > a', function(e) {
+        var $parent = $(this).closest('li');
+        if ($parent.find('.mega-menu').length || $parent.find('ul').length) {
+            e.preventDefault();
+            $parent.toggleClass('active');
+            $parent.children('.mega-menu, ul').slideToggle(300);
+        }
+    });
+});
+
 </script>
 
 </body>
