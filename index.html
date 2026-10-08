@@ -715,6 +715,8 @@
     .mega-list li a { color: #cccccc !important; font-size: 14px !important; }
     .mega-footer { color: #ffffff; border-top-color: rgba(255,255,255,0.1); }
 }
+
+
    </style>
 
     <!-- Fixing Internet Explorer-->
@@ -1619,16 +1621,33 @@
                     <span class="flaticon-envelope-1"></span>
                 </div>
                 <div class="text-box">
-                    <h2>Request a Quote</h2>
+                    <h2>Let's discuss your project</h2>
                     <p>Get in touch with Star Engineering experts today</p>
                 </div>
             </div>
             <div class="right-form">
-                <form class="levitating-contact-form" action="mailto:starengg@hotmail.com" method="post" enctype="text/plain">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Email Address" required>
-                    <input type="text" name="phone" placeholder="Phone No.">
-                    <textarea name="description" placeholder="Project Description / Details" rows="3"></textarea>
+                <!-- Added enctype="multipart/form-data" for file upload support -->
+                <form class="levitating-contact-form" action="mailto:starengg@hotmail.com" method="post" enctype="multipart/form-data">
+                    
+                    <input type="text" name="Company_Name" placeholder="Company Name *" required>
+                    <input type="email" name="Email" placeholder="Email *" required>
+                    
+                    <input type="text" name="Country" placeholder="Country *" required>
+                    <input type="text" name="Phone" placeholder="Phone">
+                    
+                    <input type="text" name="Your_Name" placeholder="Your Name *" required>
+                    <input type="text" name="Industry" placeholder="Industry">
+                    
+                    <input type="text" name="Order_Quantity" placeholder="Order Quantity *" required>
+                    <input type="text" name="Materials" placeholder="Materials *" required>
+                    
+                    <div style="flex: 1 1 100%; text-align: left; margin-top: 5px;">
+                        <label style="color: #666; font-size: 14px; margin-bottom: 8px; display: block;">Upload Your 3D Files (STP, STEP, X_T, IGS, SLDPRT, PDF, DXF, DWG, ZIP, RAR ) *</label>
+                        <input type="file" name="3D_Files" required accept=".stp,.step,.x_t,.igs,.sldprt,.pdf,.dxf,.dwg,.zip,.rar" style="height: auto; padding: 12px 20px; cursor: pointer; border: 1px dashed #ccc; background: #f9f9f9;">
+                    </div>
+                    
+                    <textarea name="Project_Details" placeholder="Project Details (include color, surface finish, etc.)" rows="3"></textarea>
+                    
                     <button type="submit">Submit <i class="fa fa-sign-in" style="margin-left:5px;"></i></button>
                 </form>
             </div>
