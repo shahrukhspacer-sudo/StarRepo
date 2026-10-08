@@ -630,6 +630,16 @@
         justify-content: flex-end !important;
     }
 }
+@media only screen and (max-width: 991px) {
+    /* Mobile view mein sticky header ke andar se desktop menu ko hide karna */
+    .sticky-header .right-col,
+    .sticky-header .main-menu {
+        display: none !important;
+    }
+    
+    /* Optional: Agar mobile par sticky header poora hi hide karna ho toh isay use karo */
+    /* .sticky-header.stricky-fixed { display: none !important; } */
+}
    
    </style>
 
