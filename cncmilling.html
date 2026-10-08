@@ -30,68 +30,6 @@
             overflow-x: hidden;
         }
 
-        /* --- 1. TOP BAR --- */
-        .header-top {
-            background: #ffffff;
-            border-bottom: 1px solid #f1f5f9;
-            padding: 10px 0;
-            font-size: 13px;
-        }
-        .header-top .outer-box {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .header-whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            background-color: var(--theme-red);
-            color: #ffffff !important;
-            padding: 6px 15px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 14px;
-            text-decoration: none;
-            gap: 6px;
-        }
-        .header-whatsapp-btn:hover { background-color: var(--theme-blue); }
-        .header-top-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .header-menu-1 ul {
-            display: flex;
-            gap: 15px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .header-menu-1 ul li a {
-            color: #64748b;
-            text-decoration: none;
-            font-size: 13px;
-        }
-        .header-social-link-1 ul {
-            display: flex;
-            gap: 8px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .header-social-link-1 ul li a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background: #f1f5f9;
-            color: #475569;
-            font-size: 12px;
-            text-decoration: none;
-        }
-
         /* --- 2. BRAND BAR --- */
         .header {
             padding: 20px 0;
@@ -205,7 +143,7 @@
             justify-content: center !important;
             border: none !important;
         }
-        .main-menu .navigation > li > a.home .home_icon {
+        .main-menu .navigation > li > a.home .home_icon, .main-menu .navigation > li > a.home i {
             font-size: 18px !important;
             color: #ffffff !important;
         }
@@ -227,6 +165,49 @@
             font-weight: 700 !important;
             border-radius: 4px !important;
             text-decoration: none !important;
+            gap: 6px;
+        }
+
+        /* --- MEGA MENU STYLING (WIDE LAYOUT & RED ICONS) --- */
+        .header-bottom .container { position: relative !important; }
+        .header-bottom .outer-box, .nav-outer.style1, .main-menu.style1, .main-menu .navigation, .main-menu .navigation > li.mega-menu-item { position: static !important; }
+
+        .mega-menu {
+            position: absolute; 
+            top: 100%; left: 15px; right: 15px; 
+            width: auto; background: #ffffff;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15); 
+            padding: 40px 40px 30px 40px;
+            opacity: 0; visibility: hidden; 
+            transform: translateY(15px); transition: all 0.4s ease; 
+            z-index: 100; border-top: 3px solid var(--theme-red);
+            border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;
+        }
+        @media (min-width: 992px) {
+            .main-menu .navigation > li.mega-menu-item:hover .mega-menu {
+                opacity: 1; visibility: visible; transform: translateY(0);
+            }
+        }
+        .mega-title { font-size: 15px; font-weight: 800; color: #1a1e36; margin-bottom: 25px; text-transform: uppercase; display: flex; align-items: flex-start; justify-content: space-between; border-bottom: 1px solid #eaeaea; padding-bottom: 15px; line-height: 1.3; }
+        .mega-title span { display: inline-block; }
+        .mega-title i { color: var(--theme-red); font-size: 26px; line-height: 1; }
+        .mega-list { list-style: none; padding: 0; margin: 0; }
+        .mega-list li { margin-bottom: 15px; }
+        .mega-list li a { color: #555555 !important; font-size: 14px !important; font-weight: 500 !important; text-transform: none !important; line-height: 1.5 !important; padding: 0 !important; height: auto !important; transition: all 0.3s ease; }
+        .mega-list li a:hover { color: var(--theme-red) !important; padding-left: 5px !important; }
+        .mega-footer { width: 100%; text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eaeaea; font-weight: 600; color: #555555; font-size: 16px; }
+
+        /* --- MOBILE MEGA MENU FIXES --- */
+        @media only screen and (max-width: 991px) {
+            .mega-menu {
+                position: relative; top: 0; left: 0; right: 0; width: 100%; transform: none; visibility: visible; opacity: 1;
+                background: rgba(255,255,255,0.05); padding: 15px; box-shadow: none; border-top: none;
+                display: none; border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+            }
+            .mega-menu-item.active .mega-menu { display: block; }
+            .mega-title { color: #222; border-bottom-color: #eee; margin-top: 15px; font-size: 14px; }
+            .mega-list li a { color: #555 !important; font-size: 14px !important; }
+            .mega-footer { color: #222; border-top-color: #eee; }
         }
 
         /* --- 4. HERO SECTION --- */
@@ -934,42 +915,24 @@
         .footer-menu-style1 ul { display: flex; list-style: none; padding: 0; margin: 0; gap: 20px; }
         .footer-menu-style1 ul li a { color: #64748b; font-size: 14px; text-decoration: none; transition: 0.3s; }
         .footer-menu-style1 ul li a:hover { color: var(--theme-red); }
+        /* --- HIDE CONTACT INFO & CENTER LOGO ON MOBILE --- */
+@media only screen and (max-width: 991px) {
+    .header-contact-info {
+        display: none !important; /* Mobile par numbers aur address hide karega */
+    }
+    .header-left {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important; /* Mobile par logo ko center karega */
+        margin-bottom: 0 !important;
+    }
+}
     </style>
 </head>
 
 <body>
 
-<!-- 1. Top Bar -->
-<div class="header-top">
-    <div class="container">
-        <div class="outer-box">
-            <div class="header-top-left">
-                <a href="https://wa.me/922135888950" target="_blank" class="header-whatsapp-btn">
-                    <i class="fa fa-whatsapp"></i> WhatsApp Us
-                </a>
-            </div>
-            <div class="header-top-right">
-                <div class="header-menu-1">
-                    <ul>
-                        <li><a href="#">Investors</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Downloads</a></li>
-                    </ul>  
-                </div>
-                <div class="header-social-link-1">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                    </ul>
-                </div>      
-            </div>
-        </div>    
-    </div>   
-</div>
-
-<!-- 2. Brand Bar -->
+<!-- 1. Brand Bar -->
 <div class="header">
     <div class="container">
         <div class="outer-box">
@@ -1009,35 +972,98 @@
     </div>    
 </div>
 
-<!-- 3. Exact Matched Menu Bar (Height 60px) -->
+<!-- 2. Menu Bar with Mega Menu -->
 <div class="header-bottom">
     <div class="container">
-        <div class="outer-box">
+        <div class="outer-box clearfix">
+
             <div class="header-bottom_left">
-                <nav class="main-menu">
-                    <ul class="navigation">
-                        <li class="home-li">
-                            <a class="home" href="index.html#home" title="Home">
-                                <span class="flaticon-home home_icon"></span>
-                            </a>
-                        </li>
-                        <li class="current"><a href="index.html#capabilities">Capabilities</a></li>
-                        <li><a href="index.html#about">About us</a></li>
-                        <li><a href="index.html#services">Core Capacities</a></li>
-                        <li><a href="index.html#products">Products</a></li>
-                        <li><a href="index.html#whyus">Why Us</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </nav>                        
+                <div class="nav-outer style1 clearfix">
+                    <div class="mobile-nav-toggler">
+                        <div class="inner">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </div>
+                    </div>
+                    <nav class="main-menu style1 navbar-expand-md navbar-light">
+                        <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                            <ul class="navigation clearfix scroll-nav">
+                                <li class="home-li">
+                                    <a class="home" href="index.html#home" title="Home">
+                                        <i class="fa fa-home"></i>
+                                    </a>
+                                </li>
+                                <li><a href="index.html#capabilities">Capabilities</a></li>
+                                <li><a href="index.html#about">About us</a></li>
+                                <li><a href="index.html#services">Core Capacities</a></li>
+                                
+                                <!-- UPDATED MEGA MENU START -->
+                                <li class="mega-menu-item">
+                                    <a href="javascript:void(0);">Manufacturing <i class="fa fa-angle-down" style="margin-left: 5px;"></i></a>
+                                    <div class="mega-menu">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                                <h4 class="mega-title"><span>CNC MACHINING<br>SERVICE</span> <i class="fa fa-cogs"></i></h4>
+                                                <ul class="mega-list">
+                                                    <li><a href="CNCMachining.html">CNC Machining</a></li>
+                                                    <li><a href="CNCTurning.html">CNC Turning</a></li>
+                                                    <li><a href="cncmilling.html">CNC Milling</a></li>
+                                                    <li><a href="SwissMachining.html">Swiss Machining</a></li>
+                                                    <li><a href="#">5 Axis Machining</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                                <h4 class="mega-title"><span>DIE CASTING<br>SERVICE</span> <i class="fa fa-tint"></i></h4>
+                                                <ul class="mega-list">
+                                                    <li><a href="#">Custom Die Casting</a></li>
+                                                    <li><a href="#">Aluminum Die Casting</a></li>
+                                                    <li><a href="ZincDieCasting.html">Zinc Die Casting</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                                <h4 class="mega-title"><span>METAL PART<br>PRODUCTION</span> <i class="fa fa-industry"></i></h4>
+                                                <ul class="mega-list">
+                                                    <li><a href="#">Machined Aluminum Parts</a></li>
+                                                    <li><a href="#">Machined Stainless Steel Parts</a></li>
+                                                    <li><a href="#">Machined Brass Parts</a></li>
+                                                    <li><a href="#">Machined Copper Parts</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                                <h4 class="mega-title"><span>RAPID<br>PROTOTYPING</span> <i class="fa fa-cube"></i></h4>
+                                                <ul class="mega-list">
+                                                    <li><a href="PrototypePreproduction.html">Prototype and Preproduction</a></li>
+                                                    <li><a href="#">High-volume Production</a></li>
+                                                    <li><a href="LowVolumeProduction.html">Low-volume Production</a></li>
+                                                    <li><a href="#">Plastic Part Production</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="mega-footer">
+                                            CNC Machining Metal & Plastic Parts
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- UPDATED MEGA MENU END -->
+                                
+                                <li><a href="index.html#whyus">Why Us</a></li>
+                                <li><a href="index.html#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>                        
+                </div>  
             </div>
+            
             <div class="header-bottom_right">
                 <div class="outer-search-box-style1">
-                    <span class="flaticon-magnifiying-glass seach-toggle"></span>
+                    <div class="seach-toggle"><span class="flaticon-magnifiying-glass"></span></div>
                 </div>
                 <div class="header-bottom_right__btn">
-                    <a class="btn-one" href="index.html#contact"><i class="flaticon-login"></i>Get a Quote</a>
-                </div>  
-            </div> 
+                    <a class="btn-one scroll-nav" href="index.html#contact"><span class="txt"><i class="left flaticon-login"></i>Get a Quote</span></a>
+                </div> 
+            </div>
+            
         </div>
     </div>    
 </div>
@@ -1182,7 +1208,7 @@
                     </div>
                     <div class="advantage-item">
                         <div class="advantage-item-header"><i class="fa fa-chevron-right"></i> Consistent Surface Finish</div>
-                        <p>CNC milling can achieve consistent and high-quality surface finishes, improving the appearance and functionality of components.</p>
+                        <p>CNC milling can achieve consistent surface finishes, improving the appearance and functionality of components.</p>
                     </div>
                 </div>
             </div>
@@ -1707,6 +1733,19 @@
             behavior: 'smooth'
         });
     }
+
+    // Mobile Mega Menu Toggle (Vanilla JS)
+    document.addEventListener('DOMContentLoaded', function() {
+        var megaMenuItems = document.querySelectorAll('.mega-menu-item > a');
+        megaMenuItems.forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                if (window.innerWidth < 992) {
+                    e.preventDefault(); // Rokne ke liye taake page refresh na ho
+                    this.parentElement.classList.toggle('active'); // Menu ko open/close karega
+                }
+            });
+        });
+    });
 </script>
 
 </body>

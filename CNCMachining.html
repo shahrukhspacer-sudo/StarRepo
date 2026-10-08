@@ -765,6 +765,18 @@
         .footer-menu-style1 ul { display: flex; list-style: none; padding: 0; margin: 0; gap: 20px; }
         .footer-menu-style1 ul li a { color: #64748b; font-size: 14px; text-decoration: none; transition: 0.3s; }
         .footer-menu-style1 ul li a:hover { color: var(--theme-red); }
+        /* --- HIDE CONTACT INFO & CENTER LOGO ON MOBILE --- */
+@media only screen and (max-width: 991px) {
+    .header-contact-info {
+        display: none !important; /* Mobile par numbers aur address hide karega */
+    }
+    .header-left {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important; /* Mobile par logo ko center karega */
+        margin-bottom: 0 !important;
+    }
+}
     </style>
 </head>
 
