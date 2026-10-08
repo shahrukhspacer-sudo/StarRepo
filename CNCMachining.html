@@ -17,7 +17,6 @@
             --theme-blue-dark: #191c52;
             --border-clr: #f1f5f9;
             --bg-light: #f8fafc;
-            --cyan-hover: #22d3d6; /* Added for hover effect */
         }
 
         * { box-sizing: border-box; }
@@ -437,7 +436,7 @@
             display: block;
         }
 
-        /* --- NEW HOVER MATERIALS SECTION --- */
+        /* --- NEW HOVER MATERIALS SECTION (THEME MATCHED) --- */
         .materials-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -503,32 +502,36 @@
             opacity: 1;
             visibility: visible;
         }
+        
+        /* Updated to match Theme Colors (Red/Blue) */
         .opt-title {
-            color: var(--cyan-hover);
-            font-size: 14px;
-            font-weight: 700;
+            color: var(--theme-red); /* Title text will be Red */
+            font-size: 15px;
+            font-weight: 800;
             margin: 0 0 10px 0;
         }
         .opt-text {
-            color: #888888;
-            font-size: 12.5px;
-            line-height: 1.5;
+            color: #555555;
+            font-size: 13px;
+            line-height: 1.6;
             margin: 0 0 15px 0;
+            font-weight: 500;
         }
-        .btn-quote-cyan {
+        .btn-quote-theme {
             display: inline-block;
-            background: var(--cyan-hover);
+            background: var(--theme-red); /* Button background Red */
             color: #ffffff !important;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
-            padding: 8px 14px;
-            border-radius: 3px;
+            padding: 9px 18px;
+            border-radius: 4px;
             text-decoration: none;
             align-self: flex-start;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
         }
-        .btn-quote-cyan:hover {
-            background: #1ab0b3;
+        .btn-quote-theme:hover {
+            background: var(--theme-blue); /* Hover effect Blue */
+            box-shadow: 0 4px 12px rgba(43, 48, 136, 0.2);
         }
 
         /* --- TOLERANCE --- */
@@ -937,7 +940,6 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="process-img-box">
-                        <!-- LOCAL IMAGE PLACED HERE -->
                         <img src="images/img/CncMachine.png" alt="CNC Machining Process Spindle">
                     </div>
                 </div>
@@ -949,7 +951,6 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <div class="advantages-img">
-                        <!-- LOCAL IMAGE PLACED HERE -->
                         <img src="images/img/advantages.jpg" alt="Engineer inspecting CNC CAD drawings">
                     </div>
                 </div>
@@ -997,29 +998,24 @@
         <section class="content-section" id="services">
             <h2 class="center-heading">Our CNC Services</h2>
             <div class="row">
-                <!-- CNC Turning -->
                 <div class="col-md-6 mb-4">
                     <div class="service-clean-card">
                         <div class="service-clean-body">
                             <h4>CNC Turning</h4>
                             <p>CNC turning is the perfect method for crafting deep holes, threaded features, and diverse cylindrical forms with exceptional surface quality. When you require accurately produced components, quick turnarounds, and flexibility in volume, our CNC turning services at Star Engineering Works offer the answer. Discover how we can assist you further.</p>
                         </div>
-                        <!-- LOCAL IMAGE PLACED HERE -->
                         <img src="images/img/Cncturning.png" class="service-clean-img" alt="CNC Turning">
                     </div>
                 </div>
-                <!-- CNC Milling -->
                 <div class="col-md-6 mb-4">
                     <div class="service-clean-card">
                         <div class="service-clean-body">
                             <h4>CNC Milling</h4>
                             <p>CNC milling is utilized to craft intricate prismatic forms and flat surfaces, catering to a diverse range of commercial and industrial products. Multi-axis CNC machines possess the ability to achieve their precision and versatility without relying on fixed tooling. Their design allows them to adapt easily to various tasks and shapes, resulting in high flexibility.</p>
                         </div>
-                        <!-- LOCAL IMAGE PLACED HERE -->
                         <img src="images/img/cnc milling.avif" class="service-clean-img" alt="CNC Milling">
                     </div>
                 </div>
-                <!-- EDM Services -->
                 <div class="col-md-6 mb-4">
                     <div class="service-clean-card">
                         <div class="service-clean-body" style="padding-bottom: 35px;">
@@ -1028,7 +1024,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Surface Finishing -->
                 <div class="col-md-6 mb-4">
                     <div class="service-clean-card">
                         <div class="service-clean-body" style="padding-bottom: 35px;">
@@ -1040,7 +1035,7 @@
             </div>
         </section>
 
-        <!-- 4: MATERIALS WITH HOVER EFFECT -->
+        <!-- 4: MATERIALS WITH HOVER EFFECT (THEME MATCHED) -->
         <section class="content-section" id="materials">
             <span class="section-badge">Materials</span>
             <h2 class="section-heading-main">Wide Material Availability</h2>
@@ -1057,7 +1052,7 @@
                     <div class="mat-hover-overlay">
                         <h6 class="opt-title">Options:</h6>
                         <p class="opt-text">6061, 7075, 5052, 6063, 2024, 7050 etc.</p>
-                        <a href="index.html#contact" class="btn-quote-cyan">Get a Free Quote</a>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
                     </div>
                 </div>
                 
@@ -1069,7 +1064,7 @@
                     <div class="mat-hover-overlay">
                         <h6 class="opt-title">Options:</h6>
                         <p class="opt-text">303, 304, 316, 316L, 304L, 430, 440C, 321, 405, 201, 202, SUS420, SUS416, 17-4PH etc.</p>
-                        <a href="index.html#contact" class="btn-quote-cyan">Get a Free Quote</a>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
                     </div>
                 </div>
                 
@@ -1081,7 +1076,7 @@
                     <div class="mat-hover-overlay">
                         <h6 class="opt-title">Options:</h6>
                         <p class="opt-text">C360, C260, C3604, C38500, C38500 etc.</p>
-                        <a href="index.html#contact" class="btn-quote-cyan">Get a Free Quote</a>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
                     </div>
                 </div>
                 
@@ -1093,7 +1088,7 @@
                     <div class="mat-hover-overlay">
                         <h6 class="opt-title">Options:</h6>
                         <p class="opt-text">C101, C110, Beryllium Copper, Tungsten Copper etc.</p>
-                        <a href="index.html#contact" class="btn-quote-cyan">Get a Free Quote</a>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
                     </div>
                 </div>
                 
@@ -1105,7 +1100,7 @@
                     <div class="mat-hover-overlay">
                         <h6 class="opt-title">Options:</h6>
                         <p class="opt-text">1018, 1045, 4140, 4340, A36, Q235, Carbon Steel etc.</p>
-                        <a href="index.html#contact" class="btn-quote-cyan">Get a Free Quote</a>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
                     </div>
                 </div>
                 
@@ -1117,7 +1112,7 @@
                     <div class="mat-hover-overlay">
                         <h6 class="opt-title">Options:</h6>
                         <p class="opt-text">Grade 2, Grade 5 (Ti-6Al-4V), Grade 23 etc.</p>
-                        <a href="index.html#contact" class="btn-quote-cyan">Get a Free Quote</a>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
                     </div>
                 </div>
                 
@@ -1129,7 +1124,7 @@
                     <div class="mat-hover-overlay">
                         <h6 class="opt-title">Options:</h6>
                         <p class="opt-text">POM, PEEK, ABS, Nylon, Polycarbonate, PTFE, Acrylic etc.</p>
-                        <a href="index.html#contact" class="btn-quote-cyan">Get a Free Quote</a>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
                     </div>
                 </div>
                 
@@ -1141,7 +1136,7 @@
                     <div class="mat-hover-overlay">
                         <h6 class="opt-title">Options:</h6>
                         <p class="opt-text">Magnesium, Custom Alloys, Zinc Alloys, Invar etc.</p>
-                        <a href="index.html#contact" class="btn-quote-cyan">Get a Free Quote</a>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
                     </div>
                 </div>
 
@@ -1196,7 +1191,6 @@
                 </div>
                 <div class="col-lg-5">
                     <div style="text-align: center;">
-                        <!-- LOCAL IMAGE PLACED HERE -->
                         <img src="images/img/dimensional-inspection.png" class="tolerance-img" alt="Dimensional Inspection">
                         <div style="background:#ffffff; box-shadow: 0 4px 18px rgba(0,0,0,0.04); border-radius:8px; padding:16px; margin-top:16px; text-align:left;">
                             <div style="display:flex; align-items:center; gap:10px; color:#10b981; font-weight:700; font-size:13.5px;">
@@ -1219,7 +1213,6 @@
             <h2 class="center-heading">Other Services</h2>
             
             <div class="slider-wrapper-rel">
-                <!-- Controls -->
                 <button class="slider-arrow-btn slider-arrow-left" onclick="slideOtherServices(-1)" aria-label="Previous">
                     <i class="fa fa-chevron-left"></i>
                 </button>
@@ -1227,49 +1220,33 @@
                     <i class="fa fa-chevron-right"></i>
                 </button>
 
-                <!-- Slider Track -->
                 <div class="other-services-slider" id="otherServicesSlider">
-                    <!-- Slide 1 -->
                     <div class="other-slide-item">
-                        <div class="other-icon-wrap">
-                            <i class="fa fa-cog"></i>
-                        </div>
+                        <div class="other-icon-wrap"><i class="fa fa-cog"></i></div>
                         <h4>CNC Turning</h4>
                         <p>Capable of precisely machining and turning parts up to 20 inches in length, and tight tolerances of ±0.0002.</p>
                         <a href="index.html#contact" class="btn-learn">Learn more</a>
                     </div>
-                    <!-- Slide 2 -->
                     <div class="other-slide-item">
-                        <div class="other-icon-wrap">
-                            <i class="fa fa-wrench"></i>
-                        </div>
+                        <div class="other-icon-wrap"><i class="fa fa-wrench"></i></div>
                         <h4>Swiss Turning</h4>
                         <p>Swiss turning excels in precision for small and long, slender parts, typically ranging from 150mm to 450mm.</p>
                         <a href="index.html#contact" class="btn-learn">Learn more</a>
                     </div>
-                    <!-- Slide 3 -->
                     <div class="other-slide-item">
-                        <div class="other-icon-wrap">
-                            <i class="fa fa-sliders"></i>
-                        </div>
+                        <div class="other-icon-wrap"><i class="fa fa-sliders"></i></div>
                         <h4>5 Axis Machining</h4>
                         <p>Integrate drilling, milling, contouring, and precision machining into one setup to minimize part handling.</p>
                         <a href="index.html#contact" class="btn-learn">Learn more</a>
                     </div>
-                    <!-- Slide 4 -->
                     <div class="other-slide-item">
-                        <div class="other-icon-wrap">
-                            <i class="fa fa-cube"></i>
-                        </div>
+                        <div class="other-icon-wrap"><i class="fa fa-cube"></i></div>
                         <h4>Die Casting</h4>
                         <p>Durable, lightweight aluminum, zinc, or magnesium castings. Order 1-10K piece custom production.</p>
                         <a href="index.html#contact" class="btn-learn">Learn more</a>
                     </div>
-                    <!-- Slide 5 -->
                     <div class="other-slide-item">
-                        <div class="other-icon-wrap">
-                            <i class="fa fa-microchip"></i>
-                        </div>
+                        <div class="other-icon-wrap"><i class="fa fa-microchip"></i></div>
                         <h4>Prototype &amp; Preproduction</h4>
                         <p>Rapid turnaround functional prototyping, physical stress validation, and fitment testing.</p>
                         <a href="index.html#contact" class="btn-learn">Learn more</a>
@@ -1335,7 +1312,6 @@
 <footer class="footer-area">
     <div class="container">
         <div class="row">
-            <!-- Footer Logo & Info -->
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
                 <div class="single-footer-widget">
                     <div class="our-company-info">
@@ -1358,12 +1334,9 @@
             
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
                 <div class="row">
-                    <!-- Core Capacities Links -->
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="single-footer-widget">
-                            <div class="title">
-                                <h3>Core Capacities</h3>
-                            </div>
+                            <div class="title"><h3>Core Capacities</h3></div>
                             <ul class="footer-widget-links1">
                                 <li><a href="index.html#services">CAD/CAM Designing</a></li>    
                                 <li><a href="index.html#services">3D Printing</a></li>    
@@ -1375,12 +1348,9 @@
                         </div>
                     </div>
 
-                    <!-- Quick Links -->
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="single-footer-widget">
-                            <div class="title">
-                                <h3>Quick Links</h3>
-                            </div>
+                            <div class="title"><h3>Quick Links</h3></div>
                             <ul class="footer-widget-links1">
                                 <li><a href="index.html#home">Home</a></li>    
                                 <li><a href="index.html#capabilities">Capabilities</a></li>    
@@ -1393,53 +1363,34 @@
                         </div>
                     </div>
 
-                    <!-- Contact Info -->
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="single-footer-widget">
-                            <div class="title">
-                                <h3>Contact Us</h3>
-                            </div>
+                            <div class="title"><h3>Contact Us</h3></div>
                             <div class="footer-contact-info">
                                 <ul>
                                     <li>
                                         <div class="icon"><span class="flaticon-incoming-call"></span></div>
-                                        <div class="text">
-                                            <p><a href="tel:922135888950">+92 21 3588 8950</a></p>
-                                        </div>   
+                                        <div class="text"><p><a href="tel:922135888950">+92 21 3588 8950</a></p></div>   
                                     </li>
                                     <li>
                                         <div class="icon"><span class="flaticon-placeholder"></span></div>
-                                        <div class="text">
-                                            <p><a href="https://maps.google.com/?cid=11563172088824159762" target="_blank">Plot # B-279, Sector 6F Mehran Town,<br> Korangi Industrial Area, Karachi</a></p>
-                                        </div>   
+                                        <div class="text"><p><a href="https://maps.google.com/?cid=11563172088824159762" target="_blank">Plot # B-279, Sector 6F Mehran Town,<br> Korangi Industrial Area, Karachi</a></p></div>   
                                     </li>
                                     <li>
                                         <div class="icon"><span class="flaticon-envelope-1"></span></div>
-                                        <div class="text">
-                                            <p><a href="mailto:starengg@hotmail.com">starengg@hotmail.com</a></p>
-                                        </div>   
+                                        <div class="text"><p><a href="mailto:starengg@hotmail.com">starengg@hotmail.com</a></p></div>   
                                     </li>
                                 </ul>
 
-                                <!-- Live Embedded Google Map -->
                                 <div class="footer-map-wrapper">
-                                    <iframe 
-                                        title="Star Engineering Works Location"
-                                        src="https://maps.google.com/maps?q=Star+Engineering+Works+Mehran+Town+Korangi+Karachi&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                                        loading="lazy" 
-                                        allowfullscreen>
-                                    </iframe>
+                                    <iframe title="Star Engineering Works Location" src="https://maps.google.com/maps?q=Star+Engineering+Works+Mehran+Town+Korangi+Karachi&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
                                 </div>
-                                <a href="https://maps.google.com/?cid=11563172088824159762" target="_blank" class="footer-map-btn">
-                                    <i class="fa fa-map-marker"></i> Open in Google Maps
-                                </a>
-
+                                <a href="https://maps.google.com/?cid=11563172088824159762" target="_blank" class="footer-map-btn"><i class="fa fa-map-marker"></i> Open in Google Maps</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Footer Bottom Row -->
                 <div class="footer-bottom">
                     <div class="copyright-text">
                         <p>&copy; 2026 <a href="#">Star Engineering Works.</a> All rights reserved.</p>
@@ -1457,7 +1408,6 @@
         </div>
     </div>
 </footer>   
-<!-- FOOTER SECTION - END -->
 
 <script>
     // Smooth scrolling for sticky pill navigation
