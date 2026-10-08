@@ -523,7 +523,7 @@
              padding-bottom: 20px;
         }
 
-        /* --- MATERIALS --- */
+        /* --- NEW HOVER MATERIALS SECTION (THEME MATCHED) --- */
         .materials-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -534,42 +534,89 @@
         @media(max-width: 575px) { .materials-grid { grid-template-columns: 1fr; } }
 
         .mat-card-hover {
-            border-radius: 8px;
-            overflow: hidden;
-            background: #ffffff;
-            text-align: center;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+            height: 220px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #fbfbfb;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             cursor: pointer;
         }
         .mat-card-img-wrap {
-            position: relative;
-            overflow: hidden;
-            height: 165px;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            transition: opacity 0.35s ease;
+            z-index: 1;
         }
-        .mat-card-hover img {
+        .mat-card-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
-        .mat-card-hover h5 {
-            font-size: 16px;
+        .mat-title-bottom {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: #ffffff;
+            font-size: 17px;
             font-weight: 700;
-            color: #1e293b;
-            margin: 15px 0;
-            transition: color 0.3s ease;
+            margin: 0;
+            z-index: 2;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
         }
-        .mat-card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 35px rgba(43, 48, 136, 0.12);
+        
+        .mat-hover-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #fbfbfb;
+            padding: 20px;
+            text-align: left;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 3;
         }
-        .mat-card-hover:hover img {
-            transform: scale(1.1);
+        .mat-card-hover:hover .mat-card-img-wrap {
+            opacity: 0;
         }
-        .mat-card-hover:hover h5 {
+        .mat-card-hover:hover .mat-hover-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .opt-title {
             color: var(--theme-red);
+            font-size: 15px;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+        }
+        .opt-text {
+            color: #555555;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+            font-weight: 500;
+        }
+        .btn-quote-theme {
+            display: inline-block;
+            background: var(--theme-red);
+            color: #ffffff !important;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 9px 18px;
+            border-radius: 4px;
+            text-decoration: none;
+            align-self: flex-start;
+            transition: all 0.3s ease;
+        }
+        .btn-quote-theme:hover {
+            background: var(--theme-blue);
+            box-shadow: 0 4px 12px rgba(43, 48, 136, 0.2);
         }
 
         /* --- TOLERANCE --- */
@@ -1053,7 +1100,6 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="complexity-img-box">
-                        <!-- Working Unsplash Image URL replace broken one here -->
                         <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop" alt="CNC Machine Axis Diagram">
                     </div>
                 </div>
@@ -1072,7 +1118,7 @@
             </div>
         </section>
 
-        <!-- 3: CNC MILLING CAPABILITIES (Slider representation) -->
+        <!-- 3: CNC MILLING CAPABILITIES -->
         <section class="content-section" id="milling-capabilities">
             <div class="capabilities-slider-wrapper">
                 <div class="row align-items-center capabilities-slide active">
@@ -1107,10 +1153,8 @@
             <div class="row">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="advantages-img">
-                        <!-- Updated to Sparking Grinding Image as requested -->
                         <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=500&fit=crop" alt="Machined Part Sparking" id="mainAdvImg">
                     </div>
-                    <!-- Thumbnails -->
                     <div class="adv-thumbnails" style="background: #f5f5f5; padding: 10px; border-radius: 4px;">
                         <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=60&h=40&fit=crop" class="adv-thumb active" alt="Thumb 1">
                         <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=60&h=40&fit=crop" class="adv-thumb" alt="Thumb 2">
@@ -1208,128 +1252,116 @@
             </div>
         </section>
 
-       <!-- 4: MATERIALS WITH HOVER EFFECT (LOCAL IMAGES MATCHING SCREENSHOT) -->
+       <!-- 6: MATERIALS WITH HOVER EFFECT (THEME MATCHED & GRID LAYOUT) -->
         <section class="content-section" id="materials">
             <span class="section-badge">Materials</span>
             <h2 class="section-heading-main">Wide Material Availability</h2>
             <p class="process-text">
                 Star Engineering Works is able to machine components in a wide range of materials. These include metals as well as plastics. It is suitable for both prototyping as well as large-batch manufacturing. When it comes to machining parts, there are a lot of variables. Star Engineering Works can help you determine the best way to have your parts made. From one part to one million, find out how we can help when you upload your CAD files for a free quotation today.
             </p>
+            
             <div class="materials-grid">
-                
+                <!-- Item 1 -->
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
                         <img src="images/img/Aluminum.png" alt="Aluminum">
+                        <h5 class="mat-title-bottom">Aluminum</h5>
                     </div>
-                    <h5>Aluminum</h5>
+                    <div class="mat-hover-overlay">
+                        <h6 class="opt-title">Options:</h6>
+                        <p class="opt-text">6061, 7075, 5052, 6063, 2024, 7050 etc.</p>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                    </div>
                 </div>
+                
+                <!-- Item 2 -->
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
                         <img src="images/img/Stainless-Steel.jpg" alt="Stainless Steel">
+                        <h5 class="mat-title-bottom">Stainless Steel</h5>
                     </div>
-                    <h5>Stainless Steel</h5>
+                    <div class="mat-hover-overlay">
+                        <h6 class="opt-title">Options:</h6>
+                        <p class="opt-text">303, 304, 316, 316L, 304L, 430, 440C, 321, 405, 201, 202, SUS420, SUS416, 17-4PH etc.</p>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                    </div>
                 </div>
+                
+                <!-- Item 3 -->
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
                         <img src="images/img/brass.jpeg" alt="Brass">
+                        <h5 class="mat-title-bottom">Brass</h5>
                     </div>
-                    <h5>Brass</h5>
+                    <div class="mat-hover-overlay">
+                        <h6 class="opt-title">Options:</h6>
+                        <p class="opt-text">C360, C260, C3604, C38500, C38500 etc.</p>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                    </div>
                 </div>
+                
+                <!-- Item 4 -->
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
                         <img src="images/img/index103.jpg.jpeg" alt="Copper">
+                        <h5 class="mat-title-bottom">Copper</h5>
                     </div>
-                    <h5>Copper</h5>
+                    <div class="mat-hover-overlay">
+                        <h6 class="opt-title">Options:</h6>
+                        <p class="opt-text">C101, C110, Beryllium Copper, Tungsten Copper etc.</p>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                    </div>
                 </div>
+                
+                <!-- Item 5 -->
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
                         <img src="images/img/Steel.jpeg" alt="Steel">
+                        <h5 class="mat-title-bottom">Steel</h5>
                     </div>
-                    <h5>Steel</h5>
+                    <div class="mat-hover-overlay">
+                        <h6 class="opt-title">Options:</h6>
+                        <p class="opt-text">1018, 1045, 4140, 4340, A36, Q235, Carbon Steel etc.</p>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                    </div>
                 </div>
+                
+                <!-- Item 6 -->
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
                         <img src="images/img/Titanium.png" alt="Titanium">
+                        <h5 class="mat-title-bottom">Titanium</h5>
                     </div>
-                    <h5>Titanium</h5>
+                    <div class="mat-hover-overlay">
+                        <h6 class="opt-title">Options:</h6>
+                        <p class="opt-text">Grade 2, Grade 5 (Ti-6Al-4V), Grade 23 etc.</p>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                    </div>
                 </div>
+                
+                <!-- Item 7 -->
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
                         <img src="images/img/Plastic.jpeg" alt="Plastic">
+                        <h5 class="mat-title-bottom">Plastic</h5>
                     </div>
-                    <h5>Plastic</h5>
+                    <div class="mat-hover-overlay">
+                        <h6 class="opt-title">Options:</h6>
+                        <p class="opt-text">POM, PEEK, ABS, Nylon, Polycarbonate, PTFE, Acrylic etc.</p>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                    </div>
                 </div>
+                
+                <!-- Item 8 -->
                 <div class="mat-card-hover">
                     <div class="mat-card-img-wrap">
                         <img src="images/img/prototyping.png" alt="Others">
+                        <h5 class="mat-title-bottom">Others</h5>
                     </div>
-                    <h5>Others</h5>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- 5: TOLERANCE MATRIX -->
-        <section class="content-section" id="tolerances">
-            <span class="section-badge">Tolerance</span>
-            <h2 class="section-heading-main">Precision Tolerances &amp; Inspection</h2>
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-4 mb-lg-0">
-                    <p class="process-text">
-                        <strong>Tightest tolerance: ±.0008″ (0.020 mm).</strong> Tighter tolerances are examined on a case by case basis with your technical drawings. Star Engineering Works' CNC machining service can produce CNC parts with tolerance as low as ± 0.0002 in.
-                    </p>
-                    <p class="process-text">
-                        Without a drawing, all CNC parts are produced to our ISO 2768 medium standard. We can also machine to tighter tolerances, ±0.025mm or ±0.001″, with an attached engineering drawing calling out critical features.
-                    </p>
-                    
-                    <div style="overflow-x: auto; margin-top: 25px;">
-                        <table class="clean-table">
-                            <thead>
-                                <tr>
-                                    <th>Options</th>
-                                    <th>Metals With Drawing</th>
-                                    <th>Plastics With Drawing</th>
-                                    <th>No Drawing</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Linear Dimension</strong></td>
-                                    <td>+/- 0.01 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.0003 inch</span></td>
-                                    <td>+/- 0.05 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.002 inch</span></td>
-                                    <td>ISO 2768 Medium</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Hole Diameters</strong></td>
-                                    <td>+/- 0.008 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.0003 inch</span></td>
-                                    <td>+/- 0.05 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.002 inch</span></td>
-                                    <td>ISO 2768 Medium</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Shaft Diameters</strong></td>
-                                    <td>+/- 0.004 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.00016 inch</span></td>
-                                    <td>+/- 0.05 mm<br><span style="color:#64748b; font-size:12px;">+/- 0.002 inch</span></td>
-                                    <td>ISO 2768 Medium</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div style="text-align: center;">
-                        <!-- LOCAL IMAGE PLACED HERE -->
-                        <img src="images/img/dimensional-inspection.jpg" class="tolerance-img" alt="Dimensional Inspection">
-                        <div style="background:#ffffff; box-shadow: 0 4px 18px rgba(0,0,0,0.04); border-radius:8px; padding:16px; margin-top:16px; text-align:left;">
-                            <div style="display:flex; align-items:center; gap:10px; color:#10b981; font-weight:700; font-size:13.5px;">
-                                <i class="fa fa-check-circle"></i> Production Complete
-                            </div>
-                            <div style="display:flex; align-items:center; gap:10px; color:var(--theme-blue); font-weight:700; font-size:13.5px; margin: 8px 0;">
-                                <i class="fa fa-check-circle"></i> Inspection Complete
-                            </div>
-                            <div style="display:flex; align-items:center; gap:10px; color:#64748b; font-size:13.5px;">
-                                <i class="fa fa-circle-o"></i> Ready to ship
-                            </div>
-                        </div>
+                    <div class="mat-hover-overlay">
+                        <h6 class="opt-title">Options:</h6>
+                        <p class="opt-text">Magnesium, Custom Alloys, Zinc Alloys, Invar etc.</p>
+                        <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
                     </div>
                 </div>
             </div>
@@ -1379,17 +1411,14 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="tolerance-img-container">
-                        <!-- US Map dots background representation -->
                         <div style="position: absolute; top: -30px; right: 20px; width: 300px; height: 200px; opacity: 0.1; background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px; z-index: -1;"></div>
                         
                         <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&h=400&fit=crop" class="tolerance-img" alt="Dimensional Inspection">
                         
-                        <!-- Circular Callout Image -->
                         <div style="position: absolute; top: -10px; left: 10%; width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                             <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=100&h=100&fit=crop" alt="Calipers">
                         </div>
                         
-                        <!-- Dotted Line connecting circle to status box -->
                         <svg style="position: absolute; top: 40px; left: calc(10% + 100px); width: 150px; height: 200px; z-index: 1;" width="150" height="200">
                              <polyline points="0,0 120,0 120,180" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,4" />
                         </svg>
@@ -1412,7 +1441,7 @@
                 </div>
             </div>
         </section>
-    </div> <!-- End Container for main content -->
+    </div> 
 
     <!-- 8: OTHER SERVICES (CAROUSEL / SLIDER) - Full width background -->
     <section class="content-section" id="other-services" style="padding: 40px 0;">
@@ -1420,7 +1449,6 @@
             <h2 class="center-heading" style="color: var(--theme-blue); font-size: 22px;">Other Services</h2>
             
             <div class="slider-wrapper-rel">
-                <!-- Controls -->
                 <button class="slider-arrow-btn slider-arrow-left" onclick="slideOtherServices(-1)" aria-label="Previous">
                     <i class="fa fa-angle-left"></i>
                 </button>
@@ -1428,9 +1456,7 @@
                     <i class="fa fa-angle-right"></i>
                 </button>
 
-                <!-- Slider Track -->
                 <div class="other-services-slider" id="otherServicesSlider">
-                    <!-- Slide 1 -->
                     <div class="other-slide-item">
                         <div class="other-icon-wrap">
                             <i class="fa fa-cog"></i>
@@ -1439,7 +1465,6 @@
                         <p>Capable of precisely machining and turning parts up to 20 inches in length, and tight tolerances of ±0.0002</p>
                         <a href="#contact" class="btn-learn">Learn more</a>
                     </div>
-                    <!-- Slide 2 -->
                     <div class="other-slide-item">
                         <div class="other-icon-wrap">
                             <i class="fa fa-wrench"></i>
@@ -1448,7 +1473,6 @@
                         <p>Integrate drilling, milling, contouring, and precision machining into one setup to minimize part handling</p>
                         <a href="#contact" class="btn-learn">Learn more</a>
                     </div>
-                    <!-- Slide 3 -->
                     <div class="other-slide-item">
                         <div class="other-icon-wrap">
                             <i class="fa fa-cubes"></i>
@@ -1457,7 +1481,6 @@
                         <p>From prototyping to production, make custom parts on demand in 70+ material options, 50+ finishes</p>
                         <a href="#contact" class="btn-learn">Learn more</a>
                     </div>
-                    <!-- Slide 4 -->
                     <div class="other-slide-item">
                         <div class="other-icon-wrap">
                             <i class="fa fa-bar-chart"></i>
@@ -1466,7 +1489,6 @@
                         <p>It's an idea from the concept stage through prototyping, and a vital bridge to full volume production</p>
                         <a href="#contact" class="btn-learn">Learn more</a>
                     </div>
-                     <!-- Slide 5 (Extra for sliding) -->
                      <div class="other-slide-item">
                         <div class="other-icon-wrap">
                             <i class="fa fa-microchip"></i>
@@ -1477,7 +1499,6 @@
                     </div>
                 </div>
 
-                <!-- Pagination Dots -->
                 <div class="slider-dots">
                     <div class="slider-dot"></div>
                     <div class="slider-dot active"></div>
@@ -1541,7 +1562,6 @@
 <footer class="footer-area">
     <div class="container">
         <div class="row">
-            <!-- Footer Logo & Info -->
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
                 <div class="single-footer-widget">
                     <div class="our-company-info">
@@ -1564,7 +1584,6 @@
             
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
                 <div class="row">
-                    <!-- Core Capacities Links -->
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="single-footer-widget">
                             <div class="title">
@@ -1581,7 +1600,6 @@
                         </div>
                     </div>
 
-                    <!-- Quick Links -->
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="single-footer-widget">
                             <div class="title">
@@ -1599,7 +1617,6 @@
                         </div>
                     </div>
 
-                    <!-- Contact Info -->
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="single-footer-widget">
                             <div class="title">
@@ -1627,7 +1644,6 @@
                                     </li>
                                 </ul>
 
-                                <!-- Live Embedded Google Map -->
                                 <div class="footer-map-wrapper">
                                     <iframe 
                                         title="Star Engineering Works Location"
@@ -1645,7 +1661,6 @@
                     </div>
                 </div>
 
-                <!-- Footer Bottom Row -->
                 <div class="footer-bottom">
                     <div class="copyright-text">
                         <p>&copy; 2026 <a href="#">Star Engineering Works.</a> All rights reserved.</p>
@@ -1663,7 +1678,6 @@
         </div>
     </div>
 </footer>   
-<!-- FOOTER SECTION - END -->
 
 <script>
     // Smooth scrolling for sticky pill navigation

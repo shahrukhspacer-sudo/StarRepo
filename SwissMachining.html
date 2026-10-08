@@ -867,6 +867,158 @@
         .footer-menu-style1 ul { display: flex; list-style: none; padding: 0; margin: 0; gap: 20px; }
         .footer-menu-style1 ul li a { color: #64748b; font-size: 14px; text-decoration: none; transition: 0.3s; }
         .footer-menu-style1 ul li a:hover { color: var(--theme-red); }
+        /* CSS Variables (Color Theme) */
+:root {
+    --theme-red: #e31820;
+    --theme-blue: #2b3088;
+    --theme-blue-dark: #191c52;
+}
+
+/* Section Headings & Text Styles */
+.content-section {
+    margin-bottom: 90px;
+}
+
+.section-badge {
+    display: inline-block;
+    background-color: var(--theme-blue);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 5px 14px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin-bottom: 14px;
+}
+
+.section-heading-main {
+    font-size: 34px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
+}
+
+.process-text {
+    color: #475569;
+    font-size: 15.5px;
+    line-height: 1.85;
+    margin-bottom: 18px;
+}
+
+/* Materials Section & Hover Cards Styles */
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 35px;
+}
+
+@media(max-width: 991px) { 
+    .materials-grid { grid-template-columns: repeat(2, 1fr); } 
+}
+@media(max-width: 575px) { 
+    .materials-grid { grid-template-columns: 1fr; } 
+}
+
+.mat-card-hover {
+    position: relative;
+    height: 220px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fbfbfb;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+.mat-card-img-wrap {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    transition: opacity 0.35s ease;
+    z-index: 1;
+}
+
+.mat-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mat-title-bottom {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0;
+    z-index: 2;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+.mat-hover-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: #fbfbfb;
+    padding: 20px;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 3;
+}
+
+.mat-card-hover:hover .mat-card-img-wrap {
+    opacity: 0;
+}
+
+.mat-card-hover:hover .mat-hover-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.opt-title {
+    color: var(--theme-red);
+    font-size: 15px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+
+.opt-text {
+    color: #555555;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    font-weight: 500;
+}
+
+.btn-quote-theme {
+    display: inline-block;
+    background: var(--theme-red);
+    color: #ffffff !important;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 9px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+}
+
+.btn-quote-theme:hover {
+    background: var(--theme-blue);
+    box-shadow: 0 4px 12px rgba(43, 48, 136, 0.2);
+}
     </style>
 </head>
 
@@ -1192,66 +1344,122 @@
         </section>
 
        <!-- 4: MATERIALS WITH HOVER EFFECT (LOCAL IMAGES MATCHING SCREENSHOT) -->
-        <section class="content-section" id="materials">
-            <span class="section-badge">Materials</span>
-            <h2 class="section-heading-main">Wide Material Availability</h2>
-            <p class="process-text">
-                Star Engineering Works is able to machine components in a wide range of materials. These include metals as well as plastics. It is suitable for both prototyping as well as large-batch manufacturing. When it comes to machining parts, there are a lot of variables. Star Engineering Works can help you determine the best way to have your parts made. From one part to one million, find out how we can help when you upload your CAD files for a free quotation today.
-            </p>
-            <div class="materials-grid">
-                
-                <div class="mat-card-hover">
-                    <div class="mat-card-img-wrap">
-                        <img src="images/img/Aluminum.png" alt="Aluminum">
-                    </div>
-                    <h5>Aluminum</h5>
+       <!-- MATERIALS SECTION -->
+<section class="content-section" id="materials">
+    <div class="container">
+        <span class="section-badge">Materials</span>
+        <h2 class="section-heading-main">Wide Material Availability</h2>
+        <p class="process-text">
+            Star Engineering Works is able to machine components in a wide range of materials. These include metals as well as plastics[cite: 1]. It is suitable for both prototyping as well as large-batch manufacturing[cite: 1]. When it comes to machining parts, there are a lot of variables[cite: 1]. Star Engineering Works can help you determine the best way to have your parts made[cite: 1]. From one part to one million, find out how we can help when you upload your CAD files for a free quotation today[cite: 1].
+        </p>
+        
+        <div class="materials-grid">
+            <!-- Item 1: Aluminum -->
+            <div class="mat-card-hover">
+                <div class="mat-card-img-wrap">
+                    <img src="images/img/Aluminum.png" alt="Aluminum">
+                    <h5 class="mat-title-bottom">Aluminum</h5>
                 </div>
-                <div class="mat-card-hover">
-                    <div class="mat-card-img-wrap">
-                        <img src="images/img/Stainless-Steel.jpg" alt="Stainless Steel">
-                    </div>
-                    <h5>Stainless Steel</h5>
+                <div class="mat-hover-overlay">
+                    <h6 class="opt-title">Options:</h6>
+                    <p class="opt-text">6061, 7075, 5052, 6063, 2024, 7050 etc.</p>
+                    <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
                 </div>
-                <div class="mat-card-hover">
-                    <div class="mat-card-img-wrap">
-                        <img src="images/img/brass.jpeg" alt="Brass">
-                    </div>
-                    <h5>Brass</h5>
-                </div>
-                <div class="mat-card-hover">
-                    <div class="mat-card-img-wrap">
-                        <img src="images/img/index103.jpg.jpeg" alt="Copper">
-                    </div>
-                    <h5>Copper</h5>
-                </div>
-                <div class="mat-card-hover">
-                    <div class="mat-card-img-wrap">
-                        <img src="images/img/Steel.jpeg" alt="Steel">
-                    </div>
-                    <h5>Steel</h5>
-                </div>
-                <div class="mat-card-hover">
-                    <div class="mat-card-img-wrap">
-                        <img src="images/img/Titanium.png" alt="Titanium">
-                    </div>
-                    <h5>Titanium</h5>
-                </div>
-                <div class="mat-card-hover">
-                    <div class="mat-card-img-wrap">
-                        <img src="images/img/Plastic.jpeg" alt="Plastic">
-                    </div>
-                    <h5>Plastic</h5>
-                </div>
-                <div class="mat-card-hover">
-                    <div class="mat-card-img-wrap">
-                        <img src="images/img/prototyping.png" alt="Others">
-                    </div>
-                    <h5>Others</h5>
-                </div>
-
             </div>
-        </section>
-
+            
+            <!-- Item 2: Stainless Steel -->
+            <div class="mat-card-hover">
+                <div class="mat-card-img-wrap">
+                    <img src="images/img/Stainless-Steel.jpg" alt="Stainless Steel">
+                    <h5 class="mat-title-bottom">Stainless Steel</h5>
+                </div>
+                <div class="mat-hover-overlay">
+                    <h6 class="opt-title">Options:</h6>
+                    <p class="opt-text">303, 304, 316, 316L, 304L, 430, 440C, 321, 405, 201, 202, SUS420, SUS416, 17-4PH etc.</p>
+                    <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                </div>
+            </div>
+            
+            <!-- Item 3: Brass -->
+            <div class="mat-card-hover">
+                <div class="mat-card-img-wrap">
+                    <img src="images/img/brass.jpeg" alt="Brass">
+                    <h5 class="mat-title-bottom">Brass</h5>
+                </div>
+                <div class="mat-hover-overlay">
+                    <h6 class="opt-title">Options:</h6>
+                    <p class="opt-text">C360, C260, C3604, C38500, C38500 etc.</p>
+                    <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                </div>
+            </div>
+            
+            <!-- Item 4: Copper -->
+            <div class="mat-card-hover">
+                <div class="mat-card-img-wrap">
+                    <img src="images/img/index103.jpg.jpeg" alt="Copper">
+                    <h5 class="mat-title-bottom">Copper</h5>
+                </div>
+                <div class="mat-hover-overlay">
+                    <h6 class="opt-title">Options:</h6>
+                    <p class="opt-text">C101, C110, Beryllium Copper, Tungsten Copper etc.</p>
+                    <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                </div>
+            </div>
+            
+            <!-- Item 5: Steel -->
+            <div class="mat-card-hover">
+                <div class="mat-card-img-wrap">
+                    <img src="images/img/Steel.jpeg" alt="Steel">
+                    <h5 class="mat-title-bottom">Steel</h5>
+                </div>
+                <div class="mat-hover-overlay">
+                    <h6 class="opt-title">Options:</h6>
+                    <p class="opt-text">1018, 1045, 4140, 4340, A36, Q235, Carbon Steel etc.</p>
+                    <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                </div>
+            </div>
+            
+            <!-- Item 6: Titanium -->
+            <div class="mat-card-hover">
+                <div class="mat-card-img-wrap">
+                    <img src="images/img/Titanium.png" alt="Titanium">
+                    <h5 class="mat-title-bottom">Titanium</h5>
+                </div>
+                <div class="mat-hover-overlay">
+                    <h6 class="opt-title">Options:</h6>
+                    <p class="opt-text">Grade 2, Grade 5 (Ti-6Al-4V), Grade 23 etc.</p>
+                    <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                </div>
+            </div>
+            
+            <!-- Item 7: Plastic -->
+            <div class="mat-card-hover">
+                <div class="mat-card-img-wrap">
+                    <img src="images/img/Plastic.jpeg" alt="Plastic">
+                    <h5 class="mat-title-bottom">Plastic</h5>
+                </div>
+                <div class="mat-hover-overlay">
+                    <h6 class="opt-title">Options:</h6>
+                    <p class="opt-text">POM, PEEK, ABS, Nylon, Polycarbonate, PTFE, Acrylic etc.</p>
+                    <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                </div>
+            </div>
+            
+            <!-- Item 8: Others -->
+            <div class="mat-card-hover">
+                <div class="mat-card-img-wrap">
+                    <img src="images/img/prototyping.png" alt="Others">
+                    <h5 class="mat-title-bottom">Others</h5>
+                </div>
+                <div class="mat-hover-overlay">
+                    <h6 class="opt-title">Options:</h6>
+                    <p class="opt-text">Magnesium, Custom Alloys, Zinc Alloys, Invar etc.</p>
+                    <a href="index.html#contact" class="btn-quote-theme">Get a Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         <!-- 7: TOLERANCE MATRIX -->
         <section class="content-section" id="tolerances">
             <span class="section-badge">Tolerance</span>
