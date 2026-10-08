@@ -640,7 +640,81 @@
     /* Optional: Agar mobile par sticky header poora hi hide karna ho toh isay use karo */
     /* .sticky-header.stricky-fixed { display: none !important; } */
 }
-   
+
+/* --- MEGA MENU STYLING --- */
+:root {
+    --mega-icon-cyan: #00d2ff;
+}
+.main-menu .navigation > li.mega-menu-item { position: static !important; }
+.mega-menu {
+    position: absolute; top: 100%; left: 0; width: 100%; background: #ffffff;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); padding: 40px 30px 20px 30px;
+    opacity: 0; visibility: hidden; transform: translateY(15px);
+    transition: all 0.4s ease; z-index: 100;
+    border-top: 3px solid var(--theme-red);
+    border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;
+}
+@media (min-width: 992px) {
+    .main-menu .navigation > li.mega-menu-item:hover .mega-menu {
+        opacity: 1; visibility: visible; transform: translateY(0);
+    }
+}
+.mega-title { font-size: 14px; font-weight: 700; color: #222; margin-bottom: 20px; text-transform: uppercase; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.mega-title i { color: var(--mega-icon-cyan); font-size: 24px; }
+.mega-list { list-style: none; padding: 0; margin: 0; }
+.mega-list li { margin-bottom: 12px; }
+.mega-list li a { color: #555 !important; font-size: 13px !important; font-weight: 500 !important; text-transform: none !important; line-height: 1.5 !important; padding: 0 !important; height: auto !important; transition: all 0.3s ease; }
+.mega-list li a:hover { color: var(--theme-red) !important; padding-left: 8px !important; }
+.mega-footer { width: 100%; text-align: center; margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; font-weight: 600; color: #444; font-size: 15px; }
+
+/* --- MEGA MENU STYLING (WIDE LAYOUT & RED ICONS) --- */
+.header-bottom .container { position: relative !important; }
+.header-bottom .outer-box, .nav-outer.style1, .main-menu.style1, .main-menu .navigation, .main-menu .navigation > li.mega-menu-item { position: static !important; }
+
+.mega-menu {
+    position: absolute; 
+    top: 100%; 
+    left: 15px; 
+    right: 15px; /* Ye dono values isko screen par wide (bada) kar dengi */
+    width: auto; 
+    background: #ffffff;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15); 
+    padding: 40px 40px 30px 40px;
+    opacity: 0; 
+    visibility: hidden; 
+    transform: translateY(15px);
+    transition: all 0.4s ease; 
+    z-index: 100;
+    border-top: 3px solid var(--theme-red);
+    border-bottom-left-radius: 8px; 
+    border-bottom-right-radius: 8px;
+}
+@media (min-width: 992px) {
+    .main-menu .navigation > li.mega-menu-item:hover .mega-menu {
+        opacity: 1; visibility: visible; transform: translateY(0);
+    }
+}
+.mega-title { font-size: 15px; font-weight: 800; color: #1a1e36; margin-bottom: 25px; text-transform: uppercase; display: flex; align-items: flex-start; justify-content: space-between; border-bottom: 1px solid #eaeaea; padding-bottom: 15px; line-height: 1.3; }
+.mega-title span { display: inline-block; }
+.mega-title i { color: var(--theme-red); font-size: 26px; line-height: 1; } /* Icon Red Color */
+.mega-list { list-style: none; padding: 0; margin: 0; }
+.mega-list li { margin-bottom: 15px; }
+.mega-list li a { color: #555555 !important; font-size: 14px !important; font-weight: 500 !important; text-transform: none !important; line-height: 1.5 !important; padding: 0 !important; height: auto !important; transition: all 0.3s ease; }
+.mega-list li a:hover { color: var(--theme-red) !important; padding-left: 5px !important; }
+.mega-footer { width: 100%; text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eaeaea; font-weight: 600; color: #555555; font-size: 16px; }
+
+/* --- MOBILE MEGA MENU FIXES --- */
+@media only screen and (max-width: 991px) {
+    .mega-menu {
+        position: relative; top: 0; left: 0; right: 0; width: 100%; transform: none; visibility: visible; opacity: 1;
+        background: rgba(255,255,255,0.05); padding: 15px; box-shadow: none; border-top: none;
+        display: none; border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+    }
+    .mobile-menu .mega-menu-item.active .mega-menu { display: block; }
+    .mega-title { color: #ffffff; border-bottom-color: rgba(255,255,255,0.1); margin-top: 15px; font-size: 14px; }
+    .mega-list li a { color: #cccccc !important; font-size: 14px !important; }
+    .mega-footer { color: #ffffff; border-top-color: rgba(255,255,255,0.1); }
+}
    </style>
 
     <!-- Fixing Internet Explorer-->
@@ -769,7 +843,7 @@
         </div>    
     </div> 
 
-    <!-- Header Bottom Navbar (Standardized 60px) --> 
+   <!-- Header Bottom Navbar (Standardized 60px) --> 
     <div class="header-bottom">
         <div class="container">
             <div class="outer-box clearfix">
@@ -794,7 +868,56 @@
                                     <li><a href="#capabilities">Capabilities</a></li>
                                     <li><a href="#about">About us</a></li>
                                     <li><a href="#services">Core Capacities</a></li>
-                                    <li><a href="#products">Products</a></li>
+                                    
+                                    <!-- UPDATED MEGA MENU START -->
+                                    <li class="mega-menu-item">
+                                        <a href="javascript:void(0);">Manufacturing <i class="fa fa-angle-down" style="margin-left: 5px;"></i></a>
+                                        <div class="mega-menu">
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                                    <h4 class="mega-title"><span>CNC MACHINING<br>SERVICE</span> <i class="fa fa-cogs"></i></h4>
+                                                    <ul class="mega-list">
+                                                        <li><a href="CNCMachining.html">CNC Machining</a></li>
+                                                        <li><a href="CNCTurning.html">CNC Turning</a></li>
+                                                        <li><a href="cncmilling.html">CNC Milling</a></li>
+                                                        <li><a href="SwissMachining.html">Swiss Machining</a></li>
+                                                        <li><a href="#">5 Axis Machining</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                                    <h4 class="mega-title"><span>DIE CASTING<br>SERVICE</span> <i class="fa fa-tint"></i></h4>
+                                                    <ul class="mega-list">
+                                                        <li><a href="#">Custom Die Casting</a></li>
+                                                        <li><a href="#">Aluminum Die Casting</a></li>
+                                                        <li><a href="ZincDieCasting.html">Zinc Die Casting</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                                    <h4 class="mega-title"><span>METAL PART<br>PRODUCTION</span> <i class="fa fa-industry"></i></h4>
+                                                    <ul class="mega-list">
+                                                        <li><a href="#">Machined Aluminum Parts</a></li>
+                                                        <li><a href="#">Machined Stainless Steel Parts</a></li>
+                                                        <li><a href="#">Machined Brass Parts</a></li>
+                                                        <li><a href="#">Machined Copper Parts</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                                    <h4 class="mega-title"><span>RAPID<br>PROTOTYPING</span> <i class="fa fa-cube"></i></h4>
+                                                    <ul class="mega-list">
+                                                        <li><a href="PrototypePreproduction.html">Prototype and Preproduction</a></li>
+                                                        <li><a href="#">High-volume Production</a></li>
+                                                        <li><a href="LowVolumeProduction.html">Low-volume Production</a></li>
+                                                        <li><a href="#">Plastic Part Production</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="mega-footer">
+                                                CNC Machining Metal & Plastic Parts
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- UPDATED MEGA MENU END -->
+                                    
                                     <li><a href="#whyus">Why Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -824,8 +947,7 @@
                 
             </div>
         </div>    
-    </div> 
-
+    </div>
     <!-- Sticky Header (Exact 75px Full Height & Centered Logo) -->
     <div class="sticky-header">
         <div class="container">
@@ -1764,6 +1886,16 @@
                 $('html, body').stop().animate({
                     'scrollTop': $target.offset().top - 75
                 }, 900, 'swing');
+            }
+        });
+    });
+    $(document).ready(function() {
+        /* Mobile Mega Menu Toggle */
+        $(document).on('click', '.mega-menu-item > a', function(e) {
+            if($(window).width() < 992) {
+                e.preventDefault(); /* Page refresh ko rokega */
+                var parentLi = $(this).parent('.mega-menu-item');
+                parentLi.toggleClass('active'); /* Click par menu open/close karega */
             }
         });
     });
