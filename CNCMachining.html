@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">	
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <style>
         :root {
@@ -197,18 +198,26 @@
         .mega-list li a:hover { color: var(--theme-red) !important; padding-left: 5px !important; }
         .mega-footer { width: 100%; text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eaeaea; font-weight: 600; color: #555555; font-size: 16px; }
 
-        /* --- MOBILE MEGA MENU FIXES --- */
-        @media only screen and (max-width: 991px) {
-            .mega-menu {
-                position: relative; top: 0; left: 0; right: 0; width: 100%; transform: none; visibility: visible; opacity: 1;
-                background: rgba(255,255,255,0.05); padding: 15px; box-shadow: none; border-top: none;
-                display: none; border-bottom-left-radius: 0; border-bottom-right-radius: 0;
-            }
-            .mega-menu-item.active .mega-menu { display: block; }
-            .mega-title { color: #222; border-bottom-color: #eee; margin-top: 15px; font-size: 14px; }
-            .mega-list li a { color: #555 !important; font-size: 14px !important; }
-            .mega-footer { color: #222; border-top-color: #eee; }
-        }
+      /* --- FIX DROPDOWN/MEGA-MENU LAYOUT ISSUE --- */
+.main-menu .navigation > li {
+    position: relative;
+}
+.main-menu .navigation > li.mega-menu-item {
+    position: static !important;
+}
+.mobile-nav-toggler {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+@media only screen and (max-width: 991px) {
+    .mobile-nav-toggler {
+        display: block !important;
+    }
+    .main-menu {
+        display: none !important; /* Hide desktop menu on mobile */
+    }
+}
 
         /* --- 4. HERO SECTION --- */
         .fullwidth-hero {
@@ -782,142 +791,174 @@
 
 <body>
 
-<!-- 1. Brand Bar -->
-<div class="header">
-    <div class="container">
-        <div class="outer-box">
-            <div class="header-left">
-                <div class="logo">
-                    <a href="index.html"><img src="images/logo/LOGO-SEW.png" alt="Star Engineering Works"></a>
-                </div>
-            </div>
-            <div class="header-right">
-                <div class="header-contact-info">
-                    <ul>
-                        <li>
-                            <div class="icon"><span class="flaticon-incoming-call"></span></div>
-                            <div class="text">
-                                <p>Call Us Today</p>
-                                <h4><a href="tel:922135888950">+92 21 3588 8950</a></h4>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon"><span class="flaticon-clock-1"></span></div>
-                            <div class="text">
-                                <p>Working Hours</p>
-                                <h4>Mon - Sat: 9 am to 6 pm</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon"><span class="flaticon-placeholder"></span></div>
-                            <div class="text">
-                                <p><a href="https://maps.google.com/?cid=11563172088824159762" target="_blank">Mehran Town, Korangi</a></p>
-                                <h4><a href="https://maps.google.com/?cid=11563172088824159762" target="_blank">Karachi, Pakistan</a></h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div> 
-        </div>
-    </div>    
-</div>
-
-<!-- 2. Menu Bar with Mega Menu -->
-<div class="header-bottom">
-    <div class="container">
-        <div class="outer-box clearfix">
-
-            <div class="header-bottom_left">
-                <div class="nav-outer style1 clearfix">
-                    <div class="mobile-nav-toggler">
-                        <div class="inner">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </div>
+<!-- MAIN HEADER SECTION -->
+<!-- MAIN HEADER SECTION -->
+<header class="main-header header-style-one">
+    
+    <!-- Brand Header (Mobile me Center Logo) --> 
+    <div class="header">
+        <div class="container">
+            <div class="outer-box clearfix">
+                <div class="header-left clearfix">
+                    <div class="logo">
+                        <a href="index.html"><img src="images/logo/LOGO-SEW.png" alt="Star Engineering Works"></a>
                     </div>
-                    <nav class="main-menu style1 navbar-expand-md navbar-light">
-                        <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                            <ul class="navigation clearfix scroll-nav">
-                                <li class="home-li">
-                                    <a class="home" href="index.html#home" title="Home">
-                                        <i class="fa fa-home"></i>
-                                    </a>
-                                </li>
-                                <li><a href="index.html#capabilities">Capabilities</a></li>
-                                <li><a href="index.html#about">About us</a></li>
-                                <li><a href="index.html#services">Core Capacities</a></li>
-                                
-                                <!-- UPDATED MEGA MENU START -->
-                                <li class="mega-menu-item">
-                                    <a href="javascript:void(0);">Manufacturing <i class="fa fa-angle-down" style="margin-left: 5px;"></i></a>
-                                    <div class="mega-menu">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                                <h4 class="mega-title"><span>CNC MACHINING<br>SERVICE</span> <i class="fa fa-cogs"></i></h4>
-                                                <ul class="mega-list">
-                                                    <li><a href="CNCMachining.html">CNC Machining</a></li>
-                                                    <li><a href="CNCTurning.html">CNC Turning</a></li>
-                                                    <li><a href="cncmilling.html">CNC Milling</a></li>
-                                                    <li><a href="SwissMachining.html">Swiss Machining</a></li>
-                                                    <li><a href="#">5 Axis Machining</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                                <h4 class="mega-title"><span>DIE CASTING<br>SERVICE</span> <i class="fa fa-tint"></i></h4>
-                                                <ul class="mega-list">
-                                                    <li><a href="#">Custom Die Casting</a></li>
-                                                    <li><a href="#">Aluminum Die Casting</a></li>
-                                                    <li><a href="ZincDieCasting.html">Zinc Die Casting</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                                <h4 class="mega-title"><span>METAL PART<br>PRODUCTION</span> <i class="fa fa-industry"></i></h4>
-                                                <ul class="mega-list">
-                                                    <li><a href="#">Machined Aluminum Parts</a></li>
-                                                    <li><a href="#">Machined Stainless Steel Parts</a></li>
-                                                    <li><a href="#">Machined Brass Parts</a></li>
-                                                    <li><a href="#">Machined Copper Parts</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                                <h4 class="mega-title"><span>RAPID<br>PROTOTYPING</span> <i class="fa fa-cube"></i></h4>
-                                                <ul class="mega-list">
-                                                    <li><a href="PrototypePreproduction.html">Prototype and Preproduction</a></li>
-                                                    <li><a href="#">High-volume Production</a></li>
-                                                    <li><a href="LowVolumeProduction.html">Low-volume Production</a></li>
-                                                    <li><a href="#">Plastic Part Production</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="mega-footer">
-                                            CNC Machining Metal & Plastic Parts
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- UPDATED MEGA MENU END -->
-                                
-                                <li><a href="index.html#whyus">Why Us</a></li>
-                                <li><a href="index.html#contact">Contact</a></li>
-                            </ul>
-                        </div>
-                    </nav>                        
-                </div>  
-            </div>
-            
-            <div class="header-bottom_right">
-                <div class="outer-search-box-style1">
-                    <div class="seach-toggle"><span class="flaticon-magnifiying-glass"></span></div>
                 </div>
-                <div class="header-bottom_right__btn">
-                    <a class="btn-one scroll-nav" href="index.html#contact"><span class="txt"><i class="left flaticon-login"></i>Get a Quote</span></a>
+                <!-- Contact info mobile par automatically hide ho jaye ga -->
+                <div class="header-right">
+                    <div class="header-contact-info clearfix">
+                        <ul>
+                            <li>
+                                <div class="icon"><span class="flaticon-incoming-call"></span></div>
+                                <div class="text">
+                                    <p>Call Us Today</p>
+                                    <h4><a href="tel:+923002335078">+92 300 2335078</a></h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><span class="flaticon-clock-1"></span></div>
+                                <div class="text">
+                                    <p>Working Hours</p>
+                                    <h4>Mon - Sat: 9 am to 6 pm</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><span class="flaticon-placeholder"></span></div>
+                                <div class="text">
+                                    <p><a href="https://maps.google.com/?cid=11563172088824159762" target="_blank">Mehran Town, Korangi</a></p>
+                                    <h4><a href="https://maps.google.com/?cid=11563172088824159762" target="_blank">Karachi, Pakistan</a></h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div> 
             </div>
-            
-        </div>
-    </div>    
-</div>
+        </div>    
+    </div> 
 
+    <!-- Header Bottom Blue Navbar --> 
+    <div class="header-bottom">
+        <div class="container">
+            <div class="outer-box clearfix">
+
+                <div class="header-bottom_left">
+                    <div class="nav-outer style1 clearfix">
+                        <!-- Mobile Hamburger Toggle Button -->
+                        <div class="mobile-nav-toggler">
+                            <div class="inner">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Menu -->
+                        <nav class="main-menu style1 navbar-expand-md navbar-light">
+                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix scroll-nav">
+                                    <li class="current home-li">
+                                        <a class="home" href="index.html" title="Home">
+                                            <i class="fa fa-home"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="index.html#capabilities">Capabilities</a></li>
+                                    <li><a href="index.html#about">About us</a></li>
+                                    <li><a href="index.html#services">Core Capacities</a></li>
+                                    
+                                    <!-- MEGA MENU START -->
+                                    <li class="mega-menu-item">
+                                        <a href="javascript:void(0);">Manufacturing <i class="fa fa-angle-down" style="margin-left: 5px;"></i></a>
+                                        <div class="mega-menu">
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                                    <h4 class="mega-title"><span>CNC MACHINING SERVICE</span> <i class="fa fa-cogs"></i></h4>
+                                                    <ul class="mega-list">
+                                                        <li><a href="CNCMachining.html">CNC Machining</a></li>
+                                                        <li><a href="CNCTurning.html">CNC Turning</a></li>
+                                                        <li><a href="cncmilling.html">CNC Milling</a></li>
+                                                        <li><a href="SwissMachining.html">Swiss Machining</a></li>
+                                                        <li><a href="#">5 Axis Machining</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                                    <h4 class="mega-title"><span>DIE CASTING SERVICE</span> <i class="fa fa-tint"></i></h4>
+                                                    <ul class="mega-list">
+                                                        <li><a href="#">Custom Die Casting</a></li>
+                                                        <li><a href="#">Aluminum Die Casting</a></li>
+                                                        <li><a href="ZincDieCasting.html">Zinc Die Casting</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                                    <h4 class="mega-title"><span>METAL PART PRODUCTION</span> <i class="fa fa-industry"></i></h4>
+                                                    <ul class="mega-list">
+                                                        <li><a href="#">Machined Aluminum Parts</a></li>
+                                                        <li><a href="#">Machined Stainless Steel Parts</a></li>
+                                                        <li><a href="#">Machined Brass Parts</a></li>
+                                                        <li><a href="#">Machined Copper Parts</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                                    <h4 class="mega-title"><span>RAPID PROTOTYPING</span> <i class="fa fa-cube"></i></h4>
+                                                    <ul class="mega-list">
+                                                        <li><a href="PrototypePreproduction.html">Prototype and Preproduction</a></li>
+                                                        <li><a href="#">High-volume Production</a></li>
+                                                        <li><a href="LowVolumeProduction.html">Low-volume Production</a></li>
+                                                        <li><a href="#">Plastic Part Production</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="mega-footer">
+                                                CNC Machining Metal & Plastic Parts
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- MEGA MENU END -->
+                                    
+                                    <li><a href="index.html#whyus">Why Us</a></li>
+                                    <li><a href="index.html#contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>                        
+                    </div>  
+                </div>
+                
+                <!-- Get a Quote Button -->
+                <div class="header-bottom_right">
+                    <div class="outer-search-box-style1">
+                        <div class="seach-toggle"><span class="flaticon-magnifiying-glass"></span></div>
+                    </div>
+                    <div class="header-bottom_right__btn">
+                        <a class="btn-one" href="index.html#contact"><span class="txt">Get a Quote</span></a>
+                    </div> 
+                </div>
+                
+            </div>
+        </div>    
+    </div>
+
+    <!-- Mobile Drawer Menu Container -->
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><span class="icon fa fa-times"></span></div>
+
+        <nav class="menu-box">
+            <div class="nav-logo">
+                <a href="index.html"><img src="images/logo/LOGO-SEW.png" alt="Star Engineering Works"></a>
+            </div>
+            <div class="menu-outer">
+                <!-- Javascript nav copy yahan automatic load hoga -->
+            </div>
+            <div class="social-links">
+                <ul class="clearfix">
+                    <li><a href="https://www.facebook.com/StarEngineeringWorks"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="https://www.instagram.com/starengineeringworkspk"><span class="fa fa-instagram"></span></a></li>
+                    <li><a href="https://www.linkedin.com/company/star-engineering-works-khi"><span class="fa fa-linkedin"></span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+</header>
 <!-- 4. Hero Section -->
 <section class="fullwidth-hero">
     <div class="container">
@@ -1468,6 +1509,55 @@
             });
         });
     });
+// Smooth scrolling for sticky pill navigation
+    document.querySelectorAll('.pill-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Slider Scroll Function for Other Services
+    function slideOtherServices(direction) {
+        const slider = document.getElementById('otherServicesSlider');
+        if(slider) {
+            const scrollAmount = 300;
+            slider.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // Mobile Navigation & Mega Menu Toggle Handler
+    $(document).ready(function() {
+        if ($('.mobile-menu').length) {
+            var navContent = $('.main-menu .navigation').parent().html();
+            $('.mobile-menu .menu-box .menu-outer').append(navContent);
+        }
+
+        // Mobile Nav Toggler
+        $('.mobile-nav-toggler').on('click', function() {
+            $('body').addClass('mobile-menu-visible');
+        });
+
+        // Close Mobile Menu
+        $('.mobile-menu .menu-backdrop, .mobile-menu .close-btn').on('click', function() {
+            $('body').removeClass('mobile-menu-visible');
+        });
+
+        // Toggle Submenu in Mobile View
+        $(document).on('click', '.mobile-menu .mega-menu-item > a', function(e) {
+            e.preventDefault();
+            $(this).parent('.mega-menu-item').toggleClass('active');
+        });
+    });
+    
 </script>
 
 </body>
