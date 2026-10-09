@@ -97,6 +97,10 @@ body {
     display: flex !important;
     align-items: center !important;
     height: 100% !important;
+    width: 100% !important;
+}
+.nav-outer {
+    width: 100%;
 }
 .main-menu .navigation {
     display: flex !important;
@@ -206,119 +210,7 @@ body {
 .mega-footer { width: 100%; text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eaeaea; font-weight: 600; color: #555555; font-size: 16px; }
 
 /* ==========================================================================
-   MOBILE HAMBURGER BUTTON & MOBILE DRAWER (SCREENSHOT FIX)
-   ========================================================================== */
-.mobile-nav-toggler {
-    display: none;
-    cursor: pointer;
-    background-color: var(--theme-orange) !important; /* Yellow / Orange Box */
-    padding: 12px 14px !important;
-    border-radius: 4px;
-    margin-right: 15px;
-}
-.mobile-nav-toggler .icon-bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: #ffffff;
-    margin: 4px 0;
-}
-
-/* Hidden Drawer for Mobile Menu */
-.mobile-menu {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 300px;
-    height: 100%;
-    z-index: 99999;
-    visibility: hidden;
-    transform: translateX(-100%);
-    transition: all 500ms ease;
-}
-.mobile-menu-visible .mobile-menu {
-    visibility: visible;
-    transform: translateX(0%);
-}
-.mobile-menu .menu-backdrop {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgba(0,0,0,0.7);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 500ms ease;
-}
-.mobile-menu-visible .mobile-menu .menu-backdrop {
-    opacity: 1;
-    visibility: visible;
-}
-.mobile-menu .menu-box {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    overflow-y: auto;
-    background: #111111;
-    padding: 30px 20px;
-    z-index: 5;
-}
-.mobile-menu .close-btn {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    line-height: 30px;
-    width: 30px;
-    text-align: center;
-    font-size: 20px;
-    color: #ffffff;
-    cursor: pointer;
-    z-index: 10;
-}
-.mobile-menu .nav-logo img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 20px;
-}
-.mobile-menu .navigation {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.mobile-menu .navigation li a {
-    color: #ffffff !important;
-    display: block;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* Responsive Media Query for Mobile Screen (< 991px) */
-@media only screen and (max-width: 991px) {
-    .mobile-nav-toggler {
-        display: block !important; /* Mobile par Orange box visible karega */
-    }
-    .main-menu {
-        display: none !important; /* Desktop menu ko hide karega */
-    }
-    .header-contact-info {
-        display: none !important; /* Contact numbers ko hide karega */
-    }
-    .header-left {
-        width: 100% !important;
-        display: flex !important;
-        justify-content: center !important; /* Mobile Logo Center */
-    }
-}
-
-/* ==========================================================================
-   HERO, PILL BAR & CONTENT SECTIONS
+   HERO & CONTENT STYLES
    ========================================================================== */
 .fullwidth-hero {
     background: linear-gradient(135deg, rgba(25, 28, 82, 0.96) 0%, rgba(43, 48, 136, 0.92) 100%);
@@ -342,7 +234,4 @@ body {
 .center-heading { text-align: center; font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 45px; }
 .process-text { color: #475569; font-size: 15.5px; line-height: 1.85; margin-bottom: 18px; }
 
-/* ==========================================================================
-   FOOTER STYLES
-   ========================================================================== */
 .footer-area { background-color: #f8fafc; padding-top: 80px; padding-bottom: 30px; border-top: 1px solid #f1f5f9; }
