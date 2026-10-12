@@ -717,7 +717,35 @@
 }
 
 
-   </style>
+   
+/* --- MOBILE: NAVBAR LOGO KE BILKUL NICHAY + SLIDER SE FLUSH (GAP FIX) --- */
+@media only screen and (max-width: 991px) {
+    /* header ab normal flow me, slider ke upar overlap nahi karega */
+    .main-header, .main-header.header-style-one {
+        position: relative !important;
+        top: auto !important; left: auto !important;
+        margin: 0 !important; padding: 0 !important;
+        background: var(--theme-blue) !important;   /* agar kahin chhota gap bacha to navbar ke rang me mil jaye */
+    }
+    .main-header .header { margin: 0 !important; padding: 10px 0 !important; background: #ffffff !important; }
+    .main-header .header .outer-box { margin: 0 !important; }
+    .main-header .header-left,
+    .main-header .header-right { margin: 0 !important; padding: 0 !important; }
+
+    /* blue navbar: logo ke foran baad, full width, solid colour */
+    .main-header .header-bottom {
+        position: relative !important; top: 0 !important; bottom: auto !important;
+        margin: 0 !important; transform: none !important;
+        width: 100% !important; background-color: var(--theme-blue) !important;
+        opacity: 1 !important;
+    }
+    .main-header .header-bottom .container { max-width: 100% !important; padding-left: 12px !important; padding-right: 12px !important; }
+
+    /* slider navbar ke bilkul sath chipke, upar se koi offset/shadow nahi */
+    .main-slider, .main-slider.style1 { margin-top: 0 !important; padding-top: 0 !important; top: 0 !important; }
+    .main-slider .top_shadow { display: none !important; }
+}
+</style>
 
     <!-- Fixing Internet Explorer-->
     <!--[if lt IE 9]>

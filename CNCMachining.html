@@ -786,6 +786,67 @@
         margin-bottom: 0 !important;
     }
 }
+
+        /* --- MOBILE DRAWER + HAMBURGER (FIX) --- */
+        .mobile-menu { display: none; }                      /* desktop par bilkul hidden */
+        .mobile-nav-toggler .inner { width: 26px; }
+        .mobile-nav-toggler .icon-bar { display: block; height: 3px; margin: 5px 0; background: #fff; border-radius: 2px; }
+        @media only screen and (max-width: 991px) {
+            .mobile-menu {
+                display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                z-index: 99999; visibility: hidden; opacity: 0; transition: opacity .3s ease, visibility .3s ease;
+            }
+            body.mobile-menu-visible { overflow: hidden; }
+            body.mobile-menu-visible .mobile-menu { visibility: visible; opacity: 1; }
+            .mobile-menu .menu-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.6); cursor: pointer; }
+            .mobile-menu .close-btn {
+                position: absolute; top: 12px; right: 12px; z-index: 5; width: 40px; height: 40px;
+                line-height: 40px; text-align: center; font-size: 20px; color: #fff; cursor: pointer;
+                background: var(--theme-red); border-radius: 50%;
+            }
+            .mobile-menu .menu-box {
+                position: absolute; top: 0; left: 0; width: 320px; max-width: 85%; height: 100%;
+                background: #fff; overflow-y: auto; padding: 25px 20px 30px;
+                transform: translateX(-100%); transition: transform .35s ease; z-index: 2;
+            }
+            body.mobile-menu-visible .mobile-menu .menu-box { transform: translateX(0); }
+            .mobile-menu .nav-logo { padding-bottom: 18px; margin-bottom: 10px; border-bottom: 1px solid #eee; }
+            .mobile-menu .nav-logo img { width: 150px; height: auto; }
+            .mobile-menu .navigation { list-style: none; margin: 0; padding: 0; }
+            .mobile-menu .navigation > li { border-bottom: 1px solid #f1f5f9; }
+            .mobile-menu .navigation > li > a {
+                display: block; padding: 13px 4px; color: #1e293b; font-weight: 700; font-size: 14px;
+                text-transform: uppercase; text-decoration: none;
+            }
+            .mobile-menu .navigation > li.current > a, .mobile-menu .navigation > li > a:hover { color: var(--theme-red); }
+            .mobile-menu .mega-list li a { text-decoration: none; }
+            .mobile-menu .mega-menu-item > a i { float: right; margin-top: 3px; transition: transform .3s; }
+            .mobile-menu .mega-menu-item.active > a i { transform: rotate(180deg); }
+            .mobile-menu .mega-menu {
+                display: none; position: static; opacity: 1; visibility: visible; transform: none;
+                box-shadow: none; border: 0; padding: 0 0 10px 10px; width: auto;
+            }
+            .mobile-menu .mega-menu-item.active > .mega-menu { display: block; }
+            .mobile-menu .mega-menu .row { margin: 0; }
+            .mobile-menu .mega-menu [class*="col-"] { padding: 0; }
+            .mobile-menu .mega-title { font-size: 13px; margin: 14px 0 10px; padding-bottom: 8px; color: var(--theme-blue); }
+            .mobile-menu .mega-title i { font-size: 18px; }
+            .mobile-menu .mega-list li { margin-bottom: 9px; }
+            .mobile-menu .mega-list li a { display: block; font-size: 13.5px !important; }
+            .mobile-menu .mega-footer { display: none; }
+            .mobile-menu .social-links { margin-top: 25px; }
+            .mobile-menu .social-links ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
+            .mobile-menu .social-links ul li a {
+                display: flex; align-items: center; justify-content: center; width: 38px; height: 38px;
+                border-radius: 50%; background: var(--theme-blue); color: #fff; text-decoration: none;
+            }
+            .mobile-menu .social-links ul li a:hover { background: var(--theme-red); }
+
+            /* header bar on mobile */
+            .header-bottom .outer-box { padding: 0 5px; }
+            .header-bottom_right .outer-search-box-style1 { display: none; }
+            .header-left .logo img { width: 150px; }
+        }
     </style>
 </head>
 
@@ -1473,91 +1534,49 @@
     </div>
 </footer>   
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
     // Smooth scrolling for sticky pill navigation
-    document.querySelectorAll('.pill-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
+    document.querySelectorAll('.pill-btn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.pill-btn').forEach(function (b) { b.classList.remove('active'); });
             this.classList.add('active');
-            const target = document.querySelector(this.getAttribute('href'));
-            if(target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
     // Slider Scroll Function for Other Services
     function slideOtherServices(direction) {
-        const slider = document.getElementById('otherServicesSlider');
-        const scrollAmount = 300;
-        slider.scrollBy({
-            left: direction * scrollAmount,
-            behavior: 'smooth'
-        });
+        var slider = document.getElementById('otherServicesSlider');
+        if (slider) slider.scrollBy({ left: direction * 300, behavior: 'smooth' });
     }
 
-    // Mobile Mega Menu Toggle (Vanilla JS)
-    document.addEventListener('DOMContentLoaded', function() {
-        var megaMenuItems = document.querySelectorAll('.mega-menu-item > a');
-        megaMenuItems.forEach(function(item) {
-            item.addEventListener('click', function(e) {
-                if (window.innerWidth < 992) {
-                    e.preventDefault(); // Rokne ke liye taake page refresh na ho
-                    this.parentElement.classList.toggle('active'); // Menu ko open/close karega
-                }
-            });
-        });
-    });
-// Smooth scrolling for sticky pill navigation
-    document.querySelectorAll('.pill-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            const target = document.querySelector(this.getAttribute('href'));
-            if(target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
+    // Mobile drawer
+    $(function () {
+        // desktop menu ki copy drawer me (clone => duplicate id nahi aayegi)
+        $('.mobile-menu .menu-outer').append($('.main-menu .navigation').first().clone());
 
-    // Slider Scroll Function for Other Services
-    function slideOtherServices(direction) {
-        const slider = document.getElementById('otherServicesSlider');
-        if(slider) {
-            const scrollAmount = 300;
-            slider.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-    }
-
-    // Mobile Navigation & Mega Menu Toggle Handler
-    $(document).ready(function() {
-        if ($('.mobile-menu').length) {
-            var navContent = $('.main-menu .navigation').parent().html();
-            $('.mobile-menu .menu-box .menu-outer').append(navContent);
-        }
-
-        // Mobile Nav Toggler
-        $('.mobile-nav-toggler').on('click', function() {
+        $('.mobile-nav-toggler').on('click', function () {
             $('body').addClass('mobile-menu-visible');
         });
-
-        // Close Mobile Menu
-        $('.mobile-menu .menu-backdrop, .mobile-menu .close-btn').on('click', function() {
+        $('.mobile-menu .menu-backdrop, .mobile-menu .close-btn').on('click', function () {
             $('body').removeClass('mobile-menu-visible');
         });
-
-        // Toggle Submenu in Mobile View
-        $(document).on('click', '.mobile-menu .mega-menu-item > a', function(e) {
+        $(document).on('keydown', function (e) {
+            if (e.key === 'Escape') $('body').removeClass('mobile-menu-visible');
+        });
+        // Manufacturing submenu toggle
+        $(document).on('click', '.mobile-menu .mega-menu-item > a', function (e) {
             e.preventDefault();
             $(this).parent('.mega-menu-item').toggleClass('active');
         });
+        // drawer band karo agar screen desktop size ho jaye
+        $(window).on('resize', function () {
+            if (window.innerWidth > 991) $('body').removeClass('mobile-menu-visible');
+        });
     });
-    
 </script>
 
 </body>
