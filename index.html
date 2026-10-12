@@ -745,6 +745,42 @@
     .main-slider, .main-slider.style1 { margin-top: 0 !important; padding-top: 0 !important; top: 0 !important; }
     .main-slider .top_shadow { display: none !important; }
 }
+
+/* --- LIFECYCLE TIMELINE (Our Process) --- */
+.lifecycle-area { background: #ffffff; padding: 80px 0 70px; }
+.lc-timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 50px; margin-top: 45px; }
+.lc-step { position: relative; text-align: center; padding: 0 12px; }
+.lc-step::before { content: ""; position: absolute; top: 27px; left: 0; right: 0; height: 2px; background: #d9ddf0; z-index: 0; }
+.lc-step:nth-child(4n+1)::before { left: 50%; }
+.lc-step:nth-child(4n)::before { right: 50%; }
+.lc-node {
+    position: relative; z-index: 1; width: 56px; height: 56px; margin: 0 auto 22px; border-radius: 50%;
+    background: var(--theme-blue); color: #fff; font-weight: 800; font-size: 17px; letter-spacing: .5px;
+    display: flex; align-items: center; justify-content: center;
+    border: 4px solid #fff; box-shadow: 0 0 0 2px #d9ddf0; transition: background .3s ease, transform .3s ease;
+}
+.lc-card {
+    background: #f8fafc; border: 1px solid #eceff7; border-bottom: 3px solid var(--theme-red); border-radius: 6px;
+    padding: 24px 14px 22px; min-height: 120px; transition: transform .3s ease, box-shadow .3s ease;
+}
+.lc-card i { display: block; font-size: 26px; color: var(--theme-red); margin-bottom: 10px; }
+.lc-card h3 { margin: 0; font-size: 16px; line-height: 1.35; font-weight: 700; color: #1a1e36; }
+.lc-step:hover .lc-node { background: var(--theme-red); transform: scale(1.08); }
+.lc-step:hover .lc-card { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(25,28,82,.12); }
+@media only screen and (max-width: 991px) {
+    .lifecycle-area { padding: 60px 0 40px; }
+    .lc-timeline { display: block; margin-top: 30px; }
+    .lc-step { text-align: left; padding: 0 0 26px 74px; }
+    .lc-step::before,
+    .lc-step:nth-child(4n+1)::before,
+    .lc-step:nth-child(4n)::before { left: 27px; right: auto; top: 28px; width: 2px; height: 100%; }
+    .lc-step:last-child { padding-bottom: 0; }
+    .lc-step:last-child::before { display: none; }
+    .lc-node { position: absolute; left: 0; top: 0; margin: 0; }
+    .lc-card { display: flex; align-items: center; gap: 14px; min-height: 56px; padding: 14px 18px; }
+    .lc-card i { margin: 0; font-size: 22px; width: 26px; text-align: center; flex: 0 0 26px; }
+    .lc-card h3 { font-size: 15.5px; }
+}
 </style>
 
     <!-- Fixing Internet Explorer-->
@@ -845,7 +881,7 @@
                                 </div>
                                 <div class="text">
                                     <p>Call Us Today</p>
-                                    <h4><a href="tel:+92 300 2335078">+92 300 2335078</a></h4>
+                                    <h4><a href="tel:+923002335078">+92 300 2335078</a></h4>
                                 </div>
                             </li>
                             <li>
@@ -1493,7 +1529,7 @@
 <!-- ==========================================================================
      SUPPLY CHAIN LIFECYCLE AREA - START
      ========================================================================== -->
-<section class="quality-policy-area" style="background-color: #ffffff; padding: 70px 0;">
+<section class="lifecycle-area" id="process">
     <div class="container">
         <div class="sec-title text-center">
             <div class="sub-title">
@@ -1502,49 +1538,61 @@
             </div>
             <h2>End-to-End Manufacturing &<br>Supply Chain Lifecycle Functions</h2>
         </div>
-        <div class="row">
-            <!-- Point 1 & 2 -->
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                <div class="quality-policy-box" style="padding: 25px 20px;">
-                    <h3 style="font-size: 17px;"><i class="fa fa-paint-brush clr1" style="margin-right: 10px;"></i>Design & Prototyping</h3>
+        <div class="lc-timeline">
+            <div class="lc-step wow fadeInUp" data-wow-delay="0ms" data-wow-duration="900ms">
+                <div class="lc-node"><span>01</span></div>
+                <div class="lc-card">
+                    <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                    <h3>Design & Prototyping</h3>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                <div class="quality-policy-box" style="padding: 25px 20px;">
-                    <h3 style="font-size: 17px;"><i class="fa fa-handshake-o clr1" style="margin-right: 10px;"></i>Supplier Matching</h3>
+            <div class="lc-step wow fadeInUp" data-wow-delay="120ms" data-wow-duration="900ms">
+                <div class="lc-node"><span>02</span></div>
+                <div class="lc-card">
+                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                    <h3>Supplier Matching</h3>
                 </div>
             </div>
-            <!-- Point 3 & 4 -->
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                <div class="quality-policy-box" style="padding: 25px 20px;">
-                    <h3 style="font-size: 17px;"><i class="fa fa-calculator clr1" style="margin-right: 10px;"></i>Pricing & Estimation</h3>
+            <div class="lc-step wow fadeInUp" data-wow-delay="240ms" data-wow-duration="900ms">
+                <div class="lc-node"><span>03</span></div>
+                <div class="lc-card">
+                    <i class="fa fa-calculator" aria-hidden="true"></i>
+                    <h3>Pricing & Estimation</h3>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                <div class="quality-policy-box" style="padding: 25px 20px;">
-                    <h3 style="font-size: 17px;"><i class="fa fa-calendar-check-o clr1" style="margin-right: 10px;"></i>Production Planning</h3>
+            <div class="lc-step wow fadeInUp" data-wow-delay="360ms" data-wow-duration="900ms">
+                <div class="lc-node"><span>04</span></div>
+                <div class="lc-card">
+                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                    <h3>Production Planning</h3>
                 </div>
             </div>
-            <!-- Point 5 & 6 -->
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                <div class="quality-policy-box" style="padding: 25px 20px;">
-                    <h3 style="font-size: 17px;"><i class="fa fa-check-square-o clr1" style="margin-right: 10px;"></i>Quality Assurance</h3>
+            <div class="lc-step wow fadeInUp" data-wow-delay="0ms" data-wow-duration="900ms">
+                <div class="lc-node"><span>05</span></div>
+                <div class="lc-card">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    <h3>Quality Assurance</h3>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                <div class="quality-policy-box" style="padding: 25px 20px;">
-                    <h3 style="font-size: 17px;"><i class="fa fa-truck clr1" style="margin-right: 10px;"></i>Logistics Tracking</h3>
+            <div class="lc-step wow fadeInUp" data-wow-delay="120ms" data-wow-duration="900ms">
+                <div class="lc-node"><span>06</span></div>
+                <div class="lc-card">
+                    <i class="fa fa-truck" aria-hidden="true"></i>
+                    <h3>Logistics Tracking</h3>
                 </div>
             </div>
-            <!-- Point 7 & 8 -->
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                <div class="quality-policy-box" style="padding: 25px 20px;">
-                    <h3 style="font-size: 17px;"><i class="fa fa-line-chart clr1" style="margin-right: 10px;"></i>Insights & Analytics</h3>
+            <div class="lc-step wow fadeInUp" data-wow-delay="240ms" data-wow-duration="900ms">
+                <div class="lc-node"><span>07</span></div>
+                <div class="lc-card">
+                    <i class="fa fa-line-chart" aria-hidden="true"></i>
+                    <h3>Insights & Analytics</h3>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                <div class="quality-policy-box" style="padding: 25px 20px;">
-                    <h3 style="font-size: 17px;"><i class="fa fa-eye clr1" style="margin-right: 10px;"></i>Transparency & Visibility</h3>
+            <div class="lc-step wow fadeInUp" data-wow-delay="360ms" data-wow-duration="900ms">
+                <div class="lc-node"><span>08</span></div>
+                <div class="lc-card">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    <h3>Transparency & Visibility</h3>
                 </div>
             </div>
         </div>
@@ -1818,7 +1866,7 @@
                                                     <span class="flaticon-incoming-call clr1"></span>
                                                 </div>
                                                 <div class="text">
-                                                    <p class="large"><a href="tel:922135888950">+92 21 3588 8950</a></p>
+                                                    <p class="large"><a href="tel:+922135888950">+92 21 3588 8950</a></p>
                                                 </div>   
                                             </li>
                                             <li>
@@ -1842,7 +1890,7 @@
                                                     <span class="flaticon-clock-1 clr1"></span>
                                                 </div>
                                                 <div class="text">
-                                                    <p>Monday to Sat: 9:am to 6pm</p>
+                                                    <p>Monday to Sat: 9 am to 6 pm</p>
                                                 </div>   
                                             </li>
                                         </ul>
