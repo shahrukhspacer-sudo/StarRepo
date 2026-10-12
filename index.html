@@ -42,7 +42,7 @@
             --bg-light: #f8fafc;
         }
 
-        html, body, p, h1, h2, h3, h4, h5, h6, a, span, li, input, textarea, button {
+        html, body, p, h1, h2, h3, h4, h5, h6, a, span:not(.fa), li, input, textarea, button {
             scroll-behavior: smooth;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
         }
@@ -781,6 +781,10 @@
     .lc-card i { margin: 0; font-size: 22px; width: 26px; text-align: center; flex: 0 0 26px; }
     .lc-card h3 { font-size: 15.5px; }
 }
+
+/* Inquire link arrow (font-free SVG, replaces broken icon box) */
+.readmore-button a .rm-arrow { display: inline-block; width: 18px; height: 18px; margin-right: 10px; vertical-align: -3px; flex: 0 0 18px; transition: transform .3s ease; }
+.readmore-button a:hover .rm-arrow { transform: translateX(4px); }
 </style>
 
     <!-- Fixing Internet Explorer-->
@@ -845,7 +849,7 @@
                 <div class="header-top-right pull-right">
                     <div class="header-menu-1">
                         <ul>
-                            <li><a href="#" data-toggle="modal" data-target="#careerModal" style="text-decoration: underline !important;">Careers</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#careerModal" data-bs-toggle="modal" data-bs-target="#careerModal" style="text-decoration: underline !important;">Careers</a></li>
                         </ul>  
                     </div>
                     <div class="header-social-link-1">
@@ -1461,7 +1465,7 @@
                                     <h3><a href="#">CAD/CAM Designing</a></h3>
                                     <p>Precision digital planning and modeling for complex manufacturing requirements ...</p>
                                     <div class="readmore-button">
-                                        <a href="#contact"><span class="fa fa-arrow-circle-o-right"></span>Inquire</a>
+                                        <a href="#contact"><svg class="rm-arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 12h9M12.5 7.5L17 12l-4.500 4.500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Inquire</a>
                                     </div>
                                 </div>   
                             </div>
@@ -1478,7 +1482,7 @@
                                     <h3><a href="#">3D Printing</a></h3>
                                     <p>Rapid prototyping and custom manufacturing using advanced 3D printing technologies ...</p>
                                     <div class="readmore-button">
-                                        <a href="#contact"><span class="fa fa-arrow-circle-o-right"></span>Inquire</a>
+                                        <a href="#contact"><svg class="rm-arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 12h9M12.5 7.5L17 12l-4.500 4.500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Inquire</a>
                                     </div>
                                 </div>   
                             </div>
@@ -1495,7 +1499,7 @@
                                     <h3><a href="#">CNC Machining Center</a></h3>
                                     <p>High precision automated machining capabilities up to 4 Axis ...</p>
                                     <div class="readmore-button">
-                                        <a href="#contact"><span class="fa fa-arrow-circle-o-right"></span>Inquire</a>
+                                        <a href="#contact"><svg class="rm-arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 12h9M12.5 7.5L17 12l-4.500 4.500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Inquire</a>
                                     </div>
                                 </div>   
                             </div>
@@ -1512,7 +1516,7 @@
                                     <h3><a href="#">CNC Turning Center</a></h3>
                                     <p>Advanced turning operations and component fabrication up to 6 Axis ...</p>
                                     <div class="readmore-button">
-                                        <a href="#contact"><span class="fa fa-arrow-circle-o-right"></span>Inquire</a>
+                                        <a href="#contact"><svg class="rm-arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 12h9M12.5 7.5L17 12l-4.500 4.500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Inquire</a>
                                     </div>
                                 </div>   
                             </div>
@@ -1944,7 +1948,7 @@
       
       <div class="modal-header" style="background-color: #f8fafc; border-bottom: 1px solid #eeeeee; padding: 20px 30px;">
         <h5 class="modal-title" id="careerModalLabel" style="color: var(--theme-blue); font-weight: 700; font-size: 22px;">Apply for a Career</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: var(--theme-red); font-size: 28px; outline: none; border: none; background: transparent; cursor: pointer;">
+        <button type="button" class="close" data-dismiss="modal" data-bs-dismiss="modal" aria-label="Close" style="color: var(--theme-red); font-size: 28px; outline: none; border: none; background: transparent; cursor: pointer;">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -2036,6 +2040,22 @@
         });
     });
     $(document).ready(function() {
+        /* Mobile drawer: link tap par menu band ho aur section tak scroll ho */
+        $(document).on('click', '.mobile-menu .navigation a[href^="#"]', function(e) {
+            var h = this.getAttribute('href');
+            if (!h || h.length < 2) return;
+            var $t = $(h);
+            if (!$t.length) return;
+            e.preventDefault();
+            $('.mobile-menu .close-btn').trigger('click');
+            setTimeout(function() {
+                var y = $t.offset().top - 75;
+                if (!$('html, body').is(':animated') && Math.abs($(window).scrollTop() - y) > 5) {
+                    $('html, body').stop().animate({ scrollTop: y }, 700, 'swing');
+                }
+            }, 400);
+        });
+
         /* Mobile Mega Menu Toggle */
         $(document).on('click', '.mega-menu-item > a', function(e) {
             if($(window).width() < 992) {
